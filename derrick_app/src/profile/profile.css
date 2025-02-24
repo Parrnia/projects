@@ -1,0 +1,445 @@
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .vertical-box {
+    flex: 1;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+border-radius: 25px;
+
+filter: drop-shadow(4px 4px 3px rgba(0,0,0,0.16 ));
+
+background: #ffffff
+
+  }
+  
+  .left {
+    width: 25%;
+    height: 80%;
+    margin-top:30px;
+  }
+  
+  .right {
+    width: 25%;
+    height: 80%;
+    margin-top:30px;
+  }
+  
+ 
+    .horizontal-box {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+     height: 85%;
+  }
+  
+  .horizontal-subbox {
+    flex: 1;
+   
+    margin: 10px;
+    height: 25%;
+    margin-top:30px;
+
+border-radius: 20px;
+
+filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.21 ));
+
+background: rgba(255,187,110,0.85 );
+background: linear-gradient(89deg, 
+rgba(255,187,110,0.85 ) 0.00%, 
+rgba(169,0,255,0.85 ) 67.94%, 
+rgba(93,98,255,0.85 ) 100.00%);
+  }
+  .horizontal-subbox1 {
+    flex: 1;
+    margin: 10px;
+background: #0006c0;
+background: linear-gradient(89deg, 
+#0006c0 0.00%, 
+#5d62ff 43.19%, 
+#3ab6e0 100.00%);
+height: 85%;
+border-radius: 20px;
+
+filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.21 ));
+
+  }
+  .background {
+    margin: 0;
+    padding: 0;
+   
+    background-color: #F8F1FF;
+  }
+  .navbartext
+{
+  font-size: 30px;
+
+font-family: "Doran";
+
+font-weight: normal;
+line-height: 43px;
+font-style: normal;
+margin-right: 25px;
+color: #5d62ff;
+
+}
+.arrow
+{  
+    position: absolute;
+    left:10px;
+    width:50px;
+    margin-left: 40px;
+}
+.vertical-links {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .vertical-links li {
+    margin-bottom: 30px;
+  }
+  
+
+  .plogo
+  {
+    width:130px;
+    position: absolute;
+    top:30px;
+  }
+  .menulabel
+{
+/* کاربر شماره 1 */
+
+position: absolute;
+width: 168px;
+top: 170px;
+border-color: #000000;
+border-width: 1px;
+margin-left: 5px;
+font-family: "Doran";
+font-size: 28px;
+font-weight: bold;
+line-height: 21px;
+font-style: normal;
+
+color: #14199a;
+
+}
+.vertical-links {
+    list-style-type: none;
+   margin-top:240px;
+  }
+  
+  .vertical-links li {
+    
+    margin-bottom: 90px;
+    display: flex; /* Make the li element a flex container */
+    align-items: center; /* Center align items vertically */
+    color: #14199a;
+    
+  }
+
+  .circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #14199a;
+    margin-right: 5px;
+    margin-left:10px;
+    position: absolute;
+    right: 40px;
+  }
+  .vertical-links a {
+    text-decoration: none;
+    position: absolute;
+    right: 80px;
+    display: block;
+font-family: "Doran";
+font-size: 18px;
+font-weight: bold;
+
+color: #14199a;
+  }
+  .subtxt
+  {
+    position: absolute;
+    right: 20px;
+    display: block;
+font-family: "Doran";
+font-size: 28px;
+
+margin-top: 40px;
+color: #ffffff;
+  }
+
+  .flex-item {
+    flex: 1;
+    padding: 10px;
+ 
+    margin-right: 5px; /* Add some spacing between items */
+  }
+
+  .flex-item1 {
+    flex: 1;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 55px; /* Add some spacing between items */
+  }
+  .horizontal-sub {
+    display: flex;
+     margin-right: 10px;
+     margin-top: 50px;
+  }
+
+  .image {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    margin-right: 5px;
+}
+.image1 {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    margin-right: 10px;
+  
+    margin-top: 5px;
+}
+.image2 {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    position: absolute;
+     right: 305px;
+    
+ 
+}
+.image3 {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    position: absolute;
+    right: 305px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 24px;
+    color: #ffffff;
+    font-family: "Dubai";
+}
+.title1 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top:15px;
+    margin-right: 10px;
+    color: #ffffff;
+    font-family: "Dubai";
+}
+.title2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top:15px;
+     margin-left: 20px;
+    color: #ffffff;
+    font-family: "Dubai";
+}
+.title3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top:15px;
+    margin-left: 20px;
+    color: #ffffff;
+    font-family: "Dubai";
+}
+.title4 {
+    width: 140px;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px; /* Align to the right */
+    color: #ffffff;
+    font-family: "Dubai";
+    bottom: 30px;
+    margin-right: 290px; /* Adjust margin for RTL */
+}
+.title5 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top:15px;
+    margin-left: 30px;
+    color: #ffffff;
+    font-family: "Dubai";
+}
+.quantity {
+   color: #ffffff;
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    margin: 10px 0;
+    margin-right: 10px ;
+}
+
+
+.horizontalSub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+}
+
+.currency {
+    margin-right: 10px; /* Space between "ریال" and the number */
+ 
+}
+
+.amount {
+    font-weight: bold; /* Optional: make the amount bold */
+    margin-right:40px ;
+}
+.increaseContainer {
+    display: flex;
+    align-items: center; /* Align button and text vertically */
+}
+
+.increaseButton {
+    background-color: transparent; /* Match background color */
+    border: 2px solid #ffffff; /* Add a border */
+    border-radius: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    width: 40px;
+     
+    margin-top: 20px;
+    font-size: 30px;
+    color: #ffffff; /* Change text color to match border */
+    transition: background-color 0.3s, color 0.3s; /* Animation for hover effect */
+}
+
+.increaseButton:hover {
+   
+    color: white; /* Change text color on hover */
+}
+.increaseText {
+   /* Space between button and text */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin: 10px 0;
+    margin-right:15px; 
+    margin-top:25px;
+    font-family: "Dubai";
+    font-weight: bold;
+}
+.vertical-box1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack flex items vertically */
+    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
+    border-radius: 25px;
+ 
+filter: drop-shadow(4px 4px 3px rgba(0,0,0,0.16 ));
+
+background: #f3f3f3
+    
+}
+
+.flex-itembox {
+    display: flex;
+    flex-direction: column; /* Stack elements within the flex item vertically */
+    align-items: center; /* Center-align items */
+    margin-bottom: 200px; /* Space between flex items */
+}
+
+.labelbox {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px; /* Space below label */
+    /* اقساط پیش رو */
+
+position: absolute;
+width: 146px;
+height: 28px;
+margin-top: 40px;
+right: 10px;
+font-family: "Doran";
+font-size: 24px;
+font-weight: bold;
+line-height: 26px;
+font-style: normal;
+text-align: right;
+color: #5d62ff;
+
+}
+.labelbox2
+{
+    margin-top: 400px;
+}
+.textbox {
+    font-size: 14px;
+    margin-bottom: 10px; /* Space below text */
+    text-align: center; /* Center-align text */
+    /* تنها با چند کلیک اقساط خود را پرداخت کنید */
+
+position: absolute;
+width: 253px;
+height: 17px;
+right: 20px;
+font-family: "Doran";
+font-size: 14px;
+font-weight: bold;
+line-height: 26px;
+font-style: normal;
+text-align: right;
+color: #14199a;
+margin-top: 80px;
+}
+
+.slider {
+    width: 100%; /* Make the horizontal slider full width */
+    margin-top: 100px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Space buttons evenly */
+    width: 100%; /* Make the button container full width */
+    margin-bottom: 10px; /* Space below buttons */
+    margin-top: 140px;
+}
+
+.buttonbox {
+    flex: 1; /* Allow buttons to share space equally */
+    margin: 0 5px; /* Space between buttons */
+    padding: 10px; /* Padding for buttons */
+    background-color: white; /* Button background color */
+    color: #5d62ff; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    width: 90px;
+}
+
+.buttonbox:hover {
+    background-color: #5d62ff; /* Darken button color on hover */
+    color: #ffffff;
+}
+
+.vertical-slider {
+    height: 100px; /* Height for vertical slider */
+    writing-mode: bt-lr; /* Make the slider vertical */
+    transform: rotate(90deg); /* Rotate slider to vertical */
+    margin-top: 10px; /* Space above the vertical slider */
+}
+
+#flex2
+{
+    margin-top: 70px;
+}

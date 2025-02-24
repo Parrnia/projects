@@ -1,0 +1,559 @@
+
+.background {
+  margin: 0;
+  padding: 0;
+  height: 140vh; /* Make it full height */
+  background: linear-gradient(to top right, rgba(255, 187, 110, 0.65), rgba(159, 13, 149, 0.38), rgba(93, 98, 255, 0.68));
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+    .box {
+        width: 677px;
+        height: 708px;
+        position: absolute;
+        left: 20px;
+        top: 196px;
+        background-image: url('./Path.png');
+    }
+
+    .box1 {
+        width: 698px;
+        height: 756px;
+        position: absolute;
+        left: 722px;
+        top: 193px;
+        background-image: url('./Path.png');
+
+    }
+    .arrow-up {
+        width: 100px;
+        height: 100px;
+        background-image: url('./Logo.png');
+        background-size: cover;
+        position: relative;
+        top: 45px;
+        left: 70px;
+    }
+    .arrow {
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        left: 106px;
+        top: 81px;
+        opacity: 1.00;
+        background-image: url('./arrow.png');
+        background-size: cover;
+        cursor: pointer;
+    }
+    
+    .logo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        Width :90px;
+        Height: 110px;
+        Left :570px;
+        Top: 35px;
+        background-image: url('./Logo_Menue.png');
+        background-size: cover;
+    
+    }
+
+    .box p
+    {
+        position: absolute;
+        width: 338px;
+        height: 58px;
+        Left :210px;
+         top: 60px; 
+        font-family: "Doran";
+        font-size: 32px;
+        font-weight: normal;
+        font-style: normal;
+        text-align: right;
+        font-weight: bold;
+        color: #0006c0;
+    }
+    .box1 p
+    {
+        position: absolute;
+        width: 338px;
+        height: 58px;
+        Left :210px;
+         top: 60px; 
+        font-family: "Doran";
+        font-size: 32px;
+        font-weight: normal;
+        font-style: normal;
+        text-align: right;
+        font-weight: bold;
+        color: #0006c0;
+    }
+    .enum
+    {
+        position: absolute;
+        Width: 143px;
+        Height: 40px;
+        Left :510px;
+        Top: 184px;
+        background-image: url('./Enum.png');
+        cursor: pointer;
+    }
+
+    .form-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        margin-top: 280px;
+        width: 90%;
+        padding: 0 20px;
+        direction: rtl;
+      }
+      .login-form-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        margin-top: 180px;
+        width: 90%;
+        padding: 0 20px;
+        direction: rtl;
+       margin-left: 30px;
+      }
+      
+      .form input {
+        width: 85%;
+        height: 40px;
+        margin-left:  10px;
+        margin-bottom: 30px;
+        border: 1px solid #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(99, 98, 98, 0.2);
+        padding: 0 10px;
+        font-size: 16px;
+        text-align: right;
+        outline: none;
+        color: #000000; 
+      }
+
+      .login-form input {
+        width: 85%;
+        height: 40px;
+        margin-right:  120px;
+        margin-bottom: 30px;
+        border: 1px solid #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(99, 98, 98, 0.2);
+        padding: 0 10px;
+        font-size: 16px;
+        text-align: right;
+        outline: none;
+        color: #000000; 
+      }
+.form input::placeholder {
+    color: #999999; /* Set the color to a light grey (#999999) */
+}
+.login-form input::placeholder {
+    color: #999999; /* Set the color to a light grey (#999999) */
+}
+      .rec {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+ 
+      }
+      .log-rec {
+        display: flex;
+        justify-content: center;
+        
+         margin-left: 84px;
+         transform: scale(0.8);
+      }
+     
+      .submit-btn {
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 20px;
+        Width :129px;
+         Height: 47px;
+       margin-left: 264px;
+       position: absolute;
+       font-family: "B Titr";
+       font-size: 16px;
+      font-weight: bold;
+      font-style: normal;
+      color: #ffffff;
+     border-radius: 10px;
+     filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.16 ));
+      background: #14199a
+
+       }
+      
+      .submit-btn:hover {
+        background-color: #14199a;
+      }
+      
+      .submit-btn:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+
+      .form {
+        margin-bottom: 20px;
+      }
+      
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      
+      .error {
+        color: red;
+        margin-top: -15px;
+        font-size: 14px;
+        text-align: right;
+      }
+      .login-btn {
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 20px;
+        Width :129px;
+         Height: 47px;
+       margin-left: 324px;
+       position: absolute;
+       font-family: "B Titr";
+       font-size: 16px;
+      font-weight: bold;
+      font-style: normal;
+      color: #ffffff;
+     border-radius: 10px;
+     filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.16 ));
+      background: #14199a
+
+       }
+      
+      .login-btn:hover {
+        background-color: #14199a;
+      }
+      
+      .login-btn:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+      .logerror {
+        color: red;
+        margin-top: -15px;
+        font-size: 14px;
+        text-align: right;
+        margin-right: 110px;
+      }
+      .path
+      {
+        background-image: url('./Pathe.png');
+        background-size: cover;
+        position: relative; 
+        width: 620px;
+        height: 242px;
+        margin-left: 40px;
+        margin-top: 80px; 
+      }
+      @media (max-width: 768px) {
+        .background {
+          margin: 0;
+          padding: 0;
+          height: 140vh; /* Make it full height */
+          background: linear-gradient( rgba(93,98,255,0.8 ),rgba(159,13,149,0.65 ) ,rgba(255,187,110,0.65 ));
+            width: 530px;
+          height: 1981px;
+        }
+        .box {
+          width: 377px;
+          height: 708px;
+          position: absolute;
+          left: 10px; /* Adjust this value as needed */
+          top: 796px;
+          background-image: none;
+      }
+       .box1 {
+        width: 377px;
+        height: 556px;
+        position: absolute;
+        justify-content: center;
+        left: 10px;
+        top: 193px;
+        background-image: none;
+    }
+     .login-form input {
+      width: 90%;
+      margin: 5px 0;
+      margin-bottom: 20px;
+      margin-right: 10px;
+    }
+     .form input
+     {
+      width: 90%;
+      margin: 5px 0;
+ 
+      margin-right: 10px;
+      margin-top: 15px;
+     }
+    .logo
+    {
+      height:60px;
+      width: 50px;
+      Left :270px;
+      Top: 35px;
+      background-image: url('./Logo_Menue2.png');
+    }
+    .box p, .box1 p {
+
+position: absolute;
+width: 210px;
+height: 26px;
+left: 50px;
+top: 40px;
+font-family: "Doran";
+font-size: 22px;
+font-weight: normal;
+font-style: normal;
+text-align: right;
+color: #c2f0ff;
+
+  }
+
+ 
+    .form-container,
+    .login-form-container {
+        grid-template-columns: 1fr; /* تغییر به یک ستون */
+    } 
+    .login-form-container 
+    {
+      margin-left: 10px;
+      margin-top: 140px;
+
+    }
+    .form-container
+    {
+      margin-left: 10px;
+      margin-top: 140px;
+      
+    }
+    .form
+  {
+    margin-bottom: 0px;
+  }
+    .path
+    {
+      background-image: none;
+      width: auto;
+    }
+    .log-rec
+    {
+      margin-top:10px;
+      margin-right:90px;
+      transform: scale(0.7); 
+       
+    }
+    .login-btn
+    {
+      margin-top:20px;
+      margin-left:115px;
+      width: 140px;
+    }
+    .submit-btn
+  {
+    margin-top:20px;
+      margin-left:115px;
+      width: 140px;
+  }
+    .logerror {
+        margin-right: 20px;
+        font-size:18px;
+      }
+      
+      .enum
+    {
+         position: absolute;
+   
+        Left :180px;
+        Top: 110px;
+      
+    }
+.form-container {
+ 
+  grid-gap: 0px;
+
+  margin-top: 150px;
+  padding: 0 20px;
+  
+}    
+
+.error {
+  margin-top: 10px;
+  font-size:18px;
+ margin-right: 10px;
+}
+.rec
+{
+  margin-top:10px;
+  margin-left:3px;
+  transform: scale(0.7); 
+   
+}
+      }
+
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .background {
+            margin: 0;
+            padding: 0;
+            height:280vh; /* تنظیم ارتفاع برای تناسب */
+            background: linear-gradient(
+                rgba(93, 98, 255, 0.8),
+                rgba(159, 13, 149, 0.65),
+                rgba(255, 187, 110, 0.65)
+            );
+            width: 100%; /* عرض کامل */
+        }
+        .box {
+          width: 377px;
+          height: 708px;
+          position: absolute;
+          left: 220px; /* Adjust this value as needed */
+          top: 796px;
+          background-image: none;
+      }
+       .box1 {
+        width: 377px;
+        height: 556px;
+        position: absolute;
+        justify-content: center;
+        left: 220px;
+        top: 193px;
+        background-image: none;
+    }
+     .login-form input {
+      width: 100%;
+      margin: 5px 0;
+      margin-bottom: 20px;
+      margin-right: 10px;
+    }
+     .form input
+     {
+      width: 100%;
+      margin: 5px 0;
+ 
+      margin-right: 10px;
+      margin-top: 15px;
+     }
+    .logo
+    {
+      height:60px;
+      width: 50px;
+      Left :270px;
+      Top: 35px;
+      background-image: url('./Logo_Menue2.png');
+    }
+    .box p, .box1 p {
+
+position: absolute;
+width: 210px;
+height: 26px;
+left: 50px;
+top: 40px;
+font-family: "Doran";
+font-size: 22px;
+font-weight: normal;
+font-style: normal;
+text-align: right;
+color: #c2f0ff;
+
+  }
+
+ 
+    .form-container,
+    .login-form-container {
+        grid-template-columns: 1fr; /* تغییر به یک ستون */
+    } 
+    .login-form-container 
+    {
+      margin-left: 10px;
+      margin-top: 140px;
+
+    }
+    .form-container
+    {
+      margin-left: 10px;
+      margin-top: 140px;
+      
+    }
+    .form
+  {
+    margin-bottom: 0px;
+  }
+    .path
+    {
+      background-image: none;
+      width: auto;
+    }
+    .log-rec
+    {
+      margin-top:10px;
+      margin-right:90px;
+      transform: scale(0.7); 
+       
+    }
+    .login-btn
+    {
+      margin-top:20px;
+      margin-left:115px;
+      width: 140px;
+    }
+    .submit-btn
+  {
+    margin-top:20px;
+      margin-left:115px;
+      width: 140px;
+  }
+    .logerror {
+        margin-right: 20px;
+        font-size:18px;
+      }
+      
+      .enum
+    {
+         position: absolute;
+   
+        Left :180px;
+        Top: 110px;
+      
+    }
+.form-container {
+ 
+  grid-gap: 0px;
+
+  margin-top: 150px;
+  padding: 0 20px;
+  
+}    
+
+.error {
+  margin-top: 10px;
+  font-size:18px;
+ margin-right: 10px;
+}
+.rec
+{
+  margin-top:10px;
+  margin-left:3px;
+  transform: scale(0.7); 
+   
+}
+    }

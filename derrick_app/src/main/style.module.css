@@ -1,0 +1,205 @@
+.baner
+{
+width: 1200px;
+height: 600px;
+border-radius: 25px;
+margin: 400px auto;
+background: #ffffff
+}
+.baner2
+{
+
+width: 1200px;
+height: 600px;
+border-radius: 25px;
+margin: 200px auto;
+display: flex; /* Use Flexbox for layout */
+align-items: center; /* Center items vertically */
+
+}
+
+.baner2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+   
+}
+
+.bannertext {
+    position: absolute;
+ 
+    color: rgb(0, 0, 0);
+    text-align: center;
+    z-index: 1;
+
+width: 570px;
+height: 330px;
+
+border-color: #000000;
+border-width: 1px;
+font-family: "Doran FaNum";
+font-size:25px;
+font-weight: bold;
+ 
+font-style: normal;
+text-align: right;
+color: #280739;
+
+}
+
+.bannerimage {
+     max-width: 27%;
+   
+    flex: 0 0 40%; /* Adjusts the width of the image */
+    margin-left: 100px;
+    margin-bottom:40px ;
+}
+
+@media (max-width: 768px) {
+    .baner2 {
+        flex-direction: column; /* Stacks elements on smaller screens */
+        align-items: flex-start;
+    }
+
+    .bannerimage {
+        width: 100%; /* Full width for the image on mobile */
+        margin-bottom: 20px; /* Space between image and text */
+    }
+}
+
+.logo1
+{
+    width: 130px;
+    margin-bottom: 190px;
+}
+.logo2
+{
+    width: 100px;
+    margin-top: 170px;
+}
+.logo3
+{
+    width: 100px;
+    margin-bottom: 140px;
+    margin-right: 120px;
+}
+
+.box {
+    /* Rectangle 37 */
+    width: 850px;
+    height: 500px;
+    border-radius: 25px;
+    margin-left: 10px;
+    filter: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.2));
+    background: #f5f5f5;
+
+    /* New styles for sticking to the left */
+    position: absolute;
+    left: 0;
+}
+.bannertext2 {
+    position: absolute;
+ 
+    color: rgb(0, 0, 0);
+    text-align: center;
+    z-index: 1;
+
+filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.3 ));
+
+font-family: "Dubai";
+font-size: 60px;
+font-weight: bold;
+line-height: 177px;
+font-style: normal;
+text-align: right;
+margin-bottom: 180px;
+color: #1a1d74;
+}
+.line {
+    
+        width: 300px;
+        position: absolute;
+        top: 0;
+        right: 590px;
+
+}
+.atm
+{
+    width: 190px;
+    margin-top: 80px;
+    margin-right:90px;
+}
+.credit
+{
+    /* اعتبار */
+
+position: absolute;
+font-family: "Dubai";
+font-size: 50px;
+font-weight: bold;
+line-height: 177px;
+font-style: normal;
+text-align: right;
+margin-right: 400px;
+color: #1a1d74;
+bottom: 200px;
+}
+.credittext
+{/* شما می توانید با داشتن دریک پی و داشتن اعتبار از این پلتفرم مالی در بخش های مختلف زیر مجموعه این پلتفرم خرید وسرمایه گذاری هایی داشته باشید */
+
+position: absolute;
+width: 750px;
+height: 500px;
+font-family: "Dubai";
+font-size: 28px;
+font-weight: bold;
+line-height: 50px;
+font-style: normal;
+text-align: right;
+color: #0006c0;
+margin-top: 40px;
+margin-right:60px;
+}
+
+/* Sidebar.css */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: #f8f9fa;
+    transition: left 0.3s ease;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .sidebar.open {
+    left: 0; /* Show when open */
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-nav {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar-nav li {
+    margin: 10px 0;
+  }
+  
+  .sidebar-nav a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  

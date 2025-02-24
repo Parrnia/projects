@@ -1,0 +1,112 @@
+
+.slick-prev,
+.slick-next {
+    width: 30px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%; /* Center the buttons vertically */
+    transform: translateY(-50%); /* Center the buttons vertically */
+    z-index: 1; /* Ensure buttons are above the slider */
+    transition: background 0.3s;
+ 
+}
+.slick-prev {
+    left: 10px; /* Position the previous button */
+}
+
+.slick-next {
+    right: 10px; /* Position the next button */
+}
+
+
+.slider {
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 100%; /* Full width on mobile */
+   
+    position: relative; /* Ensure relative positioning for the navigation buttons */
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+.slick-dots {
+    bottom: -30px; /* Vertical position of the dots */
+    display: flex !important;
+    justify-content: center;
+}
+
+.slick-dots li {
+    margin: 0 5px; /* Spacing between dots */
+}
+
+.slick-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    transition: background 0.3s;
+}
+
+.slick-dots button:hover {
+    background: #888;
+}
+
+.slick-dots .slick-active button {
+    background: #007bff;
+}
+
+@media screen and (max-width: 768px) {
+    .slider {
+        width: 100%;
+    }
+
+    .slick-prev,
+    .slick-next {
+        width: 30px;
+        height: 30px;
+        background: #007bff;
+        border-radius: 50%;
+        border: none;
+        color: rgb(255, 255, 255);
+        font-size: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%; /* Center the buttons vertically */
+        transform: translateY(-50%); /* Center the buttons vertically */
+        z-index: 1; /* Ensure buttons are above the slider */
+        transition: background 0.3s;
+    }
+
+    .slick-prev {
+        left: 10px; /* Position the previous button */
+    }
+
+    .slick-next {
+        right: 10px; /* Position the next button */
+    }
+
+    .slick-prev:hover,
+    .slick-next:hover {
+        background: #0056b3;
+  
+    }
+
+    .slick-dots {
+        bottom: -60px; /* Increase the distance of dots from the slider */
+    }
+}
+

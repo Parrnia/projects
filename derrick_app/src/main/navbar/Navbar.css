@@ -1,0 +1,72 @@
+.navbar-brand
+{
+  width: 70px;
+}
+.navbar-text
+{
+  font-size: 30px;
+
+font-family: "Doran";
+
+font-weight: normal;
+line-height: 43px;
+font-style: normal;
+margin-right: 25px;
+color: #5d62ff;
+
+}
+.navbar-nav
+{
+  margin-right: 200px;
+}
+
+.nav-link{
+  margin-left: 90px;
+  font-family: "Doran";
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 43px;
+  font-style: normal;
+  text-align: right;
+  color: #5d62ff !important; /* Use !important to ensure the color is applied */
+}
+
+#navicon {
+  position: absolute;
+ 
+  width: 30px;  /* Set a width for the icon */
+  height: 30px; /* Set a height for the icon */
+  margin: 0;
+  top: 140px; /* Maintain the vertical positioning */
+  left: 0; /* Align it to the left */
+  border: none; /* Remove any border */
+  cursor: pointer; /* Change cursor to pointer */
+  color: #5d62ff;
+
+}
+
+@media (max-width: 768px) {
+  .navbar-nav
+  {
+    margin-right: 100px;
+  }
+
+
+}
+@keyframes modalOpen {
+  from {
+      transform: translateY(-100%);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+
+@keyframes modalClose {
+  from {
+      transform: translateY(0);
+  }
+  to {
+      transform: translateY(-100%);
+  }
+}

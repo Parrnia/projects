@@ -1,0 +1,522 @@
+
+.background {
+  margin: 0;
+  padding: 0;
+  height: 300hv;
+  direction: rtl; /* Setting the direction to right-to-left */
+  background: linear-gradient(
+    #F8F1FF 10% , 
+    #C2F0FF  , 
+    #796EE8 
+  );
+}
+.app
+{
+  min-height: 500vh;
+}
+/* Navbar.module.css */
+.navbar {
+  background-color: #b77575;
+  padding: 10px 20px;
+  direction: rtl; /* For RTL layout */
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-right: 240px;
+}
+
+.navItem {
+  display: inline;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navLink:hover {
+  color: #ff6347; /* Change color on hover */
+}
+
+  @media screen and (max-width: 780px){
+    
+    /* hamburger */
+    .hamburger {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .bar {
+          background-color: #120f0b;
+          width: 20px;
+          height: 3px;
+          display: block;
+          margin: 5px;
+          -webkit-transition: 0.3s ease-in-out;
+          transition: 0.3s ease-in-out;
+      }
+  
+    /* adding active class to the bars  */
+    .hamburger.active .bar:nth-child(2){
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  
+  
+    /* navMenu */
+  
+    .navMenu{
+      position: absolute;
+      flex-direction: column;
+      gap: 0;
+      top: 70px;
+      left: -100%;
+      text-align: start;
+      width: 100%;
+      transition: 0.7s ease-in-out;
+      background-color: aliceblue;
+      padding: 10px;
+    }
+  
+    .navMenu.active{
+      left: 0;
+    }
+  
+    .navMenu li {
+      margin: 16px 0;
+    }
+  }
+
+  /* main */
+  .baner
+  {
+  width: 1200px;
+
+  border-radius: 45px;
+  margin-top: 300px ;
+  margin-right:130px;
+   
+  }
+  .baner2
+  {
+  
+  width: 1200px;
+  height: 600px;
+  border-radius: 25px;
+  margin: 200px auto;
+  display: flex; /* Use Flexbox for layout */
+  align-items: center; /* Center items vertically */
+  
+  }
+  
+  .baner2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+     
+  }
+
+  
+  .bannertext {
+      position: absolute;
+   
+      color: rgb(0, 0, 0);
+      text-align: center;
+      z-index: 1;
+  
+  width: 570px;
+  height: 330px;
+  
+  border-color: #000000;
+  border-width: 1px;
+  font-family: "Doran FaNum";
+  font-size:25px;
+  font-weight: bold;
+   
+  font-style: normal;
+  text-align: right;
+  color: #280739;
+  
+  }
+  
+  .bannerimage {
+       max-width: 27%;
+     
+
+       display: block;
+       margin: 0 auto; /* Center horizontally */
+   
+  }
+
+  
+  .logo1
+  {
+      width: 130px;
+      margin-bottom: 190px;
+  }
+  .logo2
+  {
+      width: 100px;
+      margin-top: 170px;
+  }
+  .logo3
+  {
+      width: 100px;
+      margin-bottom: 140px;
+      margin-right: 120px;
+  }
+  .baner3
+  {
+  
+
+  border-radius: 25px;
+  margin: 200px auto;
+  display: flex; /* Use Flexbox for layout */
+  align-items: center; /* Center items vertically */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+
+  }
+
+  .bannertext2 {
+      position: absolute;
+   
+      color: rgb(0, 0, 0);
+      text-align: center;
+     
+  
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.3 ));
+  
+  font-family: "Dubai";
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 177px;
+  font-style: normal;
+  text-align: right;
+  margin-bottom: 180px;
+  color: #1a1d74;
+  }
+  .line {
+      
+          width: 300px;
+          position: absolute;
+          top: 0;
+          right: 590px;
+  
+  }
+  .atm
+  {
+      width: 190px;
+      margin-top: 80px;
+      margin-right:90px;
+  }
+  .credit
+  {
+      /* اعتبار */
+  
+  position: absolute;
+  font-family: "Dubai";
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 177px;
+  font-style: normal;
+  text-align: right;
+  margin-right: 400px;
+  color: #1a1d74;
+  bottom: 200px;
+  }
+  .credittext
+{
+  position: absolute;
+  
+  font-family: "Dubai";
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 50px;
+  font-style: normal;
+  text-align: right;
+  color: #0006c0;
+  margin-top: 40px;
+  margin-right:60px;
+  }
+  
+  /* Sidebar.css */
+  .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px; /* Hidden by default */
+      width: 250px;
+      height: 100%;
+      background-color: #f8f9fa;
+      transition: left 0.3s ease;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+    
+    .sidebar.open {
+      left: 0; /* Show when open */
+    }
+    
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    
+    .sidebar-nav {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .sidebar-nav li {
+      margin: 10px 0;
+    }
+    
+    .sidebar-nav a {
+      text-decoration: none;
+      color: #000;
+    }
+  
+    .imgbaner
+    {
+      width: 100%;
+      border-radius: 25px;
+    }
+    @media only screen and (max-width: 768px) {
+      .baner {
+        width: 100%; 
+        margin-top: 250px;
+        margin-bottom: 550px;
+       
+
+      }
+      .imgbaner
+      { 
+        position: absolute;
+        width:100%;
+       left: 0px;
+      
+      }
+
+      .bannertext {
+        width: 90%;
+        font-size: 20px;
+        height: auto;
+        margin-right: 15px;
+      }
+    
+      .logo3 {
+        margin-right: 20px;
+      }
+    
+      .baner2 {
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    
+      .baner3 {
+        flex-direction: column;
+        align-items: flex-start;
+       
+      }
+      .bannerImage {
+        width: 20%;
+        margin-right: 90px;
+        
+          
+      
+      
+    }
+      .box {
+        width: 50%;
+  
+        margin: 100px 0;
+        border-radius: 15px;
+  
+        
+    }
+
+    .bannertext2 {
+        font-size: 40px;
+        line-height: 100px;
+      
+        
+    }
+
+    .line {
+        width: 150px;
+        right: 20%;
+        margin-right: 40%;
+    }
+
+    .atm {
+        width: 100px;
+        margin-top: 40px;
+        margin-right: 5%;
+    }
+
+    .credit {
+        font-size: 30px;
+        margin-right: 150px;
+        bottom: 300px;
+    }
+
+    .credittext {
+        font-size: 18px;
+        width: 80%;
+        
+        
+    }
+    }
+
+    .cardt {
+      flex: 0 0 auto;
+      width: 600px;
+      margin-right: 50px;
+      border-radius: 5px;
+      padding: 20px;
+      scroll-snap-align: start;
+      transition: transform 0.3s;
+    }
+    .container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      height: 600px; /* Adjust the height as needed */
+    }
+ 
+
+    .card {
+      flex: 0 0 auto;
+      width: 850px;
+      margin-right: 50px;
+
+      
+      border-radius: 5px;
+      padding: 20px;
+      scroll-snap-align: start;
+      transition: transform 0.3s;
+    }
+  
+
+    .box {
+      /* Rectangle 37 */
+      width: 850px;
+      height: 500px;
+      border-radius: 25px;
+      margin-left: 10px;
+      filter: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.2));
+      background: #f5f5f5;
+  
+      /* New styles for sticking to the left */
+      position: relative;
+  margin-bottom: 0px;
+  }
+
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Stack cards vertically */
+      height: auto; /* Adjust height for vertical layout */
+      overflow-x: hidden;
+      
+
+    }
+     .card
+     {
+      width: 400px;
+      margin :0px;
+      margin-right: 40px;
+     }
+    .box {
+      width: 100%; /* Full width on mobile */
+    
+      margin-bottom: 20px; /* Space between stacked cards */
+    }
+  }
+
+.container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+  .baner {
+    width: 100%; 
+    margin-top: 250px;
+    margin-bottom: 550px;
+   
+
+  }
+  .imgbaner
+  { 
+    position: absolute;
+    width:100%;
+   left: 0px;
+  
+  }
+
+
+  .bannerImage {
+    width: 230px;
+    margin-right: 350px;
+   margin-top: 100px;
+}
+.bannertext {
+  width: 60%;
+  font-size: 30px;
+  height: auto;
+  margin-right: 200px;
+  margin-top: 190px;
+}
+
+.logo3 {
+  margin-right: 200px;
+  margin-top:40px;
+}
+
+.baner2 {
+  flex-direction: column;
+  height: auto;
+  align-items: flex-start;
+  padding: 10px;
+  margin-top: 290px;
+  margin-bottom: 20px;
+}
+
+.bannerBackground
+{
+  margin-top: 190px;
+  margin-right: 200px;
+}
+
+}

@@ -1,0 +1,37 @@
+network MyNeuralNetwork {
+    layer input {
+        type: Dense;
+        units: 256;
+        activation: Relu;
+        input_shape: [28, 28];
+    }
+    layer hidden {
+        type: Dense;
+        units: 128;
+        input_shape: [28, 28];
+
+    }
+    layer output {
+        type: Dense;
+        units: 10;
+        activation: Softmax;
+    }
+    training {
+        optimizer: adam;
+        loss: SparseCategoricalCrossentropy;
+        metric: [accuracy, loss];
+        epochs: 10;
+        batch_size: 32;
+        validation_split: 0.2;
+    }
+    dataset mnist {
+        source: "tensorflow.keras.datasets.mnist";
+        preprocessing: normalize 255;
+    }
+    visualize {
+        grid: [10, 10];
+    }
+    evaluate {
+        metric: [accuracy];
+    }
+}

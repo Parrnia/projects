@@ -1,0 +1,33 @@
+network TimeSeriesModel {
+    layer input {
+        type: Dense;
+        units: 128;
+        activation: Relu;
+        input_shape: [50];
+    }
+    layer hidden {
+        type: Dense;
+        units: 64;
+        activation: Tanh;
+    }
+    layer output {
+        type: Dense;
+        units: 1;
+        activation: Linear;
+    }
+    training {
+        optimizer: adam;
+        loss: MeanSquearedError;
+        metric: [loss];
+        epochs: 40;
+        batch_size: 32;
+        validation_split: 0.2;
+    }
+    dataset timeData {
+        source: "data/time_series.csv";
+        preprocessing: normalize 100;
+    }
+    evaluate {
+        metric: [loss];
+    }
+}

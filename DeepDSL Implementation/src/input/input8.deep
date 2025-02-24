@@ -1,0 +1,32 @@
+network ImageModel {
+    layer input {
+        type: Flatten;
+        units: 256;
+        input_shape: [128, 128];
+    }
+    layer hidden {
+        type: Dense;
+        units: 200;
+        activation: Relu;
+    }
+    layer output {
+        type: Dense;
+        units: 3;
+        activation: Softmax;
+    }
+    training {
+        optimizer: adam;
+        loss: SparseCategoricalCrossentropy;
+        metric: [accuracy, loss];
+        epochs: 50;
+        batch_size: 32;
+        validation_split: 0.2;
+    }
+    dataset imageData {
+        source: "datasets/image_data";
+        preprocessing: normalize 255;
+    }
+    evaluate {
+        metric: [accuracy];
+    }
+}

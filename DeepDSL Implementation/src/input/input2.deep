@@ -1,0 +1,41 @@
+network CustomNetwork {
+    layer input {
+        type: Dense;
+        units: 512;
+        activation: Relu;
+        input_shape: [64, 64];
+    }
+    layer hidden1 {
+        type: Dense;
+        units: 256;
+        activation: Tanh;
+    }
+    layer hidden2 {
+        type: Dense;
+        units: 128;
+        activation: Sigmoid;
+    }
+    layer output {
+        type: Dense;
+        units: 5;
+        activation: Softmax;
+    }
+    training {
+        optimizer: sgd;
+        loss: MeanSquearedError;
+        metric: [loss];
+        epochs: 50;
+        batch_size: 16;
+        validation_split: 0.3;
+    }
+    dataset customData {
+        source: "data/custom_dataset.csv";
+        preprocessing: normalize 100;
+    }
+    visualize {
+        grid: [5, 5];
+    }
+    evaluate {
+        metric: [accuracy, loss];
+    }
+}

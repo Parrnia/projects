@@ -1,0 +1,21 @@
+network SmallNetwork {
+    layer input {
+        type: Dense;
+        units: 64;
+        activation: Relu;
+        input_shape: [16];
+    }
+    layer output {
+        type: Dense;
+        units: 4;
+        activation: Softmax;
+    }
+    training {
+        optimizer: rmsprop;
+        loss: SparseCategoricalCrossentropy;
+        metric: [loss];
+        epochs: 10;
+        batch_size: 8;
+        validation_split: 0.3;
+    }
+}

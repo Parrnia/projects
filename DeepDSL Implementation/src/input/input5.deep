@@ -1,0 +1,29 @@
+network DeepNetwork {
+    layer input {
+        type: Dense;
+        units: 1024;
+        activation: Relu;
+        input_shape: [100];
+    }
+    layer hidden {
+        type: Dense;
+        units: 512;
+        activation: Relu;
+    }
+    layer output {
+        type: Dense;
+        units: 3;
+        activation: Softmax;
+    }
+    training {
+        optimizer: adam;
+        loss: SparseCategoricalCrossentropy;
+        metric: [accuracy, loss];
+        epochs: 30;
+        batch_size: 16;
+        validation_split: 0.2;
+    }
+    visualize {
+        grid: [8, 8];
+    }
+}

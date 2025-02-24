@@ -1,0 +1,33 @@
+network AdvancedClassifier {
+    layer input {
+        type: Dense;
+        units: 256;
+        activation: Tanh;
+        input_shape: [50];
+    }
+    layer hidden {
+        type: Dense;
+        units: 128;
+        activation: Relu;
+    }
+    layer output {
+        type: Dense;
+        units: 5;
+        activation: Softmax;
+    }
+    training {
+        optimizer: adam;
+        loss: SparseCategoricalCrossentropy;
+        metric: [accuracy];
+        epochs: 25;
+        batch_size: 16;
+        validation_split: 0.2;
+    }
+    dataset labeled_data {
+        source: "data/labeled_dataset.csv";
+        preprocessing: normalize 255;
+    }
+    visualize {
+        grid: [4, 4];
+    }
+}

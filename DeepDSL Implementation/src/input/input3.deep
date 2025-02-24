@@ -1,0 +1,21 @@
+network SimpleClassifier {
+    layer input {
+        type: Dense;
+        units: 128;
+        activation: Relu;
+        input_shape: [32, 32];
+    }
+    layer output {
+        type: Dense;
+        units: 2;
+        activation: Sigmoid;
+    }
+    training {
+        optimizer: rmsprop;
+        loss: SparseCategoricalCrossentropy;
+        metric: [accuracy];
+        epochs: 20;
+        batch_size: 64;
+        validation_split: 0.1;
+    }
+}

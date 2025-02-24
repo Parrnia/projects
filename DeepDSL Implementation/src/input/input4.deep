@@ -1,0 +1,25 @@
+network RegressionModel {
+    layer input {
+        type: Dense;
+        units: 64;
+        activation: Tanh;
+        input_shape: [10];
+    }
+    layer output {
+        type: Dense;
+        units: 1;
+        activation: Linear;
+    }
+    training {
+        optimizer: sgd;
+        loss: MeanSquearedError;
+        metric: [loss];
+        epochs: 100;
+        batch_size: 32;
+        validation_split: 0.25;
+    }
+    dataset data_source {
+        source: "data/regression_data.csv";
+        preprocessing: normalize 10;
+    }
+}

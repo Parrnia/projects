@@ -1,0 +1,363 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Infrastructure.BackgroundJobs/Onyx.Infrastructure.BackgroundJobs.csproj": {}
+  },
+  "projects": {
+    "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/Onyx.Core.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/Onyx.Core.Application.csproj",
+        "projectName": "Onyx.Application",
+        "projectPath": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/Onyx.Core.Application.csproj",
+        "packagesPath": "/Users/parnia/.nuget/packages/",
+        "outputPath": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/parnia/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.intadev.ir/nuget": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Domain/Onyx.Core.Domain.csproj": {
+                "projectPath": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Domain/Onyx.Core.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.102.3, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.9.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Domain/Onyx.Core.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Domain/Onyx.Core.Domain.csproj",
+        "projectName": "Onyx.Domain",
+        "projectPath": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Domain/Onyx.Core.Domain.csproj",
+        "packagesPath": "/Users/parnia/.nuget/packages/",
+        "outputPath": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/parnia/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.intadev.ir/nuget": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.3.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Infrastructure.BackgroundJobs/Onyx.Infrastructure.BackgroundJobs.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Infrastructure.BackgroundJobs/Onyx.Infrastructure.BackgroundJobs.csproj",
+        "projectName": "Onyx.Infrastructure.BackgroundJobs",
+        "projectPath": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Infrastructure.BackgroundJobs/Onyx.Infrastructure.BackgroundJobs.csproj",
+        "packagesPath": "/Users/parnia/.nuget/packages/",
+        "outputPath": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Infrastructure.BackgroundJobs/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/parnia/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.intadev.ir/nuget": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/Onyx.Core.Application.csproj": {
+                "projectPath": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/Onyx.Core.Application.csproj"
+              },
+              "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Infrastructure.Persistence/Onyx.Infrastructure.Persistence.csproj": {
+                "projectPath": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Infrastructure.Persistence/Onyx.Infrastructure.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
+            "Hangfire": {
+              "target": "Package",
+              "version": "[1.8.6, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "NJsonSchema.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[11.0.0-preview008, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Serilog.Sinks.Seq": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Infrastructure.Persistence/Onyx.Infrastructure.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Infrastructure.Persistence/Onyx.Infrastructure.Persistence.csproj",
+        "projectName": "Onyx.Infrastructure",
+        "projectPath": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Infrastructure.Persistence/Onyx.Infrastructure.Persistence.csproj",
+        "packagesPath": "/Users/parnia/.nuget/packages/",
+        "outputPath": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Infrastructure.Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/parnia/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.intadev.ir/nuget": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/Onyx.Core.Application.csproj": {
+                "projectPath": "/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/Onyx.Core.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

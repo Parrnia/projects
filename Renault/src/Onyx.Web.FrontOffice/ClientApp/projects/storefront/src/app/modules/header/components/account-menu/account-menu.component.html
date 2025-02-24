@@ -1,0 +1,91 @@
+<form *ngIf="!(isAuth$ | async)" class="account-menu__form">
+    <ng-container [formGroup]="form">
+        <div class="account-menu__form-title">
+            {{ 'HEADER_LOGIN_TO_YOUR_ACCOUNT'|translate }}
+        </div>
+        <div *ngIf="form|hasError:'server'" class="alert alert-xs alert-danger mt-n2">
+            {{ ((form.errors && form.errors['server']) || '')|translate }}
+        </div>
+        <div class="form-group">
+            <div class="form-label-group">
+                <input
+                    id="header-signin-userName"
+                    type="userName"
+                    class="form-control form-control-sm"
+                    [placeholder]="'INPUT_USERNAME_PLACEHOLDER_ACCOUNT_MENU'|translate"
+                    formControlName="userName"
+                    [class.is-invalid]="form.controls['userName']|isInvalid"
+                    style="text-align: left; direction: ltr;"
+                >
+                <label for="header-signin-userName">{{ 'INPUT_USERNAME_LABEL'|translate }}</label>
+                <div class="invalid-feedback">
+                    <div *ngIf="form.controls['userName']|hasError:'required'">
+                        {{ 'ERROR_FORM_REQUIRED'|translate }}
+                    </div>
+                    <div *ngIf="form.controls['userName']|hasError:'userName'">
+                        {{ 'ERROR_FORM_INCORRECT_USERNAME'|translate }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-label-group">
+                    <input
+                        id="header-signin-password"
+                        type="password"
+                        class="form-control form-control-sm"
+                        formControlName="password"
+                        [placeholder]="'INPUT_PASSWORD_PLACEHOLDER'|translate"
+                        [class.is-invalid]="form.controls['password']|isInvalid"
+                        style="text-align: left; direction: ltr;"
+                    >
+                    <label for="header-signin-password">{{ 'INPUT_PASSWORD_LABEL'|translate }}</label>
+                
+                <div class="invalid-feedback">
+                    <div *ngIf="form.controls['password']|hasError:'required'">
+                        {{ 'ERROR_FORM_REQUIRED'|translate }}
+                    </div>
+                </div>
+               
+            </div>
+            <a routerLink="/account/forgot-password" class="account-menu__form-forgot-link">{{ 'LINK_FORGOT'|translate }}</a>
+           
+        </div>
+        <app-captcha (changeValue)="setCaptcha($event)"
+        [form]="form" (formConfirm)="login()"></app-captcha>
+        <div class="form-group account-menu__form-button">
+            <button
+                type="submit"
+                class="btn btn-primary btn-sm"
+                [class.btn-loading]="loginInProgress"
+                (click)="login()"
+            >{{ 'BUTTON_LOGIN'|translate }}</button>
+        </div>
+        <div class="account-menu__form-link">
+            <a routerLink="/account/register" (click)="closeMenu.emit()">{{ 'LINK_CREATE_ACCOUNT'|translate }}</a>
+        </div>
+    </ng-container>
+</form>
+<ng-container *ngIf="(isAuth$ | async)">
+    <a routerLink="/account/dashboard" class="account-menu__user row justify-content-center" (click)="closeMenu.emit()">
+        <div class="account-menu__user-avatar">
+            <img [src]="avatar$|async" alt="">
+        </div>
+        <div class="account-menu__user-info row justify-content-center">
+            <div class="account-menu__user-name">{{ firstName$|async }} {{ lastName$|async }}</div>
+            <div class="account-menu__user-email">{{ email$|async }}</div>
+        </div>
+    </a>
+    <div class="account-menu__divider"></div>
+    <ul class="account-menu__links">
+        <li><a routerLink="/account/dashboard" (click)="closeMenu.emit()">{{ 'LINK_ACCOUNT_DASHBOARD'|translate }}</a></li>
+        <li><a routerLink="/account/garage" (click)="closeMenu.emit()">{{ 'LINK_ACCOUNT_GARAGE'|translate }}</a></li>
+        <li><a routerLink="/account/profile" (click)="closeMenu.emit()">{{ 'LINK_ACCOUNT_PROFILE'|translate }}</a></li>
+        <li><a routerLink="/account/orders" (click)="closeMenu.emit()">{{ 'LINK_ACCOUNT_ORDERS'|translate }}</a></li>
+        <li><a routerLink="/account/addresses" (click)="closeMenu.emit()">{{ 'LINK_ACCOUNT_ADDRESSES'|translate }}</a></li>
+    </ul>
+    <div class="account-menu__divider"></div>
+    <ul class="account-menu__links">
+        <li><button type="button" (click)="logout();">{{ 'LINK_ACCOUNT_LOGOUT'|translate }}</button></li>
+    </ul>
+</ng-container>

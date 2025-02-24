@@ -1,0 +1,38 @@
+<form class="row gy-1" [formGroup]="myForm" >
+    <div class="row modal-body">
+
+        <div class="mb-3  col-xxl-6 col-md-6">
+
+            <label for="phoneNumber" class="form-label">شماره تماس</label>
+            <input type="input" class="form-control" id="phoneNumber" formControlName="phoneNumber"
+                [ngClass]="{'is-invalid': form.phoneNumber.touched && form.phoneNumber.invalid}">
+            <div *ngIf="form.phoneNumber.touched && form.phoneNumber.errors?.required" class="invalid-feedback">
+                وارد کردن شماره تماس اجباریست
+            </div>
+
+        </div><!--end col-->
+
+        <div class=" mb-3 col-xxl-6 col-md-6">
+            <label for="customerFirstName" class="form-label">نام مشتری </label>
+            <input type="input" class="form-control" id="customerFirstName" formControlName="customerFirstName"
+                [ngClass]="{'is-invalid': form.customerFirstName.touched && form.customerFirstName.invalid}">
+            <div *ngIf="form.customerFirstName.touched && form.customerFirstName.errors?.required" class="invalid-feedback">
+                وارد کردن نام مشتری اجباریست
+            </div>
+        </div><!--end col-->
+
+
+        <div class=" mb-3 col-xxl-6 col-md-6">
+            <label for="customerLastName" class="form-label">نام خانوادگی مشتری </label>
+            <input type="input" class="form-control" id="customerLastName" formControlName="customerLastName"
+                [ngClass]="{'is-invalid': form.customerLastName.touched && form.customerLastName.invalid}">
+            <div *ngIf="form.customerLastName.touched && form.customerLastName.errors?.required" class="invalid-feedback">
+                وارد کردن نام خانوادگی مشتری اجباریست
+            </div>
+        </div><!--end col-->
+
+
+
+    </div>
+    
+</form>

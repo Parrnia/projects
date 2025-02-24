@@ -1,0 +1,20 @@
+<div class="totals">
+    <h2>Totals</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let total of totals">
+          <td>{{ total.title }}</td>
+          <td>{{ total.price }}</td>
+          <td>{{ total.type }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

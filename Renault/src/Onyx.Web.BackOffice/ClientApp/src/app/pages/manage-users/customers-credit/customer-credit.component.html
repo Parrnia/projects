@@ -1,0 +1,384 @@
+<!-- Start Breadcrumbs -->
+<app-breadcrumbs title="خوشه مدیریت کاربران" [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+<!-- End Breadcrumbs -->
+
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0 flex-grow-1">لیست مشتری ها</h4>
+            </div><!-- end card header -->
+
+            <div class="card-body">
+
+                <div class="mb-lg-3 row">
+                    <div class="col-lg-8">
+                        <div class="d-flex flex-wrap gap-2 mb-3 mb-lg-0">
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-4">
+                        <div style="float: left;" class="d-flex flex-wrap gap-2 mb-3 mb-lg-0">
+
+                            <button type="button" class="btn btn-outline-primary "><i
+                                    class="las la-file-excel label-icon align-middle fs-20"></i> </button>
+                            <button type="button" class="btn btn-outline-primary "><i
+                                    class=" ri-file-excel-2-line label-icon align-middle fs-20"></i> </button>
+                            <button type="button" class="btn btn-outline-primary "><i
+                                    class="las la-file-upload label-icon align-middle fs-20"></i> </button>
+                            <button type="button" class="btn btn-outline-primary "><i
+                                    class="las la-print label-icon align-middle fs-20"></i> </button>
+                        </div>
+                    </div><!--end col-->
+
+                </div><!--end row-->
+
+
+                <div class="search-box d-inline-block mb-2">
+                    <input type="text" class="form-control search" placeholder="جستجو ..."
+                        [(ngModel)]="service.searchTerm">
+                    <i class="ri-search-line search-icon"></i>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-gridjs">
+                        <thead>
+                            <tr>
+
+
+                                <th style="width: 4px;"></th>
+                                <th class="sort" sortable="userName" (sort)="onSort($event)">نام کاربری</th>
+                                <th class="sort" sortable="firstName" (sort)="onSort($event)">نام</th>
+                                <th class="sort" sortable="lastName" (sort)="onSort($event)">نام خانوادگی</th>
+                                <th class="sort" sortable="nationalCode" (sort)="onSort($event)">کد ملی</th>
+                                <th class="sort" sortable="phoneNumber" (sort)="onSort($event)">شماره همراه</th>
+                                <th class="sort" sortable="credit" (sort)="onSort($event)">اعتبار (ریال)</th>
+                                <th class="sort" sortable="maxCredit" (sort)="onSort($event)">سقف اعتبار (ریال)</th>
+                                
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of gridjsList$ | async" id="lj_{{data.id}}">
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="checkAll"
+                                            [checked]="isChecked(data.id)" (change)="toggleCheckbox(data.id)">
+                                    </div>
+                                </td>
+                                <td><ngb-highlight [result]="data.userName" [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.firstName"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.lastName" [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.nationalCode"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.phoneNumber"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.credit.toString() | number:'1.0-0'" [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.maxCredit.toString() | number:'1.0-0'" [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td data-column-id="actions" class="hstack gap-3 flex-wrap gridjs-td">
+
+                                    <a style="cursor: pointer;" (click)="edit(data)" _ngcontent-agu-c388="">
+                                        <i _ngcontent-agu-c388=""
+                                            class=" las la-edit label-icon align-middle fs-22 "></i>
+                                    </a>
+                                    <a style="cursor: pointer;" (click)="editMax(data)" _ngcontent-agu-c388="">
+                                        <i _ngcontent-agu-c388=""
+                                            class=" las la-edit label-icon align-middle fs-22 "></i>
+                                    </a>
+                                    <a style="cursor: pointer;" (click)="openMoreDetailCustomer(data)"
+                                        _ngcontent-agu-c388="">
+                                        <i style="color: #405189;"
+                                            class=" las la-tasks label-icon align-middle fs-22 "></i>
+                                    </a>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row justify-content-md-between align-items-md-center">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">
+                            نمایش
+                            {{service.totalRecords !== 0 ? service.startIndex : 0}} تا
+                            {{service.endIndex}} از {{service.totalRecords}}
+                            داده
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="col-sm-12 col-md-5">
+                        <div class="text-md-right float-md-end gridjs-pagination">
+                            <ngb-pagination [collectionSize]="(total$ | async)!" [maxSize]="10" [(page)]="service.page"
+                                [pageSize]="service.pageSize">
+                            </ngb-pagination>
+                        </div>
+                        <div class="text-md-right float-md-end  d-flex align-items-center mx-2">
+                            <label class="p-0 m-0 text-muted" for="pageSize">تعداد موارد در هر صفحه</label>
+                            <select class="outline-none border border-gray p-1 mx-2" id="pageSize" [(ngModel)]="service.pageSize" (change)="service.page = 1">
+                              <option *ngFor="let size of [5, 10, 15, 20]" [value]="size">{{ size }}</option>
+                            </select>
+                          </div>
+                    </div>
+                    <!-- End Pagination -->
+                </div>
+            </div><!-- end card-body -->
+        </div><!-- end card -->
+    </div>
+    <!-- end col -->
+</div>
+<!-- end row -->
+
+
+<!-- Update Credit Modal -->
+<ng-template role="document" #updateFormModal let-modal>
+    <form class="row gy-1" [formGroup]="updateForm" (ngSubmit)="updateSubmit()">
+        <div class="modal-header">
+            <h4 class="modal-title">مشتری</h4>
+            <button type="button" class="close" aria-label="Close"
+                (click)="modal.dismiss();this.handleCloseUpdateFormModal();">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="row modal-body">
+
+            <div class="mb-3 col-xxl-6 col-md-6">
+
+                <label for="userName" class="form-label">نام کاربری</label>
+                <input type="input" class="form-control" id="userName" formControlName="userName"
+                    [ngClass]="{'is-invalid': updateFormControls.userName.touched && updateFormControls.userName.invalid}">
+
+            </div><!--end col-->
+
+            <div class="mb-3 col-xxl-6 col-md-6">
+
+                <label for="firstName" class="form-label">نام</label>
+                <input type="input" class="form-control" id="firstName" formControlName="firstName"
+                    [ngClass]="{'is-invalid': updateFormControls.firstName.touched && updateFormControls.firstName.invalid}">
+
+            </div><!--end col-->
+
+            <div class="mb-3 col-xxl-6 col-md-6">
+
+                <label for="lastName" class="form-label">نام خانوادگی</label>
+                <input type="input" class="form-control" id="lastName" formControlName="lastName"
+                    [ngClass]="{'is-invalid': updateFormControls.lastName.touched && updateFormControls.lastName.invalid}">
+
+            </div><!--end col-->
+
+            <div class="mb-3 col-xxl-6 col-md-6">
+
+                <label for="nationalCode" class="form-label">کد ملی</label>
+                <input type="input" class="form-control" id="nationalCode" formControlName="nationalCode"
+                    [ngClass]="{'is-invalid': updateFormControls.nationalCode.touched && updateFormControls.nationalCode.invalid}">
+
+            </div><!--end col-->
+
+            <div class="mb-3 col-xxl-6 col-md-6">
+
+                <label for="phoneNumber" class="form-label">شماره همراه</label>
+                <input type="input" class="form-control" id="phoneNumber" formControlName="phoneNumber"
+                    [ngClass]="{'is-invalid': updateFormControls.phoneNumber.touched && updateFormControls.phoneNumber.invalid}">
+
+            </div><!--end col-->
+
+
+            <div class="mb-3 col-xxl-6 col-md-6">
+
+                <label for="credit" class="form-label">اعتبار</label>
+                <div class="input-group">
+                    <input 
+                      type="number" 
+                      class="form-control" 
+                      id="credit" 
+                      formControlName="credit" 
+                      [value]="formattedCredit" 
+                      (input)="onCreditInput($event)" 
+                      [ngClass]="{'is-invalid': updateFormControls.credit.touched && updateFormControls.credit.invalid}" 
+                      maxlength="15" 
+                      placeholder="مقدار را وارد کنید">
+                    <span class="input-group-text">ریال</span>
+                  </div>
+                  
+                    
+                    <div *ngIf="updateFormControls.credit.touched && updateFormControls.credit.errors?.required" class="invalid-feedback">
+                        وارد کردن اعتبار اجباریست
+                    </div>
+                <span class="mt-1 text-gray d-flex">{{ this.creditValue | amountToWords:'toman'  }}</span>
+
+            </div><!--end col-->
+
+        </div>
+        <div class="modal-footer">
+
+            <button type="button" (click)="modal.dismiss('Cross click'); this.handleCloseUpdateFormModal();"
+                style="margin-left:5px" class="btn btn-warning">انصراف</button>
+            <button type="button" (click)="resetUpdateForm()" style="margin-left:5px" class="btn btn-warning">پاک کردن
+                فرم</button>
+                <button class="btn btn-primary" [class.btn-loading]="inProgress" [disabled]="inProgress" type="submit">
+                    <ng-container *ngIf="!inProgress; else loadingTemplate">
+                        ذخیره
+                    </ng-container>
+                    <ng-template #loadingTemplate>
+                        <span class="visually-hidden">Loading...</span>
+                    </ng-template>
+                </button>
+        </div>
+    </form>
+</ng-template>
+
+
+
+<!-- Update Max Credit Modal -->
+<ng-template role="document" #updateMaxFormModal let-modal>
+    <form class="row gy-1" [formGroup]="updateForm" (ngSubmit)="updateMaxSubmit()">
+        <div class="modal-header">
+            <h4 class="modal-title">مشتری</h4>
+            <button type="button" class="close" aria-label="Close"
+                (click)="modal.dismiss();this.handleCloseUpdateFormModal();">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="row modal-body">
+
+            <div class="mb-3 col-xxl-6 col-md-6">
+
+                <label for="userName" class="form-label">نام کاربری</label>
+                <input type="input" class="form-control" id="userName" formControlName="userName"
+                    [ngClass]="{'is-invalid': updateFormControls.userName.touched && updateFormControls.userName.invalid}">
+
+            </div><!--end col-->
+
+            <div class="mb-3 col-xxl-6 col-md-6">
+
+                <label for="firstName" class="form-label">نام</label>
+                <input type="input" class="form-control" id="firstName" formControlName="firstName"
+                    [ngClass]="{'is-invalid': updateFormControls.firstName.touched && updateFormControls.firstName.invalid}">
+
+            </div><!--end col-->
+
+            <div class="mb-3 col-xxl-6 col-md-6">
+
+                <label for="lastName" class="form-label">نام خانوادگی</label>
+                <input type="input" class="form-control" id="lastName" formControlName="lastName"
+                    [ngClass]="{'is-invalid': updateFormControls.lastName.touched && updateFormControls.lastName.invalid}">
+
+            </div><!--end col-->
+
+            <div class="mb-3 col-xxl-6 col-md-6">
+
+                <label for="nationalCode" class="form-label">کد ملی</label>
+                <input type="input" class="form-control" id="nationalCode" formControlName="nationalCode"
+                    [ngClass]="{'is-invalid': updateFormControls.nationalCode.touched && updateFormControls.nationalCode.invalid}">
+
+            </div><!--end col-->
+
+            <div class="mb-3 col-xxl-6 col-md-6">
+
+                <label for="phoneNumber" class="form-label">شماره همراه</label>
+                <input type="input" class="form-control" id="phoneNumber" formControlName="phoneNumber"
+                    [ngClass]="{'is-invalid': updateFormControls.phoneNumber.touched && updateFormControls.phoneNumber.invalid}">
+
+            </div><!--end col-->
+
+
+            <div class="mb-3 col-xxl-6 col-md-6">
+
+                <label for="maxCredit" class="form-label">سقف اعتبار</label>
+                <div class="input-group">
+                    <input 
+                      type="number" 
+                      class="form-control" 
+                      id="maxCredit" 
+                      formControlName="maxCredit" 
+                      [value]="formattedMaxCredit" 
+                      (input)="onMaxCreditInput($event)" 
+                      [ngClass]="{'is-invalid': updateFormControls.maxCredit.touched && updateFormControls.maxCredit.invalid}" 
+                      maxlength="15" 
+                      placeholder="مقدار را وارد کنید">
+                    <span class="input-group-text">ریال</span>
+                  </div>
+                  
+                    
+                    <div *ngIf="updateFormControls.maxCredit.touched && updateFormControls.maxCredit.errors?.required" class="invalid-feedback">
+                        وارد کردن سقف اعتبار اجباریست
+                    </div>
+                <span class="mt-1 text-gray d-flex">{{ this.maxCreditValue | amountToWords:'toman'  }}</span>
+
+            </div><!--end col-->
+
+        </div>
+        <div class="modal-footer">
+
+            <button type="button" (click)="modal.dismiss('Cross click'); this.handleCloseUpdateFormModal();"
+                style="margin-left:5px" class="btn btn-warning">انصراف</button>
+            <button type="button" (click)="resetUpdateForm()" style="margin-left:5px" class="btn btn-warning">پاک کردن
+                فرم</button>
+                <button class="btn btn-primary" [class.btn-loading]="inProgress" [disabled]="inProgress" type="submit">
+                    <ng-container *ngIf="!inProgress; else loadingTemplate">
+                        ذخیره
+                    </ng-container>
+                    <ng-template #loadingTemplate>
+                        <span class="visually-hidden">Loading...</span>
+                    </ng-template>
+                </button>
+        </div>
+    </form>
+</ng-template>
+
+
+
+<ng-template #customerTabModel let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+
+                        <ul ngbNav #customNav="ngbNav" [activeId]="1"
+                            class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0" role="tablist">
+                            <li [ngbNavItem]="1" class="nav-item">
+                                <a ngbNavLink class="nav-link" data-bs-toggle="tab" role="tab">
+                                    تغییرات اعتبار
+                                </a>
+                                <ng-template ngbNavContent>
+
+                                    <app-credit [customer]="selectedCustomer"></app-credit>
+                                </ng-template>
+                            </li>
+                            <li [ngbNavItem]="2" class="nav-item">
+                                <a ngbNavLink class="nav-link" data-bs-toggle="tab" role="tab">
+                                    تغییرات سقف اعتبار
+                                </a>
+                                <ng-template ngbNavContent>
+
+                                    <app-max-credit [customer]="selectedCustomer"></app-max-credit>
+                                </ng-template>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div [ngbNavOutlet]="customNav"></div>
+                    </div>
+                </div>
+            </div><!--end card-->
+        </div>
+    </div><!-- /.modal-content -->
+</ng-template>

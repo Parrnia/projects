@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-header">
+        <h5>{{ 'HEADER_CREDIT_HISTORY'|translate }}</h5>
+    </div>
+    <ng-container *ngIf="list">
+        <div class="card-divider"></div>
+        <div class="card-table">
+            <div class="table-responsive-sm">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>{{ 'TEXT_DATE'|translate }}</th>
+                        <th>{{ 'CREDIT_VALUE'|translate }}</th>
+                        <th>{{ 'MODIFIER_USER_NAME'|translate }}</th>
+                        <th>{{ 'ORDER_TOKEN'|translate }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let Credit of list.items">
+                        <td> {{ Credit.date }} </td>
+                        <td>{{ Credit.value }}</td>
+                        <td>{{ Credit.modifierUserName }}</td>
+                        <td>{{ Credit.orderToken }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-footer">
+            <app-pagination [formControl]="currentPage" [siblings]="2" [total]="list.pages"></app-pagination>
+        </div>
+    </ng-container>
+</div>

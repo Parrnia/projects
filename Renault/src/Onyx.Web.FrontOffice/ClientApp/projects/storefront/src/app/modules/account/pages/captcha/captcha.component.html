@@ -1,0 +1,22 @@
+<form [formGroup]="captchaForm">
+    <div class="form-group">
+        <div class="form-group d-flex align-items-end">
+            <img [src]="getDynamicImageSource()" style="width: 150px; height: 70px;">
+            <button type="button" class="btn btn-primary mt-1 border p-1 d-flex" [class.btn-loading]="this.reloadInProgress" (click)="reLoad()">
+                <app-icon icon="bi-arrow-repeat-16"></app-icon>
+            </button>
+        </div>
+        <div class="form-label-group">
+            <input id="signin-captchaCode" (keyup.enter)="onKeyUp()" type="captchaCode" class="form-control"
+                [class.is-invalid]="this.form.controls['captchaCode']|isInvalid"
+                [placeholder]="'INPUT_Captcha_PLACEHOLDER'|translate" formControlName="captchaCode"
+                style="text-align: left; direction: ltr;">
+                <label for="signin-captchaCode">{{ 'INPUT_Captcha_LABEL'|translate }}</label>
+            <div class="invalid-feedback">
+                <div *ngIf="this.form.controls['captchaCode']|hasError:'required'">
+                    {{ 'ERROR_FORM_REQUIRED'|translate }}
+                </div>
+            </div>
+        </div>  
+    </div>
+</form>

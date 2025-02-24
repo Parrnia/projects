@@ -1,0 +1,13 @@
+<div class="card__loader"></div>
+<div *ngIf="address.title" class="address-card__badge tag-badge tag-badge--theme">{{ address.title }} {{address.default ? '/آدرس پیشفرض' : ''}}</div>
+<div class="address-card__body">
+
+    <div class="address-card__row">
+        {{ address.country }}<br>
+        {{ address.postcode }}, {{ address.city }}<br>
+        {{ address.address1 }} {{ address.address2 }}
+    </div>
+    <div class="address-card__footer" *ngIf="footer">
+        <ng-container *ngTemplateOutlet="footer"></ng-container>
+    </div>
+</div>

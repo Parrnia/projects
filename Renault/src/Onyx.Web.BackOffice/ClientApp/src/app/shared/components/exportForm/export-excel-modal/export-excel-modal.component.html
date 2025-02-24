@@ -1,0 +1,59 @@
+<div class="card">
+    <div class="card-header">
+        <div>
+            <form [formGroup]="exportForm" class=" row m-0  gy-1 " (submit)="submitExportFormOrder()">
+                <div class="mb-3  col-xxl-6 col-md-6">
+                    <label for="searchText" class="form-label">متن جستجو</label>
+                    <input type="input" class="form-control" id="searchText" autocomplete="off" formControlName="searchText">
+                </div>
+                <div class="mb-3  col-xxl-6 col-md-6 ">
+                    <label for="pageSize" class="form-label">تعداد</label>
+                    <input type="number" class="form-control" id="pageSize" autocomplete="off" formControlName="pageSize">
+                </div>
+                <div><label>بر اساس زمان ایجاد رکورد</label></div>
+                <div class="mb-3 row p-0">
+                    <div class="col-6 d-flex align-items-center">
+                        <span class=" text-center me-2">از</span>
+                        <ng-persian-datepicker class="col" [dateInitValue]="false">
+                            <input type="text" class="form-control" id="startCreationDate"
+                              autocomplete="off"  formControlName="startCreationDate">
+                        </ng-persian-datepicker>
+                    </div>
+                    <div class="col-6 d-flex align-items-center">
+                        <span class=" text-center me-2">تا</span>
+                        <ng-persian-datepicker class="col" [dateInitValue]="false">
+                            <input type="text" class="form-control" id="endCreationDate"
+                               autocomplete="off" formControlName="endCreationDate">
+                        </ng-persian-datepicker>
+                    </div>
+                </div>
+                <div><label>بر اساس زمان آخرین تغییر</label></div>
+                <div class="mb-3 row p-0">
+                    <div class="col-6 d-flex align-items-center">
+                        <span class="text-center me-2">از</span>
+                        <ng-persian-datepicker class="col" [dateInitValue]="false">
+                            <input type="text" class="form-control" id="startChangeDate"
+                                formControlName="startChangeDate">
+                        </ng-persian-datepicker>
+                    </div>
+                    <div class="col-6 d-flex align-items-center">
+                        <span class=" text-center me-2">تا</span>
+                        <ng-persian-datepicker class="col" [dateInitValue]="false">
+                            <input type="text" class="form-control" id="endChangeDate" formControlName="endChangeDate">
+                        </ng-persian-datepicker>
+                    </div>
+                </div>
+                <button class="btn btn-primary" [class.btn-loading]="inProgressExportForm"
+                    [disabled]="inProgressExportForm" type="submit">
+                    <ng-container *ngIf="!inProgressExportForm; else loadingTemplate">
+                        گرفتن خروجی اکسل
+
+                    </ng-container>
+                    <ng-template #loadingTemplate>
+                        <span class="visually-hidden">Loading...</span>
+                    </ng-template>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0 flex-grow-1"> لیست گروه بندی ویژگی ها </h4>
+            </div><!-- end card header -->
+
+            <div class="card-body">
+                <div class="search-box d-inline-block mb-2">
+                    <input type="text" class="form-control search" placeholder="جستجو ..."
+                        [(ngModel)]="service.searchTerm">
+                    <i class="ri-search-line search-icon"></i>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-gridjs">
+                        <thead>
+                            <tr>
+                                <th style="width: 4px;"></th>
+                                <th> گروه بندی ویژگی</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of gridjsList$ | async" id="lj_{{data.id}}">
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="checkAll"
+                                            [checked]="isChecked(data.id)" (change)="toggleCheckbox(data.id)">
+                                    </div>
+                                </td>
+                                <td> <ngb-highlight [result]="data.name" [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row justify-content-md-between align-items-md-center">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">
+                            نمایش
+                            {{service.totalRecords !== 0 ? service.startIndex : 0}} تا
+                            {{service.endIndex}} از {{service.totalRecords}}
+                            داده
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="col-sm-12 col-md-5">
+                        <div class="text-md-right float-md-end gridjs-pagination">
+                            <ngb-pagination [collectionSize]="(total$ | async)!" [maxSize]="2" [(page)]="service.page"
+                                [pageSize]="service.pageSize">
+                            </ngb-pagination>
+                        </div>
+                    </div>
+                    <!-- End Pagination -->
+                </div>
+            </div><!-- end card-body -->
+        </div><!-- end card -->
+        <div class="modal-footer">
+
+            <button type="button" (click)="resetForm()" style="margin-left:5px" class="btn btn-warning">پاک کردن
+                فرم</button>
+            <button (click)="addMultiple(addModel)" type="button" class="btn btn-primary">ذخیره</button>
+
+        </div>
+    </div>
+    <!-- end col -->
+</div>
+<!-- end row -->
+
+
+<ng-template #addModel let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mt-2 text-center">
+                <lord-icon src="https://cdn.lordicon.com/wyjhrzdh.json" trigger="loop"
+                    colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+                <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                    <h4>از اضافه کردن آیتم (های) انتخاب شده مطمئن هستید؟</h4>
+                    <p class="text-muted mx-4 mb-0">تایید به منزله اضافه شدن داده ها به پایگاه داده می باشد</p>
+                </div>
+            </div>
+            <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                <button class="btn btn-link link-success fw-medium text-decoration-none" data-bs-dismiss="modal"
+                    (click)="modal.close('Close click')"><i class="ri-close-line me-1 align-middle"></i> انصراف</button>
+                <button type="button" class="btn w-sm btn-danger " id="add-product" (click)="addItems()"
+                    [class.btn-loading]="inProgress" [disabled]="inProgress">
+                    <ng-container *ngIf="!inProgress; else loadingTemplate">
+                        اضافه کن
+                    </ng-container>
+                    <ng-template #loadingTemplate>
+                        <span class="visually-hidden">Loading...</span>
+                    </ng-template>
+                </button>
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</ng-template>

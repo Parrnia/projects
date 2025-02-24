@@ -1,0 +1,428 @@
+{
+  "HEADER": {
+    "MORE": {
+      "TEXT": "بیشتر"
+    }
+  },
+  "MENUITEMS": {
+    "MENU": {
+      "TEXT": "مدیریت اطلاعات پایه"
+    },
+    "DASHBOARD": {
+      "TEXT": "داشبورد",
+      "BADGE": "جدید",
+      "LIST": {
+        "ANALYTICS": "تجزیه و تحلیل",
+        "CRM": "سی آر ام",
+        "ECOMMERCE": "تجارت الکترونیک",
+        "CRYPTO": "رمزنگاری",
+        "PROJECTS": "پروژه ها",
+        "NFT": "ان اف تی",
+        "JOB":"شغل"
+      }
+    },
+    "LAYOUT": {
+      "TEXT": "خوشه شخصی سازی قالب",
+      "BADGE": "جدید",
+      "LIST": {
+        "BLOCKBANNER":"بلوک بنر",
+        "CAROUSEL":"اسلایدر",
+        "FOOTERLINKCONTAINER": "دسته بندی لینک های فوتر",
+        "SOCIALLINK": "لینک شبکه های اجتماعی",
+        "THEME": "تم"
+      }
+    },
+    "BRANDSCLUSTER": {
+      "TEXT": "خوشه برند",
+      "BADGE": "جدید",
+      "LIST": {
+        "PRODUCTBRAND": "برندهای محصول",
+        "VEHICLEBRAND": "برندهای خودرو",
+        "FAMILY": "خانواده ها ",
+        "MODEL": "مدل ها ",
+        "KINDS": "نوع ها ",
+        "VEHICLES": "خودرو ها ",
+        "BRANDTYPE": "نوع برند ها ",
+        "PRODUCTSTYPE": "نوع محصول "
+      }
+    },
+    "PRODUCTCATEGORIESCLUSTER": {
+      "TEXT": "خوشه دسته بندی",
+      "BADGE": "جدید",
+      "LIST": {
+        "PRODUCTCATEGORY": "دسته بندی های محصول "
+      }
+    },
+    "CUSTOMERTICKETSCLUSTER": {
+      "TEXT": "خوشه پشتیبانی مشتریان",
+      "BADGE": "جدید",
+      "LIST": {
+        "TICKET": "تیکت ها "
+      }
+    },
+    "PRODUCTPROPERTIESCLUSTER": {
+      "TEXT": "خوشه ویژگی های محصول",
+      "BADGE": "جدید",
+      "LIST": {
+        "BADGE": "نشان های محصول ",
+        "COUNTINGUNIT": "واحد های شمارش محصول ",
+        "COUNTINGUNITTYPE": "نوع های واحد شمارش محصول ",
+        "PRODUCTSTATUS": "وضعیت های کالا محصول ",
+        "PRODUCTTYPE": "نوع های محصول ",
+        "PROVIDER": "تامین کنندگان ",
+        "REVIEW": "دیدگاه ها ",
+        "TAG": "تگ ها "
+      }
+    },
+    "INFOCLUSTER": {
+      "TEXT": "خوشه اطلاعات",
+      "BADGE": "جدید",
+      "LIST": {
+        "ABOUTUS" : "درباره ما ",
+        "CORPORATIONINFO" : "اطلاعات شرکت",
+        "COUNTRY" : "کشور ها",
+        "QUESTION" : "پرسش ها",
+        "TEAMMEMBER" : "اعضای تیم",
+        "TESTIMONIAL" : "شواهد"
+      }
+    },
+
+    "PRODUCTS": {
+      "TEXT": " خوشه محصولات",
+      "BADGE": "جدید",
+      "LIST": {
+        "PRODUCTSTYPE": "نوع محصولات ",
+        "PRODUCTS": "محصولات",
+        "PRODUCTATTRIBUTETYPES" :"نوع ویژگی محصول",
+        "PRODUCTTYPEATTRIBUTEGROUPS" :"گروه ویژگی محصول",
+        "PRODUCTTYPEATTRIBUTEGROUPATTRIBUTES" :"ویژگی محصول",
+        "PRODUCTATTRIBUTEOPTIONCOLOR" :"آپشن های رنگ",
+        "PRODUCTATTRIBUTEOPTIONMATERIAL" :"آپشن های متریال",
+        "PRODUCTATTRIBUTEOPTIONROLE" :"آپشن های نقش"
+      }
+    },
+    "ORDERS": {
+      "TEXT": " خوشه سفارشات",
+      "BADGE": "جدید",
+      "LIST": {
+        "ALLORDERS": " همه سفارشات ",
+        "CANCELEDORDERS": " سفارشات لغوشده " ,
+        "CONFIRMEDORDERS": " سفارشات در انتظار آماده سازی " ,
+        "COSTREFUNDEDORDERS": " سفارشات بازگشت مبلغ داده شده " ,
+        "PREPAREDORDERS": " سفارشات در انتظار ارسال " ,
+        "REGISTEREDORDERS": " سفارشات در انتظار تایید مالی" ,
+        "SHIPPEDORDERS": " سفارشات ارسال شده " ,
+        "UNCONFIRMEDORDERS": " سفارشات تایید نشده ",
+        "PAYMENTUNCONFIRMEDORDERS": " سفارشات با پرداخت تایید نشده ",
+        "PAYMENTCONFIRMEDORDERS": " سفارشات در انتظار تایید ",
+        "COMPLETEDORDERS": " سفارشات تکمیل شده ",
+        "PENDINGFORREGISTER": "سفارشات در انتظار ثبت"
+      }
+    },
+    "RETURNORDERS": {
+      "TEXT": " خوشه سفارشات بازگشت ",
+      "BADGE": "جدید",
+      "LIST": {
+        "ALLRETURNORDERS": " همه سفارشات بازگشت",
+        "ACCEPTEDRETURNORDERS": " سفارشات بازگشت پذیرفته شده " ,
+        "ALLCONFIRMEDRETURNORDERS": " سفارشات بازگشت با همه کالاهای تاییدشده " ,
+        "CANCELEDRETURNORDERS": " سفارشات بازگشت لغوشده " ,
+        "COMPLETEDRETURNORDERS": " سفارشات بازگشت تکمیل شده ",
+        "COSTREFUNDEDRETURNORDERS": " سفارشات بازگشتی که بازگشت مبلغ داده شده " ,
+        "RECEIVEDRETURNORDERS": " سفارشات بازگشت دریافت تاییدشده " ,
+        "REGISTEREDRETURNORDERS": " سفارشات بازگشت ثبت شده" ,
+        "REJECTEDRETURNORDERS": " سفارشات بازگشت رد شده " ,
+        "SENTRETURNORDERS": " سفارشات بازگشت ارسال شده " ,
+        "SOMECONFIRMEDRETURNORDERS": " سفارشات بازگشت با بعضی کالاهای تاییدشده "
+      }
+    },
+    "PRODUCTCATEGORY": {
+      "TEXT": "مدیریت دسته بندی کالاها",
+      "BADGE": "جدید",
+      "LIST": {
+        "PRODUCTGROUP": "گروه بندی کالاها",
+        "PRODUCTCATEGORY": "دسته بندی کالاها",
+        "PRODUCTSUBCATEGORY": "زیر دسته بندی کالاها"
+      }
+    },
+    "MANAGEUSER": {
+      "TEXT": "مدیریت کاربران",
+      "BADGE": "جدید",
+      "LIST": {
+        "CUSTOMERS": "مدیریت مشتریان",
+        "CUSTOMERSCREDIT": "مدیریت اعتبار مشتریان فروشگاهی",
+        "EMPLOYEE": "مدیریت کارشناسان",
+        "GROUP": "مدیریت گروه مجوزها",
+        "CUSTOMERTYPE": "مدیریت نوع مشتری ها"
+      }
+    },
+    "REQUESTSCLUSTER": {
+      "TEXT": "خوشه درخواست های api",
+      "BADGE": "جدید",
+      "LIST": {
+        "REQUESTLOGS": "مدیریت درخواست ها"
+      }
+    },
+    "APPS": {
+      "TEXT": "برنامه ها",
+      "LIST": {
+        "CALENDAR": "تقویم",
+        "CHAT": "چت",
+        "EMAIL": "ایمیل",
+        "MAILBOX": "صندوق پستی",
+        "MAILTEMPLATES": "قالب های ایمیل",
+        "BASICACTION": "Basic Action",
+        "ECOMMERCEACTION": "عملکرد تجارت الکترونیک",
+        "ECOMMERCE": "تجارت الکترونیک",
+        "PRODUCTS": "محصولات",
+        "PRODUCTDETAILS": "جزییات محصول",
+        "CREATEPRODUCT": "ایجاد محصول",
+        "ORDERS": "سفارشات",
+        "ORDERDETAILS": "جزییات سفارش",
+        "CUSTOMERS": "مصرف کننده ها",
+        "SHOPPINGCART": "چارت خرید",
+        "CHECKOUT": "وارسی",
+        "SELLERS": "فروشندگان",
+        "SELLERDETAILS": "مشخصات فروشنده",
+        "PROJECTS": "پروژه ها",
+        "LIST": "لیست",
+        "OVERVIEW": "بررسی اجمالی",
+        "CREATEPROJECT": "ایجاد پروژه",
+        "TASK": "وظایف",
+        "KANBANBOARD": "برد کانبان",
+        "LISTVIEW": "نمایش لیست",
+        "TASKDETAILS": "جزئیات کار",
+        "CRM": "سی آر ام",
+        "CONTACTS": "مخاطبان",
+        "COMPANIES": "شرکت ها",
+        "DEALS": "معاملات",
+        "LEADS": "راهنمایی ها",
+        "CRYPTO": "رمزنگاری",
+        "TRANSACTIONS": "معاملات",
+        "BUY&SELL": "خرید و فروش",
+        "MYWALLET": "کیف پول من",
+        "ICOLIST": "فهرست ICO",
+        "KYCAPPLICATION": "KYC اپلیکیشن",
+        "INVOICES": "فاکتورها",
+        "DETAILS": "جزئیات",
+        "CREATEINVOICE": "ایجاد فاکتور",
+        "SUPPORTTICKETS": "بلیط های پشتیبانی",
+        "TICKETDETAILS": "جزئیات بلیط",
+        "NFTMARKETPLACE": "بازار ان اف تی",
+        "MARKETPLACE": "بازار",
+        "EXPLORENOW": "اکنون کاوش کنید",
+        "LIVEAUCTION": "حراج زنده",
+        "ITEMDETAILS": "جزئیات مورد",
+        "COLLECTIONS": "مجموعه ها",
+        "CREATORS": "سازندگان",
+        "RANKING": "رتبه بندی",
+        "WALLETCONNECT": "اتصال کیف پول",
+        "CREATENFT": "ایجاد ان اف تی",
+        "FILEMANAGER": "مدیریت فایل",
+        "TODO": "انجام دادن",
+        "JOBS":"کارها",
+        "STATISTICS":"آمار",
+        "JOBLISTS":"لیست های شغلی",
+        "GRID":"توری",
+        "CANDIDATELISTS":"لیست های نامزدها",
+        "GRIDVIEW":"نمای شبکه",
+        "APPLICATION":"اپلیکیشن",
+        "NEWJOB":"شغل جدید",
+        "COMPANIESLIST":"فهرست شرکت ها",
+        "JOBCATEGORIES":"دسته بندی های شغلی",
+        "APIKEY":"کلید ای پی ای"
+      }
+    },
+    "LAYOUTS": {
+      "TEXT": "لایه بندی ها",
+      "LIST": {
+        "HORIZONTAL": "افقی",
+        "DETACHED": "منفصل",
+        "TWOCOLUMN": "دو ستونی",
+        "HOVERED": "شناور شد"
+      }
+    },
+    "PAGES": {
+      "TEXT": "صفحات"
+    },
+    "AUTHENTICATION": {
+      "TEXT": "احراز هویت",
+      "LIST": {
+        "BASIC": "پایه",
+        "COVER": "پوشش",
+        "SIGNIN": "ورود",
+        "SIGNUP": "ثبت نام",
+        "PASSWORDRESET": "تنظیم مجدد رمز عبور",
+        "PASSWORDCREATE": "ایجاد پسوورد",
+        "LOCKSCREEN": "صفحه قفل",
+        "LOGOUT": "خروج",
+        "SUCCESSMESSAGE": "پیام موفقیت",
+        "TWOSTEPVERIFICATION": "تایید دو مرحله ای",
+        "ERRORS": "خطاها",
+        "404BASIC": "404 پایه",
+        "404COVER": "404 کاور",
+        "404ALT": "404 Alt",
+        "500": "500",
+        "OFFLINE": "صفحه آفلاین"
+      }
+    },
+    "PAGES": {
+      "TEXT": "صفحات",
+      "LIST": {
+        "STARTER": "شروع کننده",
+        "PROFILE": "مشخصات",
+        "SIMPLEPAGE": "صفحه ساده ",
+        "SETTINGS": "تنظیمات",
+        "TEAM": "تیم",
+        "TIMELINE": "تایم لاین",
+        "FAQS": "FAQs",
+        "PRICING": "قیمت گذاری",
+        "GALLERY": "گالری",
+        "MAINTENANCE": "نگهداری",
+        "COMINGSOON": "به زودی",
+        "SITEMAP": "نقشه سایت",
+        "SEARCHRESULTS": "نتایج جستجو",
+        "PRIVACYPOLICY":"سیاست حفظ حریم خصوصی",
+        "TERMS&CONDITIONS":"مدت و شرایط"
+      }
+    },
+    "LANDING": {
+      "TEXT": "فرود آمدن",
+      "LIST": {
+        "ONEPAGE": "یک صفحه",
+        "NFTLANDING": "فرود NFT",
+        "JOB":"شغل"
+      }
+    },
+    "COMPONENTS": {
+      "TEXT": "اجزاء"
+    },
+    "BASEUI": {
+      "TEXT": "Base UI",
+      "LIST": {
+        "ALERTS": "هشدارها",
+        "BADGES": "نشان ها",
+        "BUTTONS": "دکمه ها",
+        "COLORS": "رنگ ها",
+        "CARDS": "کارت ها",
+        "CAROUSEL": "چرخ فلک",
+        "DROPDOWNS": "کشویی",
+        "GRID": "توری",
+        "IMAGES": "تصاویر",
+        "TABS": "زبانه ها",
+        "ACCORDION&COLLAPSE": "آکاردئون و فروپاشی",
+        "MODALS": "مدال ها",
+        "OFFCANVAS": "خارج از بوم",
+        "PLACEHOLDERS": "متغیرها",
+        "PROGRESS": "پیش رفت",
+        "NOTIFICATIONS": "اطلاعیه",
+        "MEDIAOBJECT": "شی رسانه ای",
+        "EMBEDVIDEO": "جاسازی ویدیو",
+        "TYPOGRAPHY": "تایپوگرافی",
+        "LISTS": "لیست ها",
+        "GENERAL": "عمومی",
+        "RIBBONS": "روبان",
+        "UTILITIES": "خدمات رفاهی"
+      }
+    },
+    "ADVANCEUI": {
+      "TEXT": "رابط کاربری پیشرفته",
+      "LIST": {
+        "SWEETALERTS": "هشدارهای شیرین",
+        "NESTABLELIST": "فهرست تودرتو",
+        "SCROLLBAR": "نوارچرخ",
+        "ANIMATION": "انیمیشن",
+        "TOUR": "تور",
+        "SWIPERSLIDER": "Swiper Slider",
+        "RATTINGS": "رتبه بندی ها",
+        "HIGHLIGHT": "برجسته",
+        "SCROLLSPY": "ScrollSpy"
+      }
+    },
+    "WIDGETS": {
+      "TEXT": "ابزارک ها"
+    },
+    "FORMS": {
+      "TEXT": "فرم ها",
+      "LIST": {
+        "BASICELEMENTS": "عناصر اساسی",
+        "FORMSELECT": "انتخاب فرم",
+        "CHECKBOXS&RADIOS": "چک باکس ها و رادیوها",
+        "PICKERS": "انتخاب کنندگان",
+        "INPUTMASKS": "ماسک های ورودی",
+        "ADVANCED": "پیشرفته",
+        "RANGESLIDER": "Range Slider",
+        "VALIDATION": "اعتبار سنجی",
+        "WIZARD": "جادوگر",
+        "EDITORS": "ویراستاران",
+        "FILEUPLOADS": "آپلودهای فایل",
+        "FORMLAYOUTS": "طرح بندی فرم ها"
+      }
+    },
+    "TABLES": {
+      "TEXT": "جداول",
+      "LIST": {
+        "BASICTABLES": "جداول پایه",
+        "GRIDJS": "Grid Js",
+        "LISTJS": "لیست Js",
+        "DATATABLES": "جدول های داده"
+      }
+    },
+    "CHARTS": {
+      "TEXT": "نمودارها",
+      "LIST": {
+        "APEXCHARTS": "Apexcharts",
+        "LINE": "Line",
+        "AREA": "Area",
+        "COLUMN": "Column",
+        "BAR": "Bar",
+        "MIXED": "Mixed",
+        "TIMELINE": "Timeline",
+        "CANDLSTICK": "Candlstick",
+        "BOXPLOT": "Boxplot",
+        "BUBBLE": "Bubble",
+        "SCATTER": "Scatter",
+        "HEATMAP": "Heatmap",
+        "TREEMAP": "Treemap",
+        "PIE": "Pie",
+        "RADIALBAR": "Radialbar",
+        "RADAR": "Radar",
+        "POLARAREA": "Polar Area",
+        "CHARTJS": "Chartjs",
+        "ECHARTS": "Echarts"
+      }
+    },
+    "ICONS": {
+      "TEXT": "آیکون ها",
+      "LIST": {
+        "REMIX": "Remix",
+        "BOXICONS": "Boxicons",
+        "MATERIALDESIGN": "Material Design",
+        "LINEAWESOME": "Line Awesome",
+        "FEATHER": "Feather",
+        "CRYPTOSVG": "Crypto SVG"
+      }
+    },
+    "MAPS": {
+      "TEXT": "Maps",
+      "LIST": {
+        "GOOGLE": "گوگل",
+        "VECTOR": "وکتور",
+        "LEAFLET": "Leaflet"
+      }
+    },
+    "MULTILEVEL": {
+      "TEXT": "چند سطحی",
+      "LIST": {
+        "LEVEL1": {
+          "1": "سطح 1.1",
+          "2": "سطح 1.2",
+          "LEVEL2": {
+            "1": "سطح 2.1",
+            "2": "سطح 2.2"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,263 @@
+<!-- Start Breadcrumbs -->
+<app-breadcrumbs title="خوشه ویژگی های محصول" [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+<!-- End Breadcrumbs -->
+
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0 flex-grow-1">لیست درخواست ها</h4>
+            </div><!-- end card header -->
+
+            <div class="card-body">
+
+                <div class="mb-lg-3 row">
+                    <div class="col-lg-8">
+                        <div class="d-flex flex-wrap gap-2 mb-3 mb-lg-0">
+
+                            <button (click)="deleteMultiple(deleteModel)" type="button"
+                                class="btn btn-outline-primary "><i
+                                    class="icon-content-red las la-trash label-icon align-middle fs-20"></i> </button>
+                            <button (click)="resendMultiple(resendModel)" type="button" class="btn btn-outline-primary">
+                                انتخاب شده ها <i
+                                    class="icon-content-green las la-check label-icon align-middle fs-20"></i>
+                            </button>
+                            <button (click)="resendAll(resendAllModel)" type="button" class="btn btn-outline-primary">
+                                همه<i class="icon-content-green las la-check label-icon align-middle fs-20"></i>
+                            </button>
+
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-4">
+                        <div style="float: left;" class="d-flex flex-wrap gap-2 mb-3 mb-lg-0">
+                            <button type="button" (click)="openGetDetailExportExcelModal()" class="btn btn-outline-primary "><i
+                                    class="las la-file-excel label-icon align-middle fs-20"></i> </button>
+                            <button type="button" class="btn btn-outline-primary" (click)="exportExcel()"
+                                [class.btn-outline-loading]="inProgressAllExportbtn" [disabled]="inProgressAllExportbtn">
+                                <ng-container *ngIf="!inProgressAllExportbtn; else loadingTemplate">
+                                    <i class=" ri-file-excel-2-line label-icon align-middle fs-20"></i>
+                                </ng-container>
+                                <ng-template #loadingTemplate>
+                                    <span class="visually-hidden">Loading...</span>
+                                </ng-template>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary "><i
+                                    class="las la-file-upload label-icon align-middle fs-20"></i> </button>
+                            <button type="button" class="btn btn-outline-primary "><i
+                                    class="las la-print label-icon align-middle fs-20"></i> </button>
+                        </div>
+                    </div><!--end col-->
+
+                </div><!--end row-->
+
+
+                <div class="search-box d-inline-block mb-2">
+                    <input type="text" class="form-control search" placeholder="جستجو ..."
+                        [(ngModel)]="service.searchTerm">
+                    <i class="ri-search-line search-icon"></i>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-gridjs">
+                        <thead>
+                            <tr>
+                                <th style="width: 4px;">حذف</th>
+                                <th style="width: 4px;">ارسال دوباره</th>
+                                <th class="sort" sortable="created" (sort)="onSort($event)">تاریخ ثبت درخواست</th>
+                                <th class="sort" sortable="apiAddress" (sort)="onSort($event)">آدرس api</th>
+                                <th class="sort" sortable="requestBody" (sort)="onSort($event)">بدنه درخواست</th>
+                                <th class="sort" sortable="errorMessage" (sort)="onSort($event)">پیام خطا</th>
+                                <th class="sort" sortable="httpStatusCodeName" (sort)="onSort($event)">نتیجه درخواست
+                                </th>
+                                <th class="sort" sortable="requestTypeName" (sort)="onSort($event)">نوع درخواست </th>
+                                <th class="sort" sortable="apiTypeName" (sort)="onSort($event)"> نوع api</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of gridjsList$ | async" id="lj_{{data.id}}">
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="checkAll"
+                                            [checked]="isCheckedDelete(data.id)"
+                                            (change)="toggleDeleteCheckbox(data.id)">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="checkAll"
+                                            [checked]="isCheckedResend(data.id)"
+                                            (change)="toggleResendCheckbox(data.id)"
+                                            [disabled]="data.httpStatusCode !== 200 || data.requestType !== 19">
+                                    </div>
+                                </td>
+                                <td><ngb-highlight [result]="data.created" [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.apiAddress"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.requestBody"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.errorMessage"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.httpStatusCodeName"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.requestTypeName"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.apiTypeName"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row justify-content-md-between align-items-md-center">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">
+                            نمایش
+                            {{service.totalRecords !== 0 ? service.startIndex : 0}} تا
+                            {{service.endIndex}} از {{service.totalRecords}}
+                            داده
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="col-sm-12 col-md-5">
+                        <div class="text-md-right float-md-end gridjs-pagination">
+                            <ngb-pagination [collectionSize]="(total$ | async)!" [maxSize]="5" [(page)]="service.page"
+                                [pageSize]="service.pageSize">
+                            </ngb-pagination>
+                        </div>
+                    </div>
+                    <!-- End Pagination -->
+                </div>
+            </div><!-- end card-body -->
+        </div><!-- end card -->
+    </div>
+    <!-- end col -->
+</div>
+<!-- end row -->
+
+
+<ng-template #deleteModel let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click'); this.handleCloseFormModal();"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mt-2 text-center">
+                <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
+                    colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+                <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                    <h4>از حذف آیتم (های) انتخاب شده مطمئن هستید؟</h4>
+                    <p class="text-muted mx-4 mb-0">تایید حذف به منزله حذف داده از پایگاه داده می باشد</p>
+                </div>
+            </div>
+            <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                <button class="btn btn-link link-success fw-medium text-decoration-none" data-bs-dismiss="modal"
+                    (click)="modal.close('Close click');"><i class="ri-close-line me-1 align-middle"></i>
+                    انصراف</button>
+                <button type="button" class="btn w-sm btn-danger" id="delete-product" (click)="deleteItems()"
+                    [class.btn-loading]="inProgress" [disabled]="inProgress">
+                    <ng-container *ngIf="!inProgress; else loadingTemplate">
+                        حذف کن
+                    </ng-container>
+                    <ng-template #loadingTemplate>
+                        <span class="visually-hidden">Loading...</span>
+                    </ng-template>
+                </button>
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</ng-template>
+
+<ng-template #resendModel let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click'); this.handleCloseFormModal();"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mt-2 text-center">
+                <lord-icon src="https://cdn.lordicon.com/okdadkfx.json" trigger="hover"
+                    style="width:250px;height:250px">
+                </lord-icon>
+                <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                    <h4>از ارسال دوباره درخواست (های) لغو سفارش ناموفق انتخاب شده مطمئن هستید؟</h4>
+                    <p class="text-muted mx-4 mb-0">تایید ارسال به منزله ارسال درخواست (های) لغو سفارش ناموفق می باشد
+                    </p>
+                </div>
+            </div>
+            <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                <button class="btn btn-link link-success fw-medium text-decoration-none" data-bs-dismiss="modal"
+                    (click)="modal.close('Close click');"><i class="ri-close-line me-1 align-middle"></i>
+                    انصراف</button>
+                <button type="button" class="btn w-sm btn-danger" id="delete-product" (click)="resendItems()"
+                    [class.btn-loading]="inProgress" [disabled]="inProgress">
+                    <ng-container *ngIf="!inProgress; else loadingTemplate">
+                        ارسال کن
+                    </ng-container>
+                    <ng-template #loadingTemplate>
+                        <span class="visually-hidden">Loading...</span>
+                    </ng-template>
+                </button>
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</ng-template>
+
+<ng-template #resendAllModel let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click'); this.handleCloseFormModal();"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mt-2 text-center">
+                <lord-icon src="https://cdn.lordicon.com/okdadkfx.json" trigger="hover"
+                    style="width:250px;height:250px">
+                </lord-icon>
+                <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                    <h4>از ارسال دوباره همه درخواست های لغو سفارش ناموفق مطمئن هستید؟</h4>
+                    <p class="text-muted mx-4 mb-0">تایید ارسال به منزله ارسال همه درخواست های لغو سفارش ناموفق می باشد
+                    </p>
+                </div>
+            </div>
+            <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                <button class="btn btn-link link-success fw-medium text-decoration-none" data-bs-dismiss="modal"
+                    (click)="modal.close('Close click');"><i class="ri-close-line me-1 align-middle"></i>
+                    انصراف</button>ّ
+                    <button type="button" class="btn w-sm btn-danger" id="delete-product" (click)="resendAllItems()"
+                    [class.btn-loading]="inProgress" [disabled]="inProgress">
+                    <ng-container *ngIf="!inProgress; else loadingTemplate">
+                        ارسال کن
+                    </ng-container>
+                    <ng-template #loadingTemplate>
+                        <span class="visually-hidden">Loading...</span>
+                    </ng-template>
+                </button>
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</ng-template>
+
+<ng-template #getDetailExportTabModel let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <app-export-excel-modal [client]="this.client" [clientQuery]="'exportExcelQuery'">
+
+            </app-export-excel-modal>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,33 @@
+<app-block-space layout="spaceship-ledge-height"></app-block-space>
+
+<div class="block">
+    <div class="container">
+        <div class="not-found">
+            <div class="not-found__404">
+                خطای 404
+            </div>
+
+            <div class="not-found__content">
+                <h1 class="not-found__title">صفحه مرود نظر شما یافت نشد</h1>
+
+                <!-- <p class="not-found__text">
+                    به نظر می رسد ما نمی‌توانیم صفحه‌ای را که به دنبال آن هستید را پیدا کنیم.<br>
+                    میتوانید جستجو را امتحان کنید. 
+                </p>
+
+                <form class="not-found__search">
+                    <input type="text" class="not-found__search-input form-control" placeholder="Search Query...">
+                    <button type="submit" class="not-found__search-button btn btn-primary">جستجو</button>
+                </form> -->
+
+                <p class="not-found__text">
+                     به صفحه اصلی بروید تا از نو آغار کنید.
+                </p>
+
+                <a class="btn btn-secondary btn-sm" [routerLink]="url.home()">صفحه اصلی</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-block-space layout="before-footer"></app-block-space>

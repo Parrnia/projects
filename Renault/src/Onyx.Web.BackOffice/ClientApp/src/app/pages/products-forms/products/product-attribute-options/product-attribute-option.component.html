@@ -1,0 +1,325 @@
+<div class="row">
+
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0 flex-grow-1"> لیست اطلاعات آپشن ها <strong
+                        style="color: rgb(11, 51, 11);">{{product.localizedName}}</strong> </h4>
+            </div><!-- end card header -->
+
+            <div class="card-body">
+
+                <div class="mb-lg-3 row">
+                    <div class="col-lg-8">
+                        <div class="d-flex flex-wrap gap-2 mb-3 mb-lg-0">
+
+                            <button (click)="openInsertModal()" type="button" class="btn btn-outline-primary "><i
+                                    class="icon-content-blue las la-plus label-icon align-middle fs-20"></i> </button>
+                            <button (click)="deleteMultiple(deleteModel)" type="button"
+                                class="btn btn-outline-primary "><i
+                                    class="icon-content-red las la-trash label-icon align-middle fs-20"></i> </button>
+
+                        </div>
+                    </div><!--end col-->
+
+                </div><!--end row-->
+
+
+                <div class="search-box d-inline-block mb-2">
+                    <input type="text" class="form-control search" placeholder="جستجو ..."
+                        [(ngModel)]="service.searchTerm">
+                    <i class="ri-search-line search-icon"></i>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-gridjs">
+                        <thead>
+                            <tr>
+                                <th style="width: 4px;"></th>
+                                <th> تعداد</th>
+                                <th> ذخیره احتیاطی</th>
+                                <th> حداقل موجودی</th>
+                                <th> حداکثر موجودی</th>
+                                <th> سقف قیمت فروش </th>
+                                <th> پیش فرض </th>
+                                <th> مقدار آپشن ها </th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of gridjsList$ | async" id="lj_{{data.id}}">
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="checkAll"
+                                            [checked]="isChecked(data.id)" (change)="toggleCheckbox(data.id)">
+                                    </div>
+                                </td>
+                                <td> <ngb-highlight [result]="data.totalCount != null? data.totalCount.toString(): ''"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td> <ngb-highlight
+                                        [result]="data.safetyStockQty != null? data.safetyStockQty.toString(): '' "
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td> <ngb-highlight
+                                        [result]="data.minStockQty != null? data.minStockQty.toString(): '' "
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td> <ngb-highlight
+                                        [result]="data.maxStockQty != null? data.maxStockQty.toString(): '' "
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td> <ngb-highlight
+                                        [result]="data.maxSalePriceNonCompanyProductPercent != null? data.maxSalePriceNonCompanyProductPercent.toString(): '' "
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td>
+                                    <strong *ngIf="data.isDefault != null && data.isDefault== true">بلی</strong>
+                                    <strong *ngIf="data.isDefault == null || data.isDefault== false">خیر</strong>
+                                </td>
+                                <td> <ngb-highlight
+                                        [result]="data.optionValues != null? data.optionValues.toString(): '' "
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+
+                                <td data-column-id="actions" class="hstack gap-3 flex-wrap gridjs-td">
+                                    <div class="d-flex align-items-center">
+                                        <a style="cursor: pointer;" (click)="editMenu(data)">
+                                            <i class="las la-edit label-icon align-middle fs-22"></i>
+                                        </a>
+                                        <a style="cursor: pointer;" (click)="openMoreDetail(data)">
+                                            <i style="color: #405189;"
+                                                class="las la-tasks label-icon align-middle fs-22"></i>
+                                        </a>
+                                    </div>
+                                </td>
+
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row justify-content-md-between align-items-md-center">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">
+                            نمایش
+                            {{service.totalRecords !== 0 ? service.startIndex : 0}} تا
+                            {{service.endIndex}} از {{service.totalRecords}}
+                            داده
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="col-sm-12 col-md-5">
+                        <div class="text-md-right float-md-end gridjs-pagination">
+                            <ngb-pagination [collectionSize]="(total$ | async)!" [(page)]="service.page"
+                                [pageSize]="service.pageSize">
+                            </ngb-pagination>
+                        </div>
+                    </div>
+                    <!-- End Pagination -->
+                </div>
+            </div><!-- end card-body -->
+        </div><!-- end card -->
+    </div>
+    <!-- end col -->
+</div>
+<!-- end row -->
+
+
+<ng-template #deleteModel let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mt-2 text-center">
+                <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
+                    colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+                <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                    <h4>از حذف آیتم (های) انتخاب شده مطمئن هستید؟</h4>
+                    <p class="text-muted mx-4 mb-0">تایید حذف به منزله حذف داده از پایگاه داده می باشد</p>
+                </div>
+            </div>
+            <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                <button class="btn btn-link link-success fw-medium text-decoration-none" data-bs-dismiss="modal"
+                    (click)="modal.close('Close click')"><i class="ri-close-line me-1 align-middle"></i> انصراف</button>
+                <button type="button" class="btn w-sm btn-danger" id="delete-product" (click)="deleteItems()"
+                    [class.btn-loading]="inProgress" [disabled]="inProgress">
+                    <ng-container *ngIf="!inProgress; else loadingTemplate">
+                        حذف کن
+                    </ng-container>
+                    <ng-template #loadingTemplate>
+                        <span class="visually-hidden">Loading...</span>
+                    </ng-template>
+                </button>
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</ng-template>
+
+
+<!-- Delete Modal -->
+<ng-template role="document" #formModal let-modal>
+    <form class="row gy-1" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="modal-header">
+            <h4 class="modal-title"> آپشن محصول</h4>
+            <button type="button" class="close" aria-label="Close"
+                (click)="modal.dismiss();this.handleCloseFormModal();">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="row modal-body">
+
+            <div *ngIf="this.product.colorOptionId != null" class="mb-3  col-xxl-6 col-md-6">
+                <label for="colorOptionValue" class="form-label"> آپشن رنگ</label>
+                <select [(ngModel)]="colorOptionValue" style="margin-bottom: 0px !important;" class="form-select mb-3"
+                    aria-label="انتخاب محصول" id="colorOptionValue"
+                    [ngClass]="{'is-invalid': form.colorOptionValue.touched && form.colorOptionValue.invalid}"
+                    formControlName="colorOptionValue">
+                    <option [value]="null">ندارد</option>
+                    <option *ngFor="let option of optionColorList" [value]="option.name">{{ option.name }}</option>
+                </select>
+            </div>
+
+            <div *ngIf="this.product.optionMaterialId != null" class="mb-3  col-xxl-6 col-md-6">
+                <label for="materialOptionValue" class="form-label"> آپشن متریال</label>
+                <select [(ngModel)]="materialOptionValue" style="margin-bottom: 0px !important;"
+                    class="form-select mb-3" aria-label="انتخاب محصول" id="materialOptionValue"
+                    [ngClass]="{'is-invalid': form.materialOptionValue.touched && form.materialOptionValue.invalid}"
+                    formControlName="materialOptionValue">
+                    <option [value]="null">ندارد</option>
+                    <option *ngFor="let option of optionMaterialList" [value]="option.name">{{ option.name }}</option>
+                </select>
+            </div>
+
+
+
+
+            <div class=" mb-3 col-xxl-6 col-md-6">
+
+                <label for="totalCount" class="form-label">تعداد محصول </label>
+                <input type="input" class="form-control" id="totalCount" formControlName="totalCount"
+                    [ngClass]="{'is-invalid': form.totalCount.touched && form.totalCount.invalid}">
+                <div *ngIf="form.totalCount.touched && form.totalCount.errors?.required" class="invalid-feedback">
+                    وارد کردن تعداد محصول اجباریست
+                </div>
+            </div><!--end col-->
+
+
+            <div class=" mb-3 col-xxl-6 col-md-6">
+
+                <label for="safetyStockQty" class="form-label">ذخیره احتیاطی </label>
+                <input type="input" class="form-control" id="safetyStockQty" formControlName="safetyStockQty"
+                    [ngClass]="{'is-invalid': form.safetyStockQty.touched && form.safetyStockQty.invalid}">
+                <div *ngIf="form.safetyStockQty.touched && form.safetyStockQty.errors?.required"
+                    class="invalid-feedback">
+                    وارد کردن ذخیره احتیاطی اجباریست
+                </div>
+            </div>
+
+            <div class=" mb-3 col-xxl-6 col-md-6">
+
+                <label for="minStockQty" class="form-label">حداقل موجودی </label>
+                <input type="input" class="form-control" id="minStockQty" formControlName="minStockQty"
+                    [ngClass]="{'is-invalid': form.minStockQty.touched && form.minStockQty.invalid}">
+                <div *ngIf="form.minStockQty.touched && form.minStockQty.errors?.required" class="invalid-feedback">
+                    وارد کردن حداقل موجودی اجباریست
+                </div>
+            </div>
+
+            <div class=" mb-3 col-xxl-6 col-md-6">
+
+                <label for="maxStockQty" class="form-label">حداکثر موجودی </label>
+                <input type="input" class="form-control" id="maxStockQty" formControlName="maxStockQty"
+                    [ngClass]="{'is-invalid': form.maxStockQty.touched && form.maxStockQty.invalid}">
+                <div *ngIf="form.maxStockQty.touched && form.maxStockQty.errors?.required" class="invalid-feedback">
+                    وارد کردن حداکثر موجودی اجباریست
+                </div>
+            </div>
+
+            <div class=" mb-3 col-xxl-6 col-md-6">
+
+                <label for="maxSalePriceNonCompanyProductPercent" class="form-label">سقف قیمت فروش </label>
+                <input type="input" class="form-control" id="maxSalePriceNonCompanyProductPercent"
+                    formControlName="maxSalePriceNonCompanyProductPercent"
+                    [ngClass]="{'is-invalid': form.maxSalePriceNonCompanyProductPercent.touched && form.maxSalePriceNonCompanyProductPercent.invalid}">
+            </div>
+
+            <div class="mb-3 col-xxl-6 col-md-6">
+                <label for="isDefault" class="form-label">پیش فرض بودن</label>
+                <input type="checkbox" class="form-check-input" id="isDefault" formControlName="isDefault"
+                    [ngClass]="{'is-invalid': form.isDefault.touched && form.isDefault.invalid}">
+            </div><!--end col-->
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" (click)="modal.dismiss('Cross click'); this.handleCloseFormModal();"
+                style="margin-left:5px" class="btn btn-warning">انصراف</button>
+            <button type="button" (click)="resetForm()" style="margin-left:5px" class="btn btn-warning">پاک کردن
+                فرم</button>
+            <button class="btn btn-primary" [class.btn-loading]="inProgress" [disabled]="inProgress" type="submit">
+                <ng-container *ngIf="!inProgress; else loadingTemplate">
+                    ذخیره
+                </ng-container>
+                <ng-template #loadingTemplate>
+                    <span class="visually-hidden">Loading...</span>
+                </ng-template>
+            </button>
+
+        </div>
+    </form>
+</ng-template>
+
+
+<ng-template #productAttributeOptionTabModal let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+
+                        <ul ngbNav #customNav="ngbNav" [activeId]="1"
+                            class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0" role="tablist">
+                            <li [ngbNavItem]="1" class="nav-item">
+                                <a ngbNavLink class="nav-link" data-bs-toggle="tab" role="tab">
+                                    اطلاعات محصول بر اساس نوع مشتری
+                                </a>
+                                <ng-template ngbNavContent>
+                                    <app-product-option-role [productOption]="selectedOption"></app-product-option-role>
+                                </ng-template>
+                            </li>
+                            <li [ngbNavItem]="2" class="nav-item">
+                                <a ngbNavLink class="nav-link" data-bs-toggle="tab" role="tab">
+                                    قیمت ها
+                                </a>
+                                <ng-template ngbNavContent>
+                                    <app-price [productOption]="selectedOption"></app-price>
+                                </ng-template>
+                            </li>
+                            <li [ngbNavItem]="3" class="nav-item">
+                                <a ngbNavLink class="nav-link" data-bs-toggle="tab" role="tab">
+                                    نشان ها
+                                </a>
+                                <ng-template ngbNavContent>
+                                    <app-product-badges [productOption]="selectedOption"></app-product-badges>
+                                </ng-template>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div [ngbNavOutlet]="customNav"></div>
+                    </div>
+                </div>
+            </div><!--end card-->
+        </div>
+    </div><!-- /.modal-content -->
+</ng-template>

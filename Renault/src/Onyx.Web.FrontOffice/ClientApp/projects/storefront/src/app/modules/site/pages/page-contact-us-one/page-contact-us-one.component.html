@@ -1,0 +1,73 @@
+<app-block-map></app-block-map>
+
+<app-block-header pageTitle="ارتباط با ما" [breadcrumb]="[
+        {label: 'خانه', url: ''},
+        {label: 'برد کرامب', url: ''},
+        {label: 'صفحه کنونی', url: ''}
+    ]" [afterHeader]="false"></app-block-header>
+
+<div class="block">
+    <div class="container container--max--lg">
+        <div class="card">
+            <div class="card-body card-body--padding--2">
+                <div class="row">
+                    <div class="col-12 col-lg-6 pb-4 pb-lg-0">
+                        <div class="mr-1">
+                            <h4 class="contact-us__header card-title">{{ 'TEXT_OUR_LOCATION'|translate }}</h4>
+
+                            <div class="contact-us__address">
+                                ایمیل :
+                                <p *ngFor="let item of (info | async)?.emailAddresses">{{ item }}<br></p>
+                                شماره تماس :
+                                <p *ngFor="let item of (info | async)?.phoneNumbers">{{ item }}<br></p>
+                                <strong>نشانی ما</strong>
+                                <p *ngFor="let item of (info | async)?.locationAddresses">{{ item }}<br></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <div class="ml-1">
+                            <h4 class="contact-us__header card-title">به ما پیام دهید</h4>
+
+                            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                                <div class="form-group">
+                                    <label for="form-subject">موضوع</label>
+                                    <input type="text" class="form-control" formControlName="subject"
+                                        [class.is-invalid]="form.controls['subject']|isInvalid"
+                                        [placeholder]="'پیشنهاد'">
+                                    <div class="invalid-feedback">
+                                        <div *ngIf="form.controls['subject']|hasError:'required'">
+                                            {{ 'ERROR_FORM_REQUIRED'|translate }}
+                                        </div>
+                                        <div *ngIf="form.controls['subject']|hasError:'maxlength'">
+                                            موضوع نباید بیشتر از 50 کاراکتر باشد
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-message">متن پیام</label>
+                                    <textarea id="form-message" class="form-control" rows="4"
+                                        formControlName="message"
+                                        [class.is-invalid]="form.controls['message']|isInvalid"></textarea>
+                                    <div class="invalid-feedback">
+                                        <div *ngIf="form.controls['message']|hasError:'required'">
+                                            {{ 'ERROR_FORM_REQUIRED'|translate }}
+                                        </div>
+                                        <div *ngIf="form.controls['message']|hasError:'maxlength'">
+                                            موضوع نباید بیشتر از 1000 کاراکتر باشد
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">ارسال پیام</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-block-space layout="before-footer"></app-block-space>

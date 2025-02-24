@@ -1,0 +1,97 @@
+.order-header-detail , .order-body-details{
+    font-size: 14px;
+}
+
+.myButton {
+   
+   border-radius: 8px;
+   display: inline-block;
+   cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 13px 32px;
+    text-decoration: none;
+  
+}
+.myButton:active {
+  position: relative;
+   top: 1px;
+}
+/* این استایل برای جدول */
+.table-custom {
+    width: 100%; /* تنظیم جدول به 100% عرض */
+
+}
+
+/* استایل برای container دکمه‌ها */
+.button-container {
+    display: flex;               /* استفاده از فلکس برای چیدمان دکمه‌ها */
+    justify-content: flex-start; /* چیدن دکمه‌ها به سمت چپ */
+    gap: 10px;                   /* فاصله بین دکمه‌ها */
+    margin-top: 10px;    
+  
+}
+
+/* استایل برای دکمه‌ها */
+.button-container .btn {
+    padding: 8px 15px; /* تنظیم padding دکمه‌ها برای اندازه بهتر */
+}
+
+.card-table-main
+{
+    width: 700px;
+    margin-left: 20px;
+}
+
+.card-table-main1
+{
+    width: 500px;
+    margin-left: 20px;
+ 
+}
+
+
+.button-container1
+{
+    margin-left: 190px;
+   
+}
+.card-table-main {
+    flex-grow: 1;
+}
+
+.d-flex.gap-2 {
+    gap: 0.5rem; /* فاصله بین دکمه‌ها */
+    margin-top: 40px;
+}
+
+.table-custom th, .table-custom td {
+    vertical-align: middle;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.875rem;
+}
+/* Optional custom styles for the table */
+.table th, .table td {
+    text-align: center; /* Centers the text inside the table */
+  }
+  
+  .table th {
+    font-weight: bold; /* Makes the table headers bold */
+  }
+  
+  .table td {
+    font-size: 14px; /* Adjusts font size for table data */
+  }
+  
+  .badge {
+    font-size: 12px; /* Adjusts font size of badges */
+  }
+  
+  .modal {
+    max-height: 90vh;  /* حداکثر ارتفاع مودال */
+    overflow-y: auto;  /* اسکرول عمودی */
+  }
+  

@@ -1,0 +1,106 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0 flex-grow-1"> لیست جزئیات سفارش <strong
+                        style="color: rgb(11, 51, 11);">{{order.number}}</strong> </h4>
+            </div><!-- end card header -->
+
+            <div class="card-body">
+
+              
+
+                <div class="search-box d-inline-block mb-2">
+                    <input type="text" class="form-control search" placeholder="جستجو ..."
+                        [(ngModel)]="service.searchTerm">
+                    <i class="ri-search-line search-icon"></i>
+                </div> 
+
+                <div class="table-responsive">
+                    <table class="table table-gridjs">
+                        <thead>
+                            <tr>
+                             
+                                <th class="sort"> محصول</th>
+                                <th class="sort">(ریال) قیمت</th>
+                                <th class="sort"> تخفیف بر روی محصول</th>
+                                <th class="sort"> تعداد</th>
+                                <th class="sort">(ریال) جمع کل</th>
+                                <th class="sort"> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of gridjsList$ | async" id="lj_{{data.id}}">
+                             
+                                <td> <ngb-highlight [result]="data.productName"
+                                    [term]="service.searchTerm"></ngb-highlight>
+                            </td>
+
+                                <td> <ngb-highlight [result]="data.price.toString()"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+
+                                <td> <ngb-highlight [result]="data.discountPercentForProduct.toString()"
+                                    [term]="service.searchTerm"></ngb-highlight>
+                            </td>
+
+                                <td> <ngb-highlight [result]="data.quantity.toString()"
+                                    [term]="service.searchTerm"></ngb-highlight>
+                            </td>
+                            <td> <ngb-highlight [result]="data.total.toString()"
+                                [term]="service.searchTerm"></ngb-highlight>
+                        </td>
+                        <td  data-column-id="actions" class="hstack gap-3 flex-wrap gridjs-td">
+
+                            <a style="cursor: pointer;" (click)="openMoreDetail(data)" _ngcontent-agu-c388="">
+                                <i style="color: #405189;"
+                                    class=" las la-tasks label-icon align-middle fs-22 "></i>
+                            </a>
+
+                        </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row justify-content-md-between align-items-md-center">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">
+                            نمایش
+                            {{service.totalRecords !== 0 ? service.startIndex : 0}} تا
+                            {{service.endIndex}} از {{service.totalRecords}}
+                            داده
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="col-sm-12 col-md-5">
+                        <div class="text-md-right float-md-end gridjs-pagination">
+                            <ngb-pagination [collectionSize]="(total$ | async)!" [maxSize]="10" [(page)]="service.page"
+                                [pageSize]="service.pageSize">
+                            </ngb-pagination>
+                        </div>
+                    </div>
+                    <!-- End Pagination -->
+                </div>
+            </div><!-- end card-body -->
+        </div><!-- end card -->
+    </div>
+    <!-- end col -->
+</div>
+<!-- end row -->
+
+
+<ng-template #optionModal let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <app-option [orderItem]="selectedItem"></app-option>
+            </div><!--end card-->
+        </div>
+    </div><!-- /.modal-content -->
+</ng-template>
+
+

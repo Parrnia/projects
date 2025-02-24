@@ -1,0 +1,22 @@
+<form [formGroup]="captchaForm">
+    <div class="form-group">
+        <div class="form-group d-flex align-items-end mx-1">
+            <img [src]="getDynamicImageSource()" style="width: 150px; height: 70px;">
+            <button type="button" class="btn btn-primary p-1 d-flex" [class.btn-loading]="this.reloadInProgress" (click)="reLoad()">
+                <i class="la la-refresh p-0 m-0"></i>
+            </button>
+        </div>
+        <div class="form-label-group mt-3">
+            <input id="signin-captchaCode" (keyup.enter)="onKeyUp()" type="text" class="form-control"
+                [class.is-invalid]="captchaFormControls.captchaCode.touched && captchaFormControls.captchaCode.invalid"
+                [placeholder]="" formControlName="captchaCode"
+                style="text-align: left; direction: ltr;">
+            <label for="signin-captchaCode">عبارت امنیتی</label>
+            <div class="invalid-feedback">
+                <div *ngIf="captchaFormControls.captchaCode.touched && captchaFormControls.captchaCode.errors?.required">
+                    کد کپچا اجباری  است
+                </div>
+            </div>
+        </div>     
+    </div>
+</form>

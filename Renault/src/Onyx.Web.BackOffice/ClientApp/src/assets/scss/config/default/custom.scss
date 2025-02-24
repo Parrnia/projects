@@ -1,0 +1,143 @@
+/*
+Template Name: Velzon - Admin & Dashboard Template
+Author: Themesbrand
+Website: https://themesbrand.com/
+Contact: support@themesbrand.com
+File: Custom Css File
+*/
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 0.25rem;
+  border-color: #c2c2c2;
+}
+
+.form-label-group > input {
+  height: 45px;
+}
+.form-label-group > span {
+  top: 15px;
+  left: 0;
+}
+
+.form-label-group > label {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  width: auto;
+  margin-bottom: 0; /* Override default `<label>` margin */
+  color: #7c7c7c;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: all 0.1s ease-in-out;
+  transform: translateY(-50%);
+  font-size: 0.9rem; /* default size */
+}
+.form-label-group input.is-invalid ~ label {
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  border: 1px solid transparent;
+  transform: translateY(-90%);
+}
+
+.form-label-group input:focus ~ label,
+.form-label-group input:not(:placeholder-shown) ~ label {
+  top: 7px;
+  right: 12px;
+  padding: 0 5px;
+  font-size: 12px;
+  display: inline;
+  color: #777;
+  background-color: #fff;
+}
+
+.form-label-group input {
+  background-color: transparent;
+  padding-top: 15px;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+  min-width: 53px;
+  min-height: 37px;
+  margin: 4px;
+}
+
+.btn-loading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  margin-top: -8px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #ffffff;
+  border-right-color: #ffffff;
+  animation: spin 0.8s linear infinite;
+  pointer-events: none;
+}
+
+.btn-outline-loading {
+  position: relative;
+  pointer-events: none;
+  min-width: 53px;
+  min-height: 37px;
+  margin: 4px;
+}
+
+.btn-outline-loading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  margin-top: -8px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #405189;
+  border-right-color: #405189;
+  animation: spin 0.8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.datepicker-content {
+  position: relative;
+  .datepicker-outer-container {
+    position: absolute;
+    z-index: 10;
+  }
+}
+
+// .mat-mdc-button-persistent-ripple,
+// mat-button,
+// .mdc-button__label,
+// .mdc-button,
+// .mat-mdc-button,
+// .mat-warn,
+// .mat-mdc-button-base,
+// .ng-star-inserted {
+//   font-family: "iransanse";
+// }

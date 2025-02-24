@@ -1,0 +1,218 @@
+<!-- invoice.component.html -->
+<div class="row justify-content-center my-3 ">
+  <button class="btn btn-primary"  [class.btn-loading]="changeProgress" (click)="downloadPDF()">چاپ فاکتور</button>
+</div>
+<section #invoiceContent class="main-invoice p-0 m-0 row border border-gray rounded justify-content-center align-content-start mx-auto h-screen">
+  <header class="row align-items-center p-1 m-0  header-invoice col-12">
+    <div class="logo_one col-3 row justify-content-start p-0 m-0 h-100">
+      <img [src]="'assets/logos/renaultpersian.png'" alt="" class="h-100 object-fit-cover ">
+    </div>
+    <h1 class=" col-6 text-center">فاکتور فروش کالا</h1>
+    <div class="logo_two col-3 justify-content-end row p-0 m-0 h-100">
+      <img [src]="'assets/logos/renault.png'" alt="" class=" h-100 object-fit-contain ">
+    </div>
+  </header>
+  <section class="row m-0 p-1 col-12">
+    <div class="invoice-details d-flex pb-1 row row-cols-3 justify-content-between m-0 col-12">
+      <div class="d-flex align-items-center col">
+        <strong>شماره فروش: </strong>
+         {{invoice?.saleNumber}} 
+      </div>
+      <div class="d-flex align-items-center col">
+        <strong> شماره فاکتور: </strong>
+         {{invoice?.orderInvoiceNumber}}
+      </div>
+      <div class="d-flex align-items-center col">
+        <strong>تاریخ فاکتور: </strong>
+         {{invoice?.orderInvoiceDate}} 
+      </div>
+      <div class="d-flex align-items-center col">
+        <strong> ساعت فاکتور: </strong>
+          {{invoice?.orderInvoiceTime}} 
+      </div>
+      <div class="d-flex align-items-center col">
+        <strong>شماره پیش فاکتور: </strong>
+         {{invoice?.preOrderInvoiceNumber}} 
+      </div>
+      <div class="d-flex align-items-center col">
+        <strong>سریال فاکتور: </strong>
+         {{invoice?.orderInvoiceSerial}} 
+      </div>
+    </div>
+    <h3 class="col-12 title-table py-2 rounded text-center mt-1">مشخصات فروشنده</h3>
+    <div class="seller-details row row-cols-1 row-cols-md-2 pb-1 justify-content-evenly m-0 col-12" >
+      <div class="d-flex align-items-center  my-1 p-0">
+        <strong>نام شخص حقیقی/حقوقی :</strong>
+        شرکت رنو پارت-دفتر مرکزی - 100
+      </div>
+      <div class="d-flex align-items-center col my-1 p-0">
+        <strong> کد ملی/اقتصادی :	</strong>
+        14009063794
+      </div>
+      <div class="d-flex align-items-center col my-1 p-0">
+        <strong> کد پستی : </strong>
+        1658996811
+      </div>
+      <div class="d-flex align-items-center col my-1 p-0">
+        <strong> تلفن : </strong>
+        02176902020
+      </div>
+      <div class="d-flex align-items-center col my-1 p-0">
+        <strong> نمابر :</strong>
+        02177142088
+      </div>
+      <div class="d-flex align-items-center col my-1 p-0">
+        <strong>نشانی کامل :</strong>  
+        تهران-جاده دماوند –بعد از سه راه اتحاد پلاک 208	
+      </div>
+      <div class="d-flex align-items-center col my-1 p-0">
+        <strong> شناسه ملی :</strong>
+        14009063794
+      </div>
+      <div class="d-flex align-items-center col my-1 p-0">
+        <strong>شماره حساب :	</strong>
+      </div>
+    </div>
+    <h3 class="col-12 title-table py-2 rounded text-center mt-1">مشخصات خریدار</h3>
+    <div class="seller-details row row-cols-1 row-cols-md-2 pb-1  row justify-content-evenly m-0 col-12" >
+      <div class="d-flex align-items-center col my-1">
+        <strong>نام شخص حقیقی/حقوقی : </strong>
+        {{ this.name }}
+      </div>
+      <div class="d-flex align-items-center col my-1">
+        <strong> کدملی/شناسه ملی :	</strong>
+         {{invoice?.nationalCode}}
+      </div>
+      <!-- <div class="d-flex align-items-center col my-1">
+        <strong>شماره ثبت :	</strong>
+      </div> -->
+      <div class="d-flex align-items-center col my-1">
+        <strong> کد اقتصادی:</strong>
+         {{this.economicCode}}
+      </div>
+      <div class="d-flex align-items-center col my-1">
+        <strong> کد پستی : </strong>
+         {{invoice?.orderAddress?.postcode}}
+      </div>
+      <div class="d-flex align-items-center col my-1">
+        <strong>استان :</strong>
+        {{invoice?.orderAddress?.state}}
+      </div>
+      <div class="d-flex align-items-center col my-1">
+        <strong>  شهر : </strong>
+        {{invoice?.orderAddress?.city}}
+      </div>
+      <div class="d-flex align-items-center col my-1">
+        <strong>نشانی کامل :</strong>
+        {{invoice?.orderAddress?.addressDetails1}}   
+      </div>
+      <div class="d-flex align-items-center col my-1">
+        <strong> تلفن : </strong>
+         {{invoice?.phoneNumber}}
+      </div>
+      <!-- <div class="d-flex align-items-center col my-1">
+        <strong>کد شاسی :</strong>
+        <span></span>
+      </div> -->
+    </div>
+    <h3 class="col-12 title-table py-2 rounded text-center mt-1">جزئیات سفارش</h3>
+    <div class="table-responsive order-details row  pb-1 row justify-content-evenly m-0 col-12 " >
+      <table class="table table-striped table-bordered text-center no-page-break" dir="rtl">
+        <thead>
+          <tr>
+            <th scope="col">ردیف</th>
+            <th scope="col">نوع</th>
+            <th scope="col">کد کالا</th>
+            <th scope="col">نام کالا</th>
+            <th scope="col">تعداد</th>
+            <th scope="col">واحد شمارش</th>
+            <th scope="col">مبلغ واحد(ریال)</th>
+            <th scope="col">مبلغ کل(ریال)</th>
+            <th scope="col">تخفیف(ریال)</th>
+            <th scope="col">مبلغ کل پس از کسرتخفیف(ریال)</th>
+            <th scope="col">جمع مالیات و عوارض(ریال)</th>
+            <th scope="col">جمع کل + مالیات و عوارض(ریال)	</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let item of invoice?.items; let i = index">
+            <td>{{i+1}}</td>
+            <td>کالا</td>
+            <td> {{item.productNo}} </td>
+            <td> {{item.productLocalizedName}} </td>
+            <td> {{item.quantity}} </td>
+            <td>عدد</td>
+            <td> {{item.price}}	</td>
+            <td> {{item.total}} </td>
+            <td>{{item.totalDiscountPercent}} </td>
+            <td> {{item.total ?? 0 * (1 - (item.totalDiscountPercent ?? 0))}} </td>
+            <td> {{item.taxPrice}}  </td>
+            <td> {{(item.total ?? 0 * (1 - (item.totalDiscountPercent ?? 0))) + (item.taxPrice ?? 0)}} </td>
+          </tr>
+          <tr *ngIf="this.shippingCost">
+            <td> {{(invoice?.items?.length ?? 0) + 1}} </td>
+            <td colspan="2">سایر هزینه ها</td>
+            <td colspan="3">{{this.shippingCost.title}}</td>
+            <td> {{this.shippingCost.price}} </td>
+            <td>{{this.shippingCost.price}}</td>
+            <td>{{this.shippingCost.type}}</td>
+            <td>{{this.shippingCost.price}}</td>
+            <td>-</td>
+            <td>{{this.shippingCost.price}}</td>
+          </tr>
+          <tr>
+            <th colspan="8">جمع کل</th>
+            <td> {{(this.discountOnCustomerType?.price ?? 0) + (this.discountOnProduct?.price ?? 0)}} </td>
+            <td>{{ (this.invoice?.subtotal ?? 0) - ((this.discountOnCustomerType?.price ?? 0) + (this.discountOnProduct?.price ?? 0)) + (this.shippingCost?.price ?? 0) }}</td>
+            <td> {{this.taxCost?.price}}  </td>
+            <td> {{invoice?.total}} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-responsive order-details row pb-1 row justify-content-evenly m-0 col-12 mt-2 " >
+      <table class="table text-center table-striped table-bordered no-page-break" dir="rtl">
+        <thead>
+          <tr>
+            <th scope="col">ردیف</th>
+            <th scope="col">نوع</th>
+            <th scope="col">مبلغ نهایی</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>کالا</td>
+            <td> {{invoice?.subtotal}} </td>
+          </tr>
+          <tr *ngFor="let item of invoice?.totals ; let i = index">
+            <td> {{i + 2}} </td>
+            <td> {{item.title}} </td>
+            <td> {{item.price}} </td>
+          </tr>
+          <!-- <tr>
+            <th colspan="2">سایر کسورات</th>
+            <td>0</td>
+          </tr> -->
+          <tr>
+            <th class="table-active">قابل پرداخت</th>
+            <td> {{(invoice?.total ?? 0) | amountToWords : 'rial'}} </td>
+            <td>{{invoice?.total}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row pb-1 row justify-content-evenly m-0 col-12 mt-2">
+      <div>
+        <p class="d-flex justify-content-start"> قطعات برقی به هیچ عنوان پس گرفته نمی شود. </p>
+        <p class="d-flex justify-content-start">کلیه اقلام فاکتور بصورت سالم و صحیح تحویل گرفته شده است و پس از آن شرکت هیچ گونه مسئولیتی بر عهده شرکت نمی باشد.</p>
+        <p class="d-flex justify-content-start">مرجوعی قطعات با اصل فاکتور امکان پذیر می باشد.</p>
+      </div>
+    </div>
+  </section>
+    <div class="page-break"></div>
+</section>
+
+
+
+  

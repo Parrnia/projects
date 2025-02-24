@@ -1,0 +1,34 @@
+/* invoice.component.css */
+.main-invoice{
+  min-height: 100vh;
+  font-size: 12px;
+}
+.header-invoice{
+  height: 80px;
+  h1{
+      font-size: 25px;
+  }
+}
+.title-table{
+  font-size: 1rem;
+  background-color: #fde900;
+  color: rgb(71, 71, 71);
+
+}
+.invoice-details , .seller-details{
+  >div{
+    font-size: 12px;
+      span{
+          text-align: start;
+      }
+  }
+}
+
+@media print {
+  .no-page-break {
+    page-break-inside: avoid;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+}

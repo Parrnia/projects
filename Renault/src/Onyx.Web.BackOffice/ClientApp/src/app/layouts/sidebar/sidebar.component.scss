@@ -1,0 +1,6 @@
+.nav-link{
+    &::before{
+       content: "";
+       display: none;
+    }
+}

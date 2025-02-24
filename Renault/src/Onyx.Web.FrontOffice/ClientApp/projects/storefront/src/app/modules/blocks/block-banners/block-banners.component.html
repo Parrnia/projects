@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="block-banners__list">
+        <ng-container *ngIf="rightBlock">
+            <a routerLink="/" class="block-banners__item block-banners__item--style--one">
+                <span class="block-banners__item-image">
+                    <img class="reflect-rtl" [src]="rightBlock.image" [alt]="rightBlock.title">
+                </span>
+                <span class="block-banners__item-image block-banners__item-image--blur">
+                    <img class="reflect-rtl" [src]="rightBlock.image" [alt]="rightBlock.title">
+                </span>
+                <span class="block-banners__item-title">{{ rightBlock.title }}</span>
+                <span class="block-banners__item-details" [innerHTML]="rightBlock.subtitle"></span>
+                <span class="block-banners__item-button btn btn-primary btn-sm">{{ rightBlock.buttonText }}</span>
+            </a>
+        </ng-container>
+        <ng-container *ngIf="leftBlock">
+        <a routerLink="/" class="block-banners__item block-banners__item--style--two">
+            <span class="block-banners__item-image">
+                <img class="reflect-rtl" [src]="leftBlock.image" [alt]="leftBlock.title">
+            </span>
+            <span class="block-banners__item-image block-banners__item-image--blur">
+                <img class="reflect-rtl" [src]="leftBlock.image" [alt]="leftBlock.title">
+            </span>
+            <span class="block-banners__item-title">{{ leftBlock.title }}</span>
+            <span class="block-banners__item-details" [innerHTML]="leftBlock.subtitle"></span>
+            <span class="block-banners__item-button btn btn-primary btn-sm">{{ leftBlock.buttonText }}</span>
+        </a>
+    </ng-container>
+    </div>
+</div>

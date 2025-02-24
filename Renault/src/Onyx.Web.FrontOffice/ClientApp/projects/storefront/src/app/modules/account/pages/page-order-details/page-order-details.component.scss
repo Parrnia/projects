@@ -1,0 +1,31 @@
+
+.order-header a {
+    margin-right: 15px;
+}
+
+.order-header__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    justify-content: flex-start; 
+  }
+  
+
+  .modal-lg {
+    max-width: 80%;
+  }
+  
+  .table {
+    margin-bottom: 0;
+  }
+ 
+.order-header__actions .btn {
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .order-header__actions > * {
+      width: 100%;
+  }
+}

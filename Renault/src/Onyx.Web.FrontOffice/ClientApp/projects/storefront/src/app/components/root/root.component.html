@@ -1,0 +1,47 @@
+<!-- site -->
+<div
+    class="site site--desktop-header--{{ header.desktopVariantClass }} site--mobile-header--mobile-{{ header.mobileVariant }}">
+    <app-loading-bar></app-loading-bar>
+
+    <div class="site__container">
+        <!-- site__header -->
+        <header class="site__header">
+            <app-header [corporationInfo]="this.corporationInfo"></app-header>
+        </header>
+        <!-- site__header / end -->
+
+        <!-- site__mobile-header -->
+        <header class="site__mobile-header">
+            <app-mobile-header [corporationInfo]="this.corporationInfo"></app-mobile-header>
+        </header>
+        <!-- site__mobile-header / end -->
+
+        <!-- site__body -->
+        <div class="site__body">
+            <router-outlet></router-outlet>
+        </div>
+        <!-- site__body / end -->
+
+        <!-- site__footer -->
+        <footer class="site__footer">
+            <app-footer
+            [logo]="corporationInfo?.footerLogo"
+            [poweredBy]="corporationInfo?.poweredBy"
+            ></app-footer>
+        </footer>
+        <!-- site__footer / end -->
+    </div>
+
+    <!-- mobile-menu -->
+    <app-mobile-menu [corporationInfo]="corporationInfo"></app-mobile-menu>
+    <!-- mobile-menu / end -->
+
+    <!-- quickview -->
+    <app-quickview></app-quickview>
+    <!-- quickview / end -->
+
+    <!-- vehicle-picker -->
+    <app-vehicle-picker-modal></app-vehicle-picker-modal>
+    <!-- vehicle-picker / end -->
+</div>
+<!-- site / end -->

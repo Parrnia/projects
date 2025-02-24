@@ -1,0 +1,448 @@
+<!-- Start Breadcrumbs -->
+<app-breadcrumbs title=" سفارش " [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+<!-- End Breadcrumbs -->
+
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0 flex-grow-1">لیست سفارش های در انتظار تایید</h4>
+            </div><!-- end card header -->
+
+            <div class="card-body">
+
+                <div class="mb-lg-3 row">
+                    <div class="col-lg-8">
+
+                    </div><!--end col-->
+
+                    <div class="col-lg-4">
+                        <div style="float: left;" class="d-flex flex-wrap gap-2 mb-3 mb-lg-0">
+                            <button type="button" (click)="openGetDetailExportExcelModal()"
+                                class="btn btn-outline-primary "><i
+                                    class="las la-file-excel label-icon align-middle fs-20"></i> </button>
+                            <button type="button" class="btn btn-outline-primary" (click)="exportExcel()"
+                                [class.btn-outline-loading]="inProgressAllExportbtn"
+                                [disabled]="inProgressAllExportbtn">
+                                <ng-container *ngIf="!inProgressAllExportbtn; else loadingTemplate">
+                                    <i class=" ri-file-excel-2-line label-icon align-middle fs-20"></i>
+                                </ng-container>
+                                <ng-template #loadingTemplate>
+                                    <span class="visually-hidden">Loading...</span>
+                                </ng-template>
+                            </button>        
+                            <button type="button" class="btn btn-outline-primary "><i
+                                    class="las la-file-upload label-icon align-middle fs-20"></i> </button>
+                            <button type="button" class="btn btn-outline-primary "><i
+                                    class="las la-print label-icon align-middle fs-20"></i> </button>
+                        </div>
+                    </div><!--end col-->
+
+                </div><!--end row-->
+
+
+                <div class="search-box d-inline-block mb-2">
+                    <input type="text" class="form-control search" placeholder="جستجو ..."
+                        [(ngModel)]="service.searchTerm">
+                    <i class="ri-search-line search-icon"></i>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-gridjs">
+                        <thead>
+                            <tr>
+                                <!-- <th style="width: 4px;"></th> -->
+                                <th class="sort" sortable="number" (sort)="onSort($event)"> کد سفارش</th>
+                                <th class="sort" sortable="orderPaymentTypeName" (sort)="onSort($event)"> نوع پرداخت</th>
+                                <th class="sort" sortable="phoneNumber" (sort)="onSort($event)"> شماره تماس مشتری</th>
+                                <th class="sort" sortable="fullCustomerName" (sort)="onSort($event)"> نام مشتری</th>
+                                <th class="sort" sortable="quantity" (sort)="onSort($event)">تعداد</th>
+                                <th class="sort" sortable="subtotal" (sort)="onSort($event)">جمع کل (ریال)</th>
+                                <th class="sort" sortable="total" (sort)="onSort($event)">پرداخت شده (ریال)</th>
+                                <th class="sort" sortable="createdAt" (sort)="onSort($event)">تاریخ سفارش</th>
+                                <th>آدرس تحویل محصول
+                                </th>
+                                <th>وضعیت سفارش
+                                </th>
+                                <th class="sort" sortable="customerTypeEnumName" (sort)="onSort($event)">نوع مشتری در
+                                    زمان
+                                    سفارش</th>
+                                <th class="sort" sortable="discountPercentForRole" (sort)="onSort($event)">درصد تخفیف
+                                    اعمال
+                                    شده برای نوع مشتری</th>
+                                <th class="sort" sortable="isPayed" (sort)="onSort($event)">پرداخت شده </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of gridjsList$ | async" id="lj_{{data.id}}">
+                                <!-- <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="checkAll"
+                                            [checked]="isChecked(data.id)" (change)="toggleCheckbox(data.id)">
+                                    </div>
+                                </td> -->
+                                <td class="text-center"><ngb-highlight [result]="data.number.toString()"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.orderPaymentTypeName"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td class="text-center"><ngb-highlight [result]="data.phoneNumber.toString()"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td class="text-center"><ngb-highlight [result]="data.fullCustomerName.toString()"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td class="text-center"><ngb-highlight [result]="data.quantity.toString()"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td class="text-center"><ngb-highlight [result]="data.subtotal.toString()"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td class="text-center"><ngb-highlight [result]="data.total.toString()"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td class="text-center"><ngb-highlight [result]="data.createdAt"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.orderAddress"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.currentOrderStateName"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td><ngb-highlight [result]="data.customerTypeEnumName"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                <td class="text-center"><ngb-highlight [result]="data.discountPercentForRole.toString()"
+                                        [term]="service.searchTerm"></ngb-highlight>
+                                </td>
+                                    <td><strong *ngIf="data.isPayed != null && data.isPayed== true">بلی</strong>
+                                        <strong *ngIf="data.isPayed == null || data.isPayed== false">خیر</strong>
+                                    </td>
+
+                                <td data-column-id="actions" class=" hstack gap-2  gridjs-td">
+
+
+                                    <a style="cursor: pointer;" (click)="openMoreDetailOrder(data)"
+                                        _ngcontent-agu-c388="">
+                                        <i style="color: #405189;"
+                                            class=" las la-tasks label-icon align-middle fs-22 "></i>
+                                    </a>
+
+                                    <button ngbTooltip="لغو سفارش" (click)="openCancelOrder(data)" type="button"
+                                        class="btn btn-danger btn-icon waves-effect waves-light"><i
+                                            class="ri-forbid-2-line"></i></button>
+                                    <button ngbTooltip="تایید سفارش" (click)="openConfirmedOrder(data)" type="button"
+                                        class="btn btn-success btn-icon waves-effect waves-light"><i
+                                            class=" ri-checkbox-circle-line"></i></button>
+                                    <button ngbTooltip="عدم تایید سفارش" (click)="openUnConfirmOrder(data)"
+                                        type="button" class="btn btn-warning btn-icon waves-effect waves-light"><i
+                                            class=" ri-close-circle-line"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row justify-content-md-between align-items-md-center">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_info mb-2" id="tickets-table_info" role="status" aria-live="polite">
+                            نمایش
+                            {{service.totalRecords !== 0 ? service.startIndex : 0}} تا
+                            {{service.endIndex}} از {{service.totalRecords}}
+                            داده
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="col-sm-12 col-md-5">
+                        <div class="text-md-right float-md-end gridjs-pagination">
+                            <ngb-pagination [collectionSize]="(total$ | async)!" [maxSize]="10" [(page)]="service.page"
+                                [pageSize]="service.pageSize">
+                            </ngb-pagination>
+                        </div>
+                        <div class="text-md-right float-md-end  d-flex align-items-center mx-2">
+                            <label class="p-0 m-0 text-muted" for="pageSize">تعداد موارد در هر صفحه</label>
+                            <select class="outline-none border border-gray p-1 mx-2" id="pageSize" [(ngModel)]="service.pageSize" (change)="service.page = 1">
+                              <option *ngFor="let size of [5, 10, 15, 20]" [value]="size">{{ size }}</option>
+                            </select>
+                          </div>
+                    </div>
+                    <!-- End Pagination -->
+                </div>
+            </div><!-- end card-body -->
+        </div><!-- end card -->
+    </div>
+    <!-- end col -->
+</div>
+<!-- end row -->
+
+<ng-template #productTabModel let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+
+                        <ul ngbNav #customNav="ngbNav" [activeId]="1"
+                            class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0" role="tablist">
+                            <li [ngbNavItem]="1" class="nav-item">
+                                <a ngbNavLink class="nav-link" data-bs-toggle="tab" role="tab">
+                                    جزئیات سفارش
+                                </a>
+                                <ng-template ngbNavContent>
+
+                                    <app-order-item [order]="selectedOrder"></app-order-item>
+                                </ng-template>
+                            </li>
+                            <li [ngbNavItem]="2" class="nav-item">
+                                <a ngbNavLink class="nav-link" data-bs-toggle="tab" role="tab">
+                                    هزینه های جانبی
+                                </a>
+                                <ng-template ngbNavContent>
+                                    <app-order-total [order]="selectedOrder"></app-order-total>
+                                </ng-template>
+                            </li>
+                            <li [ngbNavItem]="3" class="nav-item">
+                                <a ngbNavLink class="nav-link" data-bs-toggle="tab" role="tab">
+                                    وضعیت های سفارش
+                                </a>
+                                <ng-template ngbNavContent>
+                                    <app-order-state [order]="selectedOrder"></app-order-state>
+                                </ng-template>
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div [ngbNavOutlet]="customNav"></div>
+                    </div>
+                </div>
+            </div><!--end card-->
+        </div>
+    </div><!-- /.modal-content -->
+</ng-template>
+
+
+<ng-template #cancelModel let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mt-2 text-center">
+                <lord-icon src="https://cdn.lordicon.com/wyjhrzdh.json" trigger="loop"
+                    colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+                <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                    <h4>از لغو سفارش انتخاب شده مطمئن هستید؟</h4>
+                    <p class="text-muted mx-4 mb-0">تایید به منزله لغو سفارش می باشد.</p>
+                </div>
+            </div>
+            <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                <button class="btn btn-link link-success fw-medium text-decoration-none" data-bs-dismiss="modal"
+                    (click)="modal.close('Close click')"><i class="ri-close-line me-1 align-middle"></i> انصراف</button>
+                <button type="button" class="btn w-sm btn-danger" id="delete-product" (click)="cancelOrder()"
+                    [class.btn-loading]="inProgress" [disabled]="inProgress">
+                    <ng-container *ngIf="!inProgress; else loadingTemplate">
+                        لغو کن
+                    </ng-container>
+                    <ng-template #loadingTemplate>
+                        <span class="visually-hidden">Loading...</span>
+                    </ng-template>
+                </button>
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</ng-template>
+
+<ng-template #unConfirmModel let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mt-2 text-center">
+                <lord-icon src="https://cdn.lordicon.com/wyjhrzdh.json" trigger="loop"
+                    colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+                <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                    <h4>از عدم تایید سفارش انتخاب شده مطمئن هستید؟</h4>
+                    <p class="text-muted mx-4 mb-0">موافقت به منزله عدم تایید سفارش می باشد.</p>
+                </div>
+            </div>
+            <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                <button class="btn btn-link link-success fw-medium text-decoration-none" data-bs-dismiss="modal"
+                    (click)="modal.close('Close click')"><i class="ri-close-line me-1 align-middle"></i> انصراف</button>
+                <button type="button" class="btn w-sm btn-danger" id="delete-product" (click)="unConfirmOrder()"
+                    [class.btn-loading]="inProgress" [disabled]="inProgress">
+                    <ng-container *ngIf="!inProgress; else loadingTemplate">
+                        عدم تایید کن
+                    </ng-container>
+                    <ng-template #loadingTemplate>
+                        <span class="visually-hidden">Loading...</span>
+                    </ng-template>
+                </button>
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</ng-template>
+
+<ng-template #confirmedModel let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mt-2 text-center">
+                <lord-icon src="https://cdn.lordicon.com/wyjhrzdh.json" trigger="loop"
+                    colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+                <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                    <h4>از تایید سفارش انتخاب شده مطمئن هستید؟</h4>
+                    <p class="text-muted mx-4 mb-0">تایید به منزله تایید سفارش می باشد.</p>
+                </div>
+            </div>
+            <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                <button class="btn btn-link link-success fw-medium text-decoration-none" data-bs-dismiss="modal"
+                    (click)="modal.close('Close click')"><i class="ri-close-line me-1 align-middle"></i> انصراف</button>
+                <button type="button" class="btn w-sm btn-danger" id="delete-product" (click)="confirmedOrder()"
+                    [class.btn-loading]="inProgress" [disabled]="inProgress">
+                    <ng-container *ngIf="!inProgress; else loadingTemplate">
+                        تایید کن
+                    </ng-container>
+                    <ng-template #loadingTemplate>
+                        <span class="visually-hidden">Loading...</span>
+                    </ng-template>
+                </button>
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</ng-template>
+
+<!-- Delete Modal -->
+<ng-template role="document" #cancelFormModal let-modal>
+    <form class="row gy-1" [formGroup]="cancelForm" (ngSubmit)="onSubmitCancelForm()">
+        <div class="modal-header">
+            <h4 class="modal-title">لغو سفارش</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="row modal-body">
+
+            <div class=" mb-3 col-xxl-12 col-md-12">
+
+                <label for="details" class="form-label">دلیل لغو سفارش </label>
+                <input type="input" class="form-control" id="details" formControlName="details"
+                    [ngClass]="{'is-invalid': cancelFormControl.details.touched && cancelFormControl.details.invalid}">
+                <div *ngIf="cancelFormControl.details.touched && cancelFormControl.details.invalid"
+                    class="invalid-feedback">
+                    دلیل لغو سفارش صحیح را وارد کنید.
+                </div>
+            </div><!--end col-->
+
+        </div>
+        <div class="modal-footer">
+
+            <button (click)="modal.dismiss();handleCloseFormModal(cancelForm);" style="margin-left:5px" type="button"
+                class="btn btn-warning">انصراف</button>
+            <button class="btn btn-primary" type="submit">
+                    لغو سفارش
+            </button>
+        </div>
+    </form>
+</ng-template>
+
+
+<ng-template role="document" #confirmedFormModal let-modal>
+    <form class="row gy-1" [formGroup]="confirmForm" (ngSubmit)="onSubmitConfirmForm()">
+        <div class="modal-header">
+            <h4 class="modal-title">تایید سفارش</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="row modal-body">
+
+            <div class=" mb-3 col-xxl-12 col-md-12">
+
+                <label for="details" class="form-label">دلیل تایید سفارش </label>
+                <input type="input" class="form-control" id="details" formControlName="details"
+                    [ngClass]="{'is-invalid': confirmFormControl.details.touched && confirmFormControl.details.invalid}">
+                <div *ngIf="confirmFormControl.details.touched && confirmFormControl.details.invalid"
+                    class="invalid-feedback">
+                    دلیل تایید سفارش صحیح را وارد کنید.
+                </div>
+            </div><!--end col-->
+
+        </div>
+        <div class="modal-footer">
+
+            <button (click)="modal.dismiss();handleCloseFormModal(confirmForm);" style="margin-left:5px" type="button"
+                class="btn btn-warning">انصراف</button>
+            <button class="btn btn-primary" type="submit">
+                    تایید سفارش
+            </button>
+        </div>
+    </form>
+</ng-template>
+
+
+<ng-template role="document" #unConfirmFormModal let-modal>
+    <form class="row gy-1" [formGroup]="unConfirmForm" (ngSubmit)="onSubmitUnConfirmForm()">
+        <div class="modal-header">
+            <h4 class="modal-title">عدم تایید سفارش</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="row modal-body">
+
+            <div class=" mb-3 col-xxl-12 col-md-12">
+
+                <label for="details" class="form-label">دلیل عدم تایید سفارش </label>
+                <input type="input" class="form-control" id="details" formControlName="details"
+                    [ngClass]="{'is-invalid': unConfirmFormControl.details.touched && unConfirmFormControl.details.invalid}">
+                <div *ngIf="unConfirmFormControl.details.touched && unConfirmFormControl.details.invalid"
+                    class="invalid-feedback">
+                    دلیل عدم تایید سفارش صحیح را وارد کنید.
+                </div>
+            </div><!--end col-->
+
+        </div>
+        <div class="modal-footer">
+
+            <button (click)="modal.dismiss();handleCloseFormModal(unConfirmForm);" style="margin-left:5px" type="submit"
+                class="btn btn-warning">انصراف</button>
+            <button class="btn btn-primary" type="submit">
+                    تایید سفارش
+            </button>
+        </div>
+    </form>
+</ng-template>
+
+<ng-template #getDetailExportTabModel let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <app-export-excel-modal [client]="this.client" [clientQuery]="'exportExcelPaymentConfirmedQuery'">
+            
+            </app-export-excel-modal>
+        </div>
+    </div>
+</ng-template>

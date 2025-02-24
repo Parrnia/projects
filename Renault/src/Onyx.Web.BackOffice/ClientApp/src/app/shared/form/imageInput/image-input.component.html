@@ -1,0 +1,40 @@
+<div class="row m-0 p-0">
+  <input
+    #fileInput
+    accept="image/png, image/jpeg"
+    type="file"
+    id="image"
+    name="image"
+    style="display: none"
+    (change)="onFileSelected($event)"
+  />
+  <div *ngIf="!selectedFileUrl" class="alert text-sm m-1 p-0" [ngClass]="{'text-danger': isRequired}" >
+    لطفا {{ title }} را وارد کنید.
+  </div>
+  <div
+    class="col-12 col-sm-12 col-md-6 d-flex flex-column align-items-start m-0 p-0 gap-2"
+  >
+    <button (click)="fileInput.click()" type="button" class="btn btn-success">
+      انتخاب {{ title }}
+    </button>
+    <button
+      (click)="clearFileForm()"
+      *ngIf="selectedFileUrl != undefined"
+      type="button"
+      class="btn btn-danger d-flex justify-content-center align-items-center p-1"
+    >
+      <i class="las la-trash align-middle fs-20"></i>
+    </button>
+  </div>
+  <div
+    class="col-12 col-sm-12 col-md-6 d-flex justify-content-center align-items-center"
+  >
+    <img
+      *ngIf="selectedFileUrl != undefined"
+      [src]="selectedFileUrl"
+      alt="Brand Logo"
+      style="max-width: 100px; max-height: 100px"
+      class="object-fit-cover rounded"
+    />
+  </div>
+</div>

@@ -1,0 +1,173 @@
+<div class="card">
+    <div class="card-header">
+        <h5>{{ 'HEADER_EDIT_PROFILE'|translate }}</h5>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-body card-body--padding--2">
+        <div class="row no-gutters">
+            <div class="form-group">
+                <label for="formPartSelect">انتخاب نوع مشتری:</label>
+                <select class="form-control" id="formPartSelect" [(ngModel)]="selectedFormPart">
+                    <option value="natural">حقیقی</option>
+                    <option value="legal">حقوقی</option>
+                </select>
+            </div>
+            <!-- natural -->
+            <div *ngIf="selectedFormPart === 'legal'">
+                <div class="col-12 col-lg-15 col-xl-12 row" [formGroup]="form">
+                    <div class="form-group col-12">
+                        <label for="profile-first-name">{{ 'INPUT_FIRST_NAME_LABEL'|translate }}</label>
+                        <input type="text" id="profile-first-name" formControlName="firstName" class="form-control"
+                            [class.is-invalid]="form.controls['firstName']|isInvalid"
+                            [placeholder]="'INPUT_FIRST_NAME_PLACEHOLDER'|translate">
+                        <div class="invalid-feedback">
+                            <div *ngIf="form.controls['firstName']|hasError:'required'">
+                                {{ 'ERROR_FORM_REQUIRED'|translate }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="profile-last-name">{{ 'INPUT_ECONOMICCODE_LABEL'|translate }}</label>
+                        <input type="text" id="profile-last-name" formControlName="lastName" class="form-control"
+                            [class.is-invalid]="form.controls['lastName']|isInvalid"
+                            [placeholder]="'INPUT_ECONOMICCODE_PLACEHOLDER'|translate">
+                        <div class="invalid-feedback">
+                            <div *ngIf="form.controls['lastName']|hasError:'required'">
+                                {{ 'ERROR_FORM_REQUIRED'|translate }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="profile-email">{{ 'INPUT_EMAIL_ADDRESS_LABEL'|translate }}</label>
+                        <input type="email" id="profile-email" formControlName="email" class="form-control"
+                            [class.is-invalid]="form.controls['email']|isInvalid"
+                            [placeholder]="'INPUT_EMAIL_ADDRESS_PLACEHOLDER'|translate">
+                        <div class="invalid-feedback">
+                            <div *ngIf="form.controls['email']|hasError:'required'">
+                                {{ 'ERROR_FORM_REQUIRED'|translate }}
+                            </div>
+                            <div *ngIf="form.controls['email']|hasError:'email'">
+                                {{ 'ERROR_FORM_INCORRECT_EMAIL'|translate }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="profile-nationalCode">{{ 'INPUT_NATIONALID_LABEL'|translate
+                            }}</label>
+                        <input minlength="10" maxlength="11" type="text" id="profile-nationalCode" formControlName="nationalCode" class="form-control"
+                            [class.is-invalid]="form.controls['nationalCode']|isInvalid"
+                            [placeholder]="'INPUT_NATIONALID_PLACEHOLDER'|translate"
+                            style="text-align: left; direction: ltr;">
+                        <div class="invalid-feedback">
+                            <div *ngIf="form.controls['nationalCode']|hasError:'required'">
+                                {{ 'ERROR_FORM_REQUIRED'|translate }}
+                            </div>
+                            <div *ngIf="form.controls['nationalCode']|hasError:'nationalCode'">
+                                {{ 'ERROR_FORM_INCORRECT_NATIONALCODE'|translate }}
+                            </div>
+                            <div *ngIf="
+                                    form.controls['nationalCode'].touched &&
+                                    form.controls['nationalCode'].errors?.['nationalCodeTaken']">
+                                شناسه ملی تکراری است
+                            </div>
+                            <div *ngIf="
+                                     form.controls['nationalCode'].touched &&
+                                     form.controls['nationalCode'].pending">
+                                یگانگی شناسه ملی در حال بررسی است
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-12">
+                        <app-file-upload *ngIf="profileIsLoaded" [title]="' تصویر پروفایل'"
+                            [savedFileId]="form.controls['avatar'].value" [isRequired]="false"
+                            [savedFileUrl]="avatarUrl" (uploadResponseEvent)="onFileSelected($event)"></app-file-upload>
+                    </div>
+
+                    <div class="form-group mb-0 col-12">
+                        <button class="btn btn-primary mt-3" [class.btn-loading]="saveInProgress" (click)="save()">
+                            {{ 'BUTTON_SAVE'|translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- legal -->
+            <div *ngIf="selectedFormPart === 'natural'">
+                <div class="col-12 col-lg-15 col-xl-12 row" [formGroup]="form">
+                    <div class="form-group col-12">
+                        <label for="profile-first-name">{{ 'INPUT_FIRST_NAME_LABEL'|translate }}</label>
+                        <input type="text" id="profile-first-name" formControlName="firstName" class="form-control"
+                            [class.is-invalid]="form.controls['firstName']|isInvalid"
+                            [placeholder]="'INPUT_FIRST_NAME_PLACEHOLDER'|translate">
+                        <div class="invalid-feedback">
+                            <div *ngIf="form.controls['firstName']|hasError:'required'">
+                                {{ 'ERROR_FORM_REQUIRED'|translate }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="profile-last-name">{{ 'INPUT_LAST_NAME_LABEL'|translate }}</label>
+                        <input type="text" id="profile-last-name" formControlName="lastName" class="form-control"
+                            [class.is-invalid]="form.controls['lastName']|isInvalid"
+                            [placeholder]="'INPUT_LAST_NAME_PLACEHOLDER'|translate">
+                        <div class="invalid-feedback">
+                            <div *ngIf="form.controls['lastName']|hasError:'required'">
+                                {{ 'ERROR_FORM_REQUIRED'|translate }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="profile-email">{{ 'INPUT_EMAIL_ADDRESS_LABEL'|translate }}</label>
+                        <input type="email" id="profile-email" formControlName="email" class="form-control"
+                            [class.is-invalid]="form.controls['email']|isInvalid"
+                            [placeholder]="'INPUT_EMAIL_ADDRESS_PLACEHOLDER'|translate">
+                        <div class="invalid-feedback">
+                            <div *ngIf="form.controls['email']|hasError:'required'">
+                                {{ 'ERROR_FORM_REQUIRED'|translate }}
+                            </div>
+                            <div *ngIf="form.controls['email']|hasError:'email'">
+                                {{ 'ERROR_FORM_INCORRECT_EMAIL'|translate }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="profile-nationalCode">{{ 'INPUT_NATIONALCODE_LABEL'|translate
+                            }}</label>
+                        <input type="text" minlength="10" maxlength="10" id="profile-nationalCode" formControlName="nationalCode" class="form-control"
+                            [class.is-invalid]="form.controls['nationalCode']|isInvalid"
+                            [placeholder]="'INPUT_NATIONALID_PLACEHOLDER'|translate"
+                            style="text-align: left; direction: ltr;">
+                        <div class="invalid-feedback">
+                            <div *ngIf="form.controls['nationalCode']|hasError:'required'">
+                                {{ 'ERROR_FORM_REQUIRED'|translate }}
+                            </div>
+                            <div *ngIf="form.controls['nationalCode']|hasError:'nationalCode'">
+                                {{ 'ERROR_FORM_INCORRECT_NATIONALCODE'|translate }}
+                            </div>
+                            <div *ngIf="
+                                    form.controls['nationalCode'].errors?.['nationalCodeTaken']">
+                                کد ملی تکراری است
+                            </div>
+                            <div *ngIf="form.controls['nationalCode'].pending">
+                                یگانگی کد ملی در حال بررسی است
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-12">
+                        <app-file-upload *ngIf="profileIsLoaded" [title]="' تصویر پروفایل'"
+                            [savedFileId]="form.controls['avatar'].value" [isRequired]="false"
+                            [savedFileUrl]="this.avatarUrl"
+                            (uploadResponseEvent)="onFileSelected($event)"></app-file-upload>
+                    </div>
+                    <div class="form-group mb-0 col-12">
+                        <button class="btn btn-primary mt-3" [class.btn-loading]="saveInProgress" (click)="save()">
+                            {{ 'BUTTON_SAVE'|translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

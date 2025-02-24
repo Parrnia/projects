@@ -1,0 +1,52 @@
+.mat-stepper-vertical {
+  margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+
+.mat-form-field label,
+.mat-input-element,
+.mat-form-field-infix {
+  font-family: "iransans", sans-serif !important;
+}
+body,
+mat-stepper,
+mat-form-field,
+mat-button,
+form,
+.mat-mdc-form-field,
+.mdc-form-field {
+  font-family: "iransans", sans-serif !important;
+}
+
+.mat-mdc-radio-button.mat-accent {
+  font-family: "iransans", sans-serif !important;
+  color: aqua;
+}
+
+.mat-mdc-radio-button.mat-accent {
+  --mdc-radio-selected-focus-icon-color: #3351b4;
+  --mdc-radio-selected-hover-icon-color: #2554bb;
+  --mdc-radio-selected-icon-color: #1e81d1;
+  --mdc-radio-selected-pressed-icon-color: #6ab4ca;
+  --mat-mdc-radio-checked-ripple-color: #267da5;
+}
+
+[dir="rtl"] .mdc-form-field > label,
+.mdc-form-field > label[dir="rtl"],
+.mat-mdc-button-persistent-ripple,
+.mdc-button__ripple {
+  padding-left: 0;
+  padding-right: 4px;
+  font-family: "IranSans";
+  font-family: "iransans", sans-serif !important;
+}
+
+.mdc-button,
+.mat-mdc-button,
+.mat-primary,
+.mat-mdc-button-base {
+  font-family: "IranSans";
+}

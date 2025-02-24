@@ -1,0 +1,151 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0 flex-grow-1">مشخصات سفارش بازگشت</h4>
+            </div><!-- end card header -->
+
+            <div class="card-body">
+
+
+                <div class="table-responsive">
+                    <table class="table table-gridjs">
+                        <thead>
+                            <tr>
+                                <!-- <th style="width: 4px;"></th> -->
+                                <th> شماره سفارش بازگشت</th>
+                                <th>شماره سفارش</th>
+                                <th>شماره تماس مشتری</th>
+                                <th>نام کامل مشتری</th>
+                                <th> تعداد کل</th>
+                                <th> جمع قیمت محصولات(ریال)</th>
+                                <th>  جمع کل هزینه ها(ریال)</th>
+                                <th>زمان ثبت سفارش باگشت</th>
+                                <th>شیوه بازپرداخت
+                                </th>
+                                <th>وضعیت
+                                    کنونی سفارش بازگشت</th>
+                                <th>
+                                    شیوه بازگشت کالا</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td class="text-center"><ngb-highlight
+                                    [result]="(gridjsList$ | async)?.number?.toString()"></ngb-highlight>
+                            </td>
+                            <td class="text-center"><ngb-highlight
+                                    [result]="(gridjsList$ | async)?.orderNumber?.toString()"></ngb-highlight>
+                            </td>
+                            <td class="text-center"><ngb-highlight
+                                    [result]="(gridjsList$ | async)?.phoneNumber?.toString()"></ngb-highlight>
+                            </td>
+                            <td class="text-center"><ngb-highlight
+                                    [result]="(gridjsList$ | async)?.fullCustomerName"></ngb-highlight>
+                            </td>
+                            <td class="text-center"><ngb-highlight
+                                    [result]="(gridjsList$ | async)?.quantity?.toString()"></ngb-highlight>
+                            </td>
+                            <td class="text-center"><ngb-highlight
+                                    [result]="(gridjsList$ | async)?.subtotal?.toString()"></ngb-highlight>
+                            </td>
+                            <td class="text-center"><ngb-highlight
+                                    [result]="(gridjsList$ | async)?.total?.toString()"></ngb-highlight>
+                            </td>
+                            <td class="text-center"><ngb-highlight
+                                    [result]="(gridjsList$ | async)?.createdAt"></ngb-highlight>
+                            </td>
+                            <td class="text-center"><ngb-highlight
+                                    [result]="(gridjsList$ | async)?.costRefundTypeName"></ngb-highlight>
+                            </td>
+                            <td class="text-center"><ngb-highlight
+                                    [result]="(gridjsList$ | async)?.currentReturnOrderStateName"></ngb-highlight>
+                            </td>
+                            <td class="text-center"><ngb-highlight
+                                    [result]="(gridjsList$ | async)?.returnOrderTransportationTypeName"></ngb-highlight>
+                            </td>
+                            <td data-column-id="actions" class=" hstack gap-2  gridjs-td">
+
+
+                                <a style="cursor: pointer;" (click)="openMoreDetailReturnOrder(gridjsList$)"
+                                    _ngcontent-agu-c388="">
+                                    <i style="color: #405189;" class=" las la-tasks label-icon align-middle fs-22 "></i>
+                                </a>
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!-- end card-body -->
+        </div><!-- end card -->
+    </div>
+    <!-- end col -->
+</div>
+<!-- end row -->
+
+<ng-template #productTabModel let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+
+                        <ul ngbNav #customNav="ngbNav" [activeId]="1"
+                            class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0" role="tablist">
+                            <li [ngbNavItem]="1" class="nav-item">
+                                <a ngbNavLink class="nav-link" data-bs-toggle="tab" role="tab">
+                                    جزئیات سفارش
+                                </a>
+                                <ng-template ngbNavContent>
+                                    <app-return-order-item-group
+                                      [stepId]="stepId"  [returnOrder]="selectedReturnOrder"></app-return-order-item-group>
+                                </ng-template>
+                            </li>
+                            <li [ngbNavItem]="2" class="nav-item">
+                                <a ngbNavLink class="nav-link" data-bs-toggle="tab" role="tab">
+                                    هزینه های جانبی
+                                </a>
+                                <ng-template ngbNavContent>
+                                    <app-return-order-total
+                                       [stepId]="stepId" [returnOrder]="selectedReturnOrder"></app-return-order-total>
+                                </ng-template>
+                            </li>
+                            <li [ngbNavItem]="3" class="nav-item">
+                                <a ngbNavLink class="nav-link" data-bs-toggle="tab" role="tab">
+                                    وضعیت های سفارش
+                                </a>
+                                <ng-template ngbNavContent>
+                                    <app-return-order-state
+                                        [returnOrder]="selectedReturnOrder"></app-return-order-state>
+                                </ng-template>
+                            </li>
+                            <li [ngbNavItem]="4" class="nav-item">
+                                <a ngbNavLink class="nav-link" data-bs-toggle="tab" role="tab">
+                                    اطلاعات سفارش
+                                </a>
+                                <ng-template ngbNavContent>
+                                    <app-return-order-info (afterSubmit)="this.refreshGrid()"
+                                        [returnOrder]="selectedReturnOrderInfo"></app-return-order-info>
+                                </ng-template>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div [ngbNavOutlet]="customNav"></div>
+                    </div>
+                </div>
+            </div><!--end card-->
+        </div>
+    </div><!-- /.modal-content -->
+</ng-template>
+
+
+
+

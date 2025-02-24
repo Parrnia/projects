@@ -1,0 +1,12 @@
+<div class="input-radio-label__list">
+    <label *ngFor="let item of options.items; trackBy: trackBySlug" class="input-radio-label__item">
+        <input
+            type="checkbox"
+            name="material"
+            class="input-radio-label__input"
+            [checked]="isItemChecked(item)"
+            (change)="onItemChange(item, $event)"
+        >
+        <span class="input-radio-label__title">{{ item.name }}</span>
+    </label>
+</div>

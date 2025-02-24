@@ -1,6 +1,0 @@
-/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/obj/Debug/net8.0/Onyx.Core.Application.csproj.AssemblyReference.cache
-/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/obj/Debug/net8.0/Onyx.Core.Application.GeneratedMSBuildEditorConfig.editorconfig
-/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/obj/Debug/net8.0/Onyx.Core.Application.AssemblyInfoInputs.cache
-/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/obj/Debug/net8.0/Onyx.Core.Application.AssemblyInfo.cs
-/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/obj/Debug/net8.0/Onyx.Core.Application.csproj.CoreCompileInputs.cache
-/Users/parnia/Desktop/neginpart/NeginPart/src/Onyx.Core.Application/obj/Debug/net8.0/Onyx.Core.Application.sourcelink.json

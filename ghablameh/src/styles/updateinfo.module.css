@@ -1,0 +1,206 @@
+@font-face {
+  font-family: 'vazir';
+  src: url('../assets/fonts/vazir/Vazir.ttf');
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  
+}
+
+.bg{
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: 500px;
+  background-color: #ffffff;
+  text-align: right;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: calc(23vh - 100px);
+  margin-bottom: calc(30vh - 100px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  object-fit: cover; 
+}
+
+.avatarimg {
+  display: flex;
+  justify-content: center;
+}
+
+.fileinput {
+  height: 50px;
+}
+
+.fileinput {
+  display: none;
+}
+
+
+.input {
+  width: 100%;
+  padding: 8px;  
+  border-radius: 10px;
+  /* text-align: right; */
+  border: 1px solid #26577C;
+
+  font-size: 14px;
+}
+
+.input:hover {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.submit {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #26577C;
+  color: #000000;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #26577C;
+}
+
+.passwordInputContainer {
+  display: flex;
+  align-items: center;
+  
+}
+
+.passwordInputContainer {
+  position: relative;
+  
+}
+
+.passwordIcon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #26577C;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: #26577C;
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    padding: 10px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-width: 3px;
+  }
+  
+  .fileinput {
+    height: 40px;
+  }
+  
+  .input {
+    font-size: 12px;
+  }
+  
+  .submit {
+    font-size: 12px;
+  }
+}
+
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  object-fit: cover;
+}
+
+.avatarimg {
+  display: flex;
+  justify-content: center;
+}
+
+.fileinput {
+  height: 50px;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner2 {
+  border: 3px solid rgba(204, 204, 204, 0.5);
+  border-left-color: rgb(38, 87, 124);
+  border-top-color: rgb(38, 87, 124);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  animation: spinner 1s linear infinite;
+}

@@ -1,0 +1,9 @@
+.searchbarForMyOrgs {
+    width: 60%;
+}
+
+@media (max-width:800px) {
+    .searchbarForMyOrgs {
+        width: 100%;
+    }
+}

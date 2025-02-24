@@ -1,0 +1,19 @@
+.wrapper input {
+    background-color: white;
+    opacity: 60%;
+}
+
+select {
+    color: #000;
+     /* padding-right: 30px; */
+}
+
+select.placeholder {
+    color: #999;
+    /* margin-left: 3px; */
+    /* padding-right: 30px; */
+}
+/* 
+::placeholder {
+    text-indent: 10px; 
+}*/

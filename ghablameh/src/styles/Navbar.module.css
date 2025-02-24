@@ -1,0 +1,52 @@
+.navbar-design{
+  /* background: rgba(54,54,54,0.30) 0%; */
+  background-color:rgb(38, 87, 124);
+  /* border-radius: 10px; */
+  /* padding: 1px;
+  margin: 20px; */
+}
+
+#GFG {
+  text-decoration: none;
+}
+
+.dropdown-me{
+  /* background: rgb(248, 196, 167); */
+  background-color:rgb(38, 87, 124);
+  margin :12px;
+}
+
+.elements-me{
+  padding-right: 50px;
+}
+
+.navPos{
+  /* position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 0 !important; */
+}
+
+.notifbox {
+  display: none;
+  position: absolute;
+  top: 8%;
+  right: 1%;
+  max-height: 300px;
+  width: 20%;
+  z-index: 2;
+  background-color: white
+}
+
+@media (max-width:800px) {
+  .notifbox {
+    display: none;
+    position: absolute;
+    top: 8%;
+    right: 1%;
+    max-height: 300px;
+    width: 50%;
+    z-index: 2;
+    background-color: white
+  }
+}

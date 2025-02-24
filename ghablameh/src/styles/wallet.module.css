@@ -1,0 +1,132 @@
+/* wallet */
+.input {
+  width: 100%;
+  padding: 8px;
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.input:hover {
+  background-color: #ffffff;
+}
+
+.input::placeholder {
+  font: 0.9rem/0.9 'vazir';
+}
+
+.label {
+  font-weight: bold;
+}
+
+.button1 {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #26577C;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.button2 {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #545e65;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.button2:hover {
+  background-color: #424d4f;
+}
+
+.button1:hover {
+  background-color: #264e6c;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-width: 3px;
+  }
+
+  .fileinput {
+    height: 40px;
+  }
+
+  .input {
+    font-size: 12px;
+  }
+
+  .button {
+    font-size: 12px;
+  }
+}
+
+.bgme {
+  background-color: rgba(229, 86, 4, 0.939);
+}
+
+.bgmee {
+  background-color: rgba(113, 112, 112, 0.939);
+}
+
+/* verify page */
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  border: 4px solid rgba(204, 204, 204, 0.5);
+  border-left-color: rgb(38, 87, 124);
+  border-top-color: rgb(38, 87, 124);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spinner 1s linear infinite;
+}
+
+.spinner2 {
+  border: 3px solid rgba(204, 204, 204, 0.5);
+  border-left-color: rgb(38, 87, 124);
+  border-top-color: rgb(38, 87, 124);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  animation: spinner 1s linear infinite;
+}
+
+.passwordIcon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

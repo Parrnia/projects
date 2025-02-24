@@ -1,0 +1,506 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.app {
+
+  margin-top: auto;
+}
+
+.iner-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.footersection {
+  background: #26577c;
+  /* position: fixed; */
+  /* margin-bottom: 0; */
+  /* bottom: 0; */
+  right: 0;
+  /* Change left to right */
+  width: 100%;
+}
+
+.footer-cta {
+  border-bottom: 1px solid #163043;
+}
+
+.single-cta i {
+  color: #ff5edaa82b14;
+  font-size: 30px;
+  float: right;
+  /* Change float to right */
+  margin-top: 8px;
+}
+
+.cta-text {
+  padding-right: 15px;
+  /* Change padding-left to padding-right */
+  display: inline-block;
+}
+
+.cta-text h4 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.cta-text span {
+  color: #ffefe6;
+  font-size: 15px;
+}
+
+.footer-content {
+  position: relative;
+  /* z-index: 2; */
+}
+
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* Change left to right */
+  height: 330px;
+  background-size: cover;
+  background-position: 0% 100%;
+  /* Change 100% 100% to 0% 100% */
+}
+
+.footer-logo {
+  margin-bottom: 30px;
+}
+
+.footer-logo img {
+  max-width: 200px;
+}
+
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 28px;
+  text-align: right;
+  /* Change text-align to right */
+}
+
+.footer-social-icon span {
+  color: #fffefe;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  text-align: right;
+  /* Change text-align to right */
+}
+
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-left: 15px;
+  /* Change margin-right to margin-left */
+}
+
+.facebook-bg {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* background-color: #3b5998; */
+  text-align: center;
+  line-height: 40px;
+  float: right;
+  /* Change float to right */
+}
+
+.facebook-bg {
+  font-size: 14px;
+  text-align: right;
+  /* Change text-align to right */
+  color: rgb(246, 229, 229);
+}
+
+.twitter-bg {
+  /* background: #55ACEE; */
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  float: right;
+  /* Change float to right */
+}
+
+.insta-bg {
+  /* background: #d139a3; */
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  float: right;
+  /* Change float to right */
+}
+
+.tel-bg {
+  /* background: #398fd1; */
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  float: right;
+  /* Change float to right */
+}
+
+.footer-widget-heading h3 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  /* margin-bottom: 40px; */
+  position: relative;
+  text-align: right;
+  /* Change text-align to right */
+}
+
+/* .footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #ff5e14;
+} */
+
+.footer-widget ul li {
+  display: inline-block;
+  float: right;
+  /* Change float to right */
+  width: 50%;
+  margin-bottom: 12px;
+}
+
+.footer-widget ul li a:hover {
+  color: #163043;
+}
+
+.footer-widget ul li a {
+  color: #efe5db;
+  text-transform: capitalize;
+  text-align: right;
+  /* Change text-align to right */
+}
+
+.subscribe-form button {
+  position: absolute;
+  left: 0;
+  /* Change right to left */
+  background: #163043;
+  padding: 13px 20px;
+  border: 1px solid #163043;
+  top: 0;
+}
+
+.subscribe-form button .telegram {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+
+.footer-menu li {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.footer-menu li:hover a {
+  color: #102330;
+}
+
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+  text-align: right;
+  /* Change text-align to right */
+}
+
+/* Additional RTL adjustments */
+
+.footer-logo {
+  margin-left: 0;
+  margin-right: 30px;
+  /* Add margin-right to create space between logo and text */
+}
+
+.footer-text p {
+  margin-right: 0;
+  margin-left: 30px;
+  /* Add margin-left to create space between text and social icons */
+}
+
+.footer-social-icon a:first-child {
+  margin-right: 15px;
+  margin-left: 15px;
+  /* Add margin-left to create space between social icons */
+}
+
+.facebook-bg {
+  display: inline-block;
+  width: 40px;
+  /* Adjust the width and height to your desired size */
+  height: 40px;
+  border-radius: 50%;
+  /* Creates a circular shape */
+  background-color: #3b589800;
+  /* Facebook's primary color */
+  text-align: center;
+  line-height: 40px;
+  margin-left: 15px;
+}
+
+.facebook-bg {
+  font-size: 14px;
+  text-align: left;
+  /* Adjust the font size to make the "f" icon smaller or larger */
+  color: rgb(255, 255, 255);
+  /* Icon color */
+  /* border: 1px solid rgb(255, 255, 255);
+    padding: 7px; */
+}
+
+.twitter-bg {
+  /* background: #55ACEE; */
+  display: inline-block;
+  width: 40px;
+  /* Adjust the width and height to your desired size */
+  height: 40px;
+  border-radius: 50%;
+  /* Creates a circular shape */
+  text-align: center;
+  line-height: 40px;
+  margin-left: 15px;
+  color: rgb(255, 255, 255);
+  /* Icon color */
+  /* border: 1px solid rgb(255, 255, 255);
+    padding: 7px; */
+}
+
+.insta-bg {
+  /* background: #d139a3; */
+  display: inline-block;
+  width: 40px;
+  /* Adjust the width and height to your desired size */
+  height: 40px;
+  border-radius: 50%;
+  /* Creates a circular shape */
+  text-align: center;
+  line-height: 40px;
+  margin-left: 15px;
+  /* border: 1px solid rgb(255, 255, 255); */
+  /* padding: 7px; */
+}
+
+
+.tel-bg {
+  /* background: #398fd1; */
+  display: inline-block;
+  width: 40px;
+  /* Adjust the width and height to your desired size */
+  height: 40px;
+  border-radius: 50%;
+  /* Creates a circular shape */
+  text-align: center;
+  line-height: 50px;
+  margin-left: 15px;
+  /* padding: 7px; */
+}
+
+.footer-widget-heading h3 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* .footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 26vw;
+  background: #daa82b; line color
+  } */
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+
+.footer-widget ul li a:hover {
+  color: #102330;
+}
+
+.footer-widget ul li a {
+  color: #efe5db;
+  text-transform: capitalize;
+}
+
+.subscribe-form button {
+  position: absolute;
+  right: 0;
+  background: #102330;
+  padding: 13px 20px;
+  border: 1px solid #102330;
+  top: 0;
+}
+
+.subscribe-form button .telegram {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+
+.copyright-area {
+  background: #102330;
+  padding: 1px 0;
+ 
+}
+
+.copyright-text p {
+  padding-top: 20px;
+  font-size: 14px;
+  color: #878787;
+
+}
+
+.copyright-text p a {
+  color: #163043;
+
+}
+
+.footer-menu li {
+  display: inline-block;
+  /* margin-left: 20px; */
+
+}
+
+.footer-menu li:hover a {
+  color: #102330;
+}
+
+.footer-menu li a {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.footer-widget {
+  /* margin:20px; */
+}
+
+@media (min-width: 768px) {
+
+}
+@media (max-width: 991px) {
+  .footer-widget {
+    margin:20px;
+  }
+
+  .footer-cta {
+    border-bottom: none;
+  }
+
+  .iner-footer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-widget-heading h3 {
+    margin-bottom: 20px;
+  }
+
+  .footer-widget ul li {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-pattern img {
+    height: 200px;
+  }
+
+  .footer-logo {
+    margin-bottom: 20px;
+  }
+
+  .footer-text p {
+    font-size: 13px;
+    line-height: 24px;
+  }
+
+  .footer-widget-heading h3 {
+    font-size: 18px;
+  }
+
+  .subscribe-form button {
+    padding: 10px 15px;
+  }
+
+  .subscribe-form button .telegram {
+    font-size: 18px;
+  }
+
+  /* .footer-menu li {
+      margin-left: 10px;
+    } */
+}
+
+@media (max-width: 575px) {
+  .footer-cta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .single-cta {
+    text-align: center;
+  }
+
+  .single-cta i {
+    float: none;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .cta-text {
+    padding-left: 0;
+  }
+
+  .footer-social-icon span {
+    margin-bottom: 10px;
+    font-family: vazir;
+  }
+
+  .footer-menu {
+    margin-bottom: 20px;
+  }
+}

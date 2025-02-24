@@ -1,0 +1,115 @@
+
+.logo
+{
+  width: 50px;
+  margin: 5px;
+}
+.account-box {
+  border: 1px solid transparent;
+  margin-left: 20px;
+}
+
+/* .account-box.selected {
+  border-color: blue;
+
+} */
+
+.forget-password-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  width: 500px;
+  max-width: 90%;
+  animation: fade-in 0.3s ease-in-out, background-pulse 2s infinite;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes background-pulse {
+  0% {
+    background-color: #ffffff;
+  }
+  50% {
+    background-color: rgb(240, 243, 246);
+  }
+  100% {
+    background-color: #ffffff;
+  }
+}
+.forget-password-window h2 {
+  color:rgb(231, 107, 18);
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.icon  {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ .forget-password-window p {
+  
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.forget-password-window form {
+  display: flex;
+  flex-direction: column;
+}
+
+.forget-password-window input[type="email"] {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  background-color: #efeaea;
+  border-radius: 9999px;
+}
+
+.forget-password-window button[type="submit"] {
+  background-color: rgb(236, 110, 20);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 9999px;
+}
+
+.forget-password-window button[type="submit"]:hover {
+  background-color: rgb(210, 98, 18);
+  color: #ffffff;;
+}
+
+.forget-password-window .close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #333333;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.forget-password-window .close-icon:hover {
+  color:#ff5e14;;
+}
+
+

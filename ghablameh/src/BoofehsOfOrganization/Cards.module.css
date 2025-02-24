@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+.containment_boof {
+  /* background-color: #ffffff; */
+  font-family: "Vazir", "Vazirmatn", "Arabic Typesetting", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: 200;
+  font-style: normal;
+  font-size: 9pt; */
+   /* background-image: url('../assets/colorkit1.png'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0; 
+/*  
+ */}
+@media only screen and (max-width: 600px) {
+  @media (max-width: 768px) {
+  .containment_boof {
+    text-align: center;
+    background-size: 100% 100%;
+    justify-content: center;
+  }
+  }
+}
+.itemscenter{
+  direction: rtl;
+  text-align: center;
+  justify-content: center;
+  background-position: center;
+  align-items: center;
+}
+.card{
+    background-color: rgba(255, 255, 255, 0.772);
+    border: 2px solid rgba(0, 0, 0, 0.298);
+    border-radius: 10px;
+    padding: 50px;
+    margin: 15px;
+    text-align: center;
+    max-width: 250px;
+    display: inline-block;
+}
+.card:hover{ 
+    box-shadow: 1px 8px 20px #E55604;
+ }
+
+.card .card_image{
+    height: auto;
+    justify-content: center;
+    border-radius: 80%;
+    margin-bottom:10px ;
+    width: 150px;
+}
+.card_orgName{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #26577C;
+    font-size: large;
+    font-weight:bold;
+    font-size: 13pt;
+}
+.card_orgNum{
+    margin-bottom: 15px;
+    color: #26577C;
+    font-size: large;
+    font-weight:bold;
+}
+.button{
+    @apply bg-template-custom-blue hover:bg-template-custom-orange text-white font-normal text-sm rounded-full border-none cursor-pointer mt-3 mb-1 mr-1;
+  }
+.rtl{
+  direction: rtl;
+}
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+.containment_boof {
+
+  /* background-color: #ffffff; */
+  font-family: "Vazir", "Vazirmatn", "Arabic Typesetting", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: 200;
+  font-style: normal;
+  font-size: 9pt; */
+/*   background-image: url('../assets/colorkit1.png');
+ */  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+/*   height: 100vh;
+ */}
+.button{
+    @apply bg-template-custom-blue hover:bg-template-custom-orange text-white font-medium py-2 px-4 rounded-full border-none cursor-pointer mt-1 mb-1;
+}
+.bodys{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.itemscenter{
+    text-align: center;
+    justify-content: center;
+    background-position: center;
+    align-items: center;
+  }
+  .rate {
+    text-align: center;
+    width: 400px;
+    height: 90px;
+  }
+  .emoji {
+    font-size: 50px;
+    height: 90px;
+    line-height: 100px;
+  }
+  .input {
+    cursor: ew-resize;
+    direction: ltr;
+  }

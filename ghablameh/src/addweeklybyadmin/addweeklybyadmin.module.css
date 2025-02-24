@@ -1,0 +1,151 @@
+.weekly-menu-card {
+  border: 2px solid #3b5998;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+.buffet-selection,
+.menu-items-container,
+.new-food-item-container,
+.menu-date-picker {
+  margin-bottom: 30px;
+}
+
+.buffet-selection label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.menu-items-container {
+  margin-bottom: 20px;
+}
+
+.menu-item-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.menu-item-input {
+  flex: 1;
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.menu-item-select {
+  width: 120px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.new-food-item-container h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.new-food-item-container input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.menu-date-picker {
+  display: flex;
+  align-items: center;
+  direction: rtl;
+  margin-bottom: 1rem;
+}
+
+.menu-date-label {
+  margin-left: 0.5rem;
+}
+
+.menu-date-input {
+  direction: ltr;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.h33 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.week {
+  padding: 8px 16px;
+  background-color: #ff5e14;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.week:hover {
+  background-color: #ff5e14;
+}
+
+.weekinput {
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.selectt {
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.selectt option {
+  padding: 5px;
+}
+
+@media (max-width: 767px) {
+  .weekly-menu-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .menu-item-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-item-input,
+  .menu-item-select {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .weekinput,
+  .selectt {
+    font-size: 0.9rem;
+  }
+}

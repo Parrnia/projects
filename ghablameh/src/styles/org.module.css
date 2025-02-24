@@ -1,0 +1,163 @@
+@font-face {
+  font-family: 'vazir';
+  src: url('../assets/fonts/vazir/Vazir.ttf');
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  height: 130vh;
+  position: relative;
+}
+
+.pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 350px;
+  background-image: linear-gradient(315deg, #E55604 0%, #26577C 74%);
+}
+
+.pattern:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: url(https://media.geeksforgeeks.org/wp-content/uploads/20200326181026/wave3.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: 800px;
+  background-color: #ffffff;
+  text-align: right;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: calc(23vh - 100px);
+  margin-bottom: calc(30vh - 100px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #26577C;
+  text-align: center;
+}
+
+.avatarimg {
+  display: flex;
+  justify-content: center;
+}
+
+.fileinput {
+  height: 50px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.input:hover {
+  background-color: #ffffff; 
+  
+}
+
+.fileinput:hover {
+  background-color: #ffffff;
+}
+
+.button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #26577C;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #26577C;
+}
+
+.passwordInputContainer {
+  display: flex;
+  align-items: center;
+}
+
+.passwordInputContainer {
+  position: relative;
+}
+
+.passwordIcon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+.card {
+  width: 90%;
+  margin-top: 20px;
+}
+}
+
+@media (max-width: 576px) {
+.card {
+  padding: 10px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-width: 3px;
+}
+
+.fileinput {
+  height: 40px;
+}
+
+.input {
+  font-size: 12px;
+}
+
+.button {
+  font-size: 12px;
+}
+}

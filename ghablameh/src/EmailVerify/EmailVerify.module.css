@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+.container {
+  direction: rtl;
+  /* background-color: #ffffff; */
+  font-family: "Vazir", "Vazirmatn", "Arabic Typesetting", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 9pt;
+  /* background-image: url('../assets/colorkit1.png'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin: 0;
+  padding: 0;
+}
+.button_sign{
+    @apply  bg-template-custom-blue hover:bg-template-custom-orange text-white font-medium py-2 lg:px-20 md:px-20 px-10 rounded-full border-none cursor-pointer mt-1 mb-1;
+  }

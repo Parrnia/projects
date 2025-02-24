@@ -1,0 +1,83 @@
+/* Style for the calendar container */
+.calendarcontainer {
+    height: 800px;
+    margin: 50px;
+    margin-bottom: 60px;
+  }
+  .rbc-time-slot {
+    height: 90px; /* Increase this value to make the step intervals larger */
+  }
+  
+  /* Style for the calendar tooltip */
+  .rbc-event-tooltip {
+    margin-bottom: 280px;
+  }
+  .app {
+    overflow-y: auto;
+  
+  }
+  /* Style for the time columns */
+  .rbc-time-column {
+    margin-left: 0;
+  }
+  
+  /* Style for the calendar header */
+  .rbc-header {
+    background-color: #E55604;
+    font-weight: bold;
+  }
+  
+  /* Style for the calendar cells */
+  .rbc-month-view .rbc-row .rbc-day-slot .rbc-day-bg {
+    border: 1px solid  #EBE4D1;
+    height: 70px;
+  
+  }
+  
+  /* Style for the calendar event */
+  .rbc-event {
+    background-color: #26577C;
+    color: #EBE4D1;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+  
+  /* Style for the calendar event title */
+  .rbc-event-content {
+    font-size: 14px;
+  }
+  
+  /* Style for the calendar event wrapper */
+  .rbc-event-continues-after {
+    background-color: #007bff;
+    opacity: 0.5;
+  }
+  
+  /* Style for the calendar event tooltip */
+  .rbc-event-tooltip {
+    background-color: #EBE4D1;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 14px;
+    color: #132989;
+  }
+  
+  /* Style for the calendar event tooltip title */
+  .rbc-event-tooltip-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Style for the calendar event tooltip time */
+  .rbc-event-tooltip-time {
+    font-style: italic;
+    color: #777;
+  }
+  
+  /* Style for the calendar event tooltip description */
+  .rbc-event-tooltip-description {
+    margin-top: 5px;
+  }
+  
+  /* Style for the footer */
+ 

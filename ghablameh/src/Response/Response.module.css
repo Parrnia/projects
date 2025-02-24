@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+.containment_boof {
+
+  background-color: #ffffff;
+  font-family: "Vazir", "Vazirmatn", "Arabic Typesetting", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 9pt;
+/*   background-image: url('../assets/colorkit1.png');
+ */  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+/*   height: 100vh;
+ */}
+.button{
+    @apply bg-template-custom-blue hover:bg-template-custom-orange text-white font-medium py-2 px-20 rounded-full border-none cursor-pointer mt-1 mb-1;
+}
+.bodys{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.itemscenter{
+    text-align: center;
+    justify-content: center;
+    background-position: center;
+    align-items: center;
+  }
+  .rate {
+    text-align: center;
+    width: 400px;
+    height: 90px;
+  }
+  .emoji {
+    font-size: 50px;
+    height: 90px;
+    line-height: 100px;
+  }
+  .input {
+    cursor: ew-resize;
+    direction: ltr;
+  }

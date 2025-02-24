@@ -1,0 +1,325 @@
+
+.slick-prev,
+.slick-next {
+    width: 30px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color :#0DBBBF;
+    position: absolute;
+    top: 50%; /* Center the buttons vertically */
+    transform: translateY(-50%); /* Center the buttons vertically */
+    z-index: 1; /* Ensure buttons are above the slider */
+    transition: background 0.3s;
+ 
+}
+.slick-prev {
+    left: 10px; /* Position the previous button */
+}
+
+.slick-next {
+    right: 10px; /* Position the next button */
+}
+
+
+.slider {
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 70%; /* Full width on mobile */
+   
+    position: relative; /* Ensure relative positioning for the navigation buttons */
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .slider {
+        width: 100%;
+    }
+
+    .slick-prev,
+    .slick-next {
+        width: 30px;
+        height: 30px;
+        background: #007bff;
+        border-radius: 50%;
+        border: none;
+        color: rgb(255, 255, 255);
+        font-size: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%; /* Center the buttons vertically */
+        transform: translateY(-50%); /* Center the buttons vertically */
+        z-index: 1; /* Ensure buttons are above the slider */
+        transition: background 0.3s;
+    }
+
+    .slick-prev {
+        left: 10px; /* Position the previous button */
+    }
+
+    .slick-next {
+        right: 10px; /* Position the next button */
+    }
+
+    .slick-prev:hover,
+    .slick-next:hover {
+        background: #0056b3;
+  
+    }
+
+
+}
+
+
+.slider-container {
+    width: 80%;
+    max-width: 400px; /* Optional: Add a maximum width */
+    margin: 0 auto; /* Center the slider */
+    overflow: hidden; /* Prevent any overflow issues */
+  }
+  
+  .swiper {
+    width: 40%; /* Ensure the Swiper takes full width of the container */
+    height: auto; /* Prevent infinite height growth */
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Prevent slides from causing height issues */
+  }
+  
+  .card {
+    width: 80%; /* Ensure the card fits within the slide */
+    max-width: 250px; /* Optional: Limit card width */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto; /* Maintain image aspect ratio */
+    object-fit: cover; /* Scale the image properly */
+    border-radius: 8px;
+  }
+  
+  .custom-prev,
+  .custom-next {
+    background-color: #007bff;
+    color: rgb(39, 39, 117);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .custom-prev:hover,
+  .custom-next:hover {
+    background-color: #0056b3;
+  }
+  
+  .info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+ 
+  .slick-list {
+    margin: 0; /* Remove margin to eliminate space */
+  }
+  
+  .slick-slide {
+    margin: 0; /* Remove margin between slides */
+  }
+  
+  .slick-slide > div {
+    padding: 0; /* Remove padding around the slide */
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem 0 0.5rem;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+    color: #666;
+    font-family: Yekan Bakh;
+font-size: 15px;
+font-weight: 500;
+line-height: 32.5px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+    margin-bottom: 1rem;
+  }
+  
+  .info {
+    display: flex;
+    font-family: Yekan Bakh;
+font-size: 15px;
+font-weight: 500;
+line-height: 32.5px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 1rem;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+ 
+    color: #0DBBBF;
+    font-family: Yekan Bakh;
+font-size: 18px;
+font-weight: 500;
+line-height: 32.5px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+    border: none;
+    border-radius: 0 0 8px 8px;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  
+  .line {
+    height: 2px; /* ضخامت خط */
+    background-color: rgb(88, 86, 86); /* رنگ خط */
+    margin-bottom: 5px; /* فاصله بین خط و دکمه */
+  }
+  .slider {
+    padding: 20px 0;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 10px 0;
+  }
+  
+  .info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+  }
+  
+  .info span {
+    font-size: 0.8rem;
+    color: #888;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .card-image {
+      height: 180px;
+    }
+  
+    .card h3 {
+      font-size: 1.1rem;
+    }
+  
+    .card p {
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card-image {
+      height: 150px;
+    }
+  
+    .card h3 {
+      font-size: 1rem;
+    }
+  
+    .card p {
+      font-size: 0.8rem;
+    }
+  
+    .info span {
+      font-size: 0.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card-image {
+      height: 120px;
+    }
+  
+    .card h3 {
+      font-size: 0.9rem;
+    }
+  
+    .card p {
+      font-size: 0.75rem;
+    }
+  
+    .info span {
+      font-size: 0.7rem;
+    }
+  }

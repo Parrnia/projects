@@ -1,0 +1,66 @@
+.dorehbox {
+    background: #2F4158;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the start vertically */
+    margin: 20px auto;
+    width: 1340px;
+    height: 453px;
+    margin-top: 80px;
+    margin-bottom: 120px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    direction: rtl;
+}
+.dorehbox1 {
+    background:  url('../../Images/Landing/news.png') no-repeat center center; /* اضافه کردن تصویر پس‌زمینه */
+    background-size: cover; /* تصویر تمام کادر را پر کند */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* تنظیم محتوا به بالا */
+    margin: 20px auto;
+    width: 1340px;
+    height: 453px;
+    margin-top: 80px;
+    margin-bottom: 120px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    direction: rtl;
+  }
+  
+.container {
+    display: flex;
+    align-items: flex-start; /* Align items to the start vertically */
+    width: 100%; /* Make the container take full width */
+    margin-top: 100px;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column; /* Stack title and image vertically */
+    justify-content: flex-start; /* Align items to the start */
+    margin-right: 40px; /* Space between text and slider */
+    margin-bottom: 100px;
+
+}
+
+.title {
+    font-weight: bold;
+    margin: 0;
+    text-align: right;
+    font-family: 'Yekan Bakh', sans-serif;
+    font-size: 28px;
+    color: #fff;
+}
+
+.simg {
+    width: 90%;
+    margin-top: 120px; /* Adjust margin as needed */
+}
+
+.slid {
+    width: 95%;
+    height: auto;
+    margin-top: 120px;
+}
+

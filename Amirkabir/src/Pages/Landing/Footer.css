@@ -1,0 +1,113 @@
+/* src/components/Footer.css */
+
+.footer {
+    background-color: #2d3748;
+    color: #ffffff;
+    padding: 20px 0;
+    direction: rtl;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 10px;
+    max-width: 200px;
+}
+
+.footer-column-1 {
+    flex: 2;
+    max-width: 300px;
+}
+
+.footer h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Separator Line */
+.footer-separator {
+    width: 90%;
+    height: 1px;
+    background-color: #4a5568;
+    margin: 20px auto;
+    border: none;
+}
+
+/* Social Icons and Download Button */
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto; /* Center the container within the footer */
+    padding-top: 20px;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center icons within their container */
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.social-icon {
+    width: 40px;  /* Increased size for logos */
+    height: 40px; /* Increased size for logos */
+    cursor: pointer;
+}
+
+.download-button {
+    background-color: #4299e1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-right: auto; /* Push the button to the far left of the footer-bottom */
+}
+
+.download-button:hover {
+    background-color: #3182ce;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 15px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .download-button {
+        margin: 10px 0 0; /* Center button on small screens */
+    }
+}

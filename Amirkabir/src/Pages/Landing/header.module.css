@@ -1,0 +1,297 @@
+/* اصلی‌ترین استایل‌ها */
+.header {
+    background-color: #ffffff;
+    color: #2d3748;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    margin-top: 50px;
+    width: 85%;
+    height: auto;
+    direction: ltr;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* این به عناصر اجازه می‌دهد تا در اندازه‌های مختلف بچرخند */
+}
+
+.signUp {
+    display: flex;
+    gap: 10px;
+}
+
+.signUpButton,
+.loginButton {
+    font-size: 16px;
+    width: 120px; /* دکمه‌ها به اندازه ثابت باقی می‌مانند */
+    padding: 8px 16px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: Yekan Bakh;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    border: none; 
+}
+
+
+.buttonIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.signUpButton {
+    background-color: #0DBBBF;
+    color: #ffffff;
+}
+
+.loginButton {
+    background-color: #ffffff;
+    color: #0DBBBF;
+}
+
+.signUpButton:hover,
+.loginButton:hover {
+    background-color: #2d3748;
+}
+
+.searchContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.searchInput {
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    height: 25px;
+    font-size: 14px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+    text-align: right;
+    display: block;
+    margin-right: 80px;
+}
+
+.textRight {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+/* Navigation Line with Buttons */
+.headerNav {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 10px 0;
+    border-top: 1px solid #cbd5e0;
+}
+
+.navButton {
+    background: none;
+    color: #4F4F4F;
+    padding: 10px 40px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-family: Yekan Bakh;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 20px;
+}
+
+.navButton:hover {
+    color: #3182ce;
+}
+
+.headerContainer p {
+    font-family: Kalameh;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 24px;
+    text-align: left;
+    color: #0DBBBF;
+}
+
+/* ریسپانسیو برای صفحه‌های موبایل */
+@media screen and (max-width: 768px) {
+    .headerContainer {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .textRight {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+ 
+
+    .signUpButton,
+    .loginButton {
+        width: 48%;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    /* مخفی کردن فیلد جستجو در حالت موبایل */
+    .searchContainer {
+        display: none;
+    }
+
+    .headerNav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .navButton {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .headerContainer p {
+        font-size: 24px;
+    }
+
+    .signUpButton,
+    .loginButton {
+        font-size: 12px;
+        width: 45%;
+        padding: 8px 12px;
+    }
+
+    .searchInput {
+        width: 90%;
+        margin-right: 0;
+        font-size: 12px;
+    }
+
+    .headerNav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navButton {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 14px;
+    }
+}
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profileSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profileImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profileDefault {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #e0e0e0; /* رنگ خاکستری */
+    border-radius: 50%; /* دایره‌ای کردن */
+    font-weight: bold;
+    font-size: 16px;
+    color: #333; /* رنگ متن */
+}
+
+.profileDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profileName {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.profilePoints {
+    font-size: 12px;
+    color: #666;
+}
+
+
+/* استایل‌های همبرگر منو */
+.hamburger {
+    display: none; /* به طور پیش‌فرض مخفی است */
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburgerLine {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+}
+
+/* استایل‌های ریسپانسیو */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* نمایش دکمه همبرگر در حالت موبایل */
+        margin-left: auto; /* دکمه همبرگر را به سمت راست منتقل می‌کند */
+    }
+
+    .headerNav {
+        display: none; /* مخفی کردن منو در حالت موبایل */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* فاصله از بالای صفحه */
+        right: 20px; /* فاصله از سمت راست صفحه */
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        padding: 10px;
+        z-index: 1000; /* اطمینان از نمایش منو روی سایر عناصر */
+    }
+
+    .headerNav.open {
+        display: flex; /* نمایش منو در حالت باز */
+    }
+
+    .navButton {
+        width: 100%;
+        text-align: right;
+        padding: 10px 20px; /* افزایش فضای داخلی برای دکمه‌ها */
+        white-space: nowrap; /* جلوگیری از شکسته شدن متن */
+    }
+}

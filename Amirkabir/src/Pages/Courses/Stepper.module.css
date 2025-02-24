@@ -1,0 +1,114 @@
+.stepperContainer {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    background-color: #eaf7f9; /* Light blue */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.backgroundMap {
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 80px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    max-height: 550px;
+    overflow: auto;
+    direction: rtl;
+}
+
+.stepItem {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.stepContent {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+.duration{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0;
+    background: #E6F2F2;
+    padding: 11px;
+    border-radius: 37px;
+    gap: 7px;
+}
+.stepText{
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px;
+    width: 23rem;
+    justify-content: space-between;
+    border-radius: 37px;
+}
+.stepText h5 {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.stepText p {
+    font-size: 16px;
+    color: gray;
+}
+
+.stepIcon img {
+    width: 60px;
+    height: 60px;
+}
+
+.stepLine {
+    width: 2px;
+    height: 40px;
+    background-color: #d1d1d1;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.activeStep .stepLine {
+    background-color: #00bcd4; /* Active line color */
+}
+
+.activeStep .stepText h3,
+.activeStep .stepText p {
+    color: #00bcd4; /* Active text color */
+}
+
+.activeStep .stepIcon img {
+    filter: drop-shadow(0 0 6px #00bcd4); /* Active icon glow */
+}
+.examButton {
+    background-color: transparent; /* پس‌زمینه شفاف */
+    color: #4CAF50; /* رنگ متن سبز */
+    padding: 10px 20px;
+    border: 2px solid #4CAF50; /* حاشیه سبز */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease; /* انیمیشن برای همه تغییرات */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* سایه ظریف */
+}
+
+.examButton:hover {
+    background-color: #4CAF50; /* پس‌زمینه سبز هنگام hover */
+    color: white; /* رنگ متن سفید هنگام hover */
+    border-color: #45a049; /* تغییر رنگ حاشیه هنگام hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* سایه بیشتر هنگام hover */
+}

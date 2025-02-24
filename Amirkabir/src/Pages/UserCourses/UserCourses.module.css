@@ -1,0 +1,181 @@
+/* Container styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Layout wrapper for sidebars and main content */
+.layout {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row; /* Keep sidebars on the left and right of the content */
+    position: relative;
+}
+
+/* Main content */
+.mainContent {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 250px; /* Reserve space for the left sidebar */
+    margin-right: 250px; /* Reserve space for the right sidebar */
+    box-sizing: border-box; /* Ensure padding doesn't affect the layout */
+    transition: margin-left 0.3s ease, margin-right 0.3s ease;
+}
+
+/* Responsive grid for course cards */
+.coursesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Individual course card */
+.courseCard {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+}
+
+.courseCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.courseImage {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.courseDetails {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.courseTitle {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.courseDescription {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.courseInfo {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Action buttons */
+.courseActions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.actionButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.actionButton:hover {
+    background-color: #0056b3;
+}
+
+/* Left Sidebar */
+.leftColumn {
+    position: fixed;
+    top: 50px; /* Adjust top position for spacing from the header */
+    left: 0; /* Align to the left side */
+    width: 250px; /* Set fixed width */
+    height: calc(100vh - 100px); /* Fit within the viewport */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    background: #ffffff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow on the left side */
+    padding: 15px;
+    border-right: 1px solid #ddd;
+    z-index: 1000;
+}
+
+/* Right Sidebar */
+.rightColumn {
+    position: fixed;
+    top: 100px; /* Adjust top position for spacing from the header */
+    right: 0; /* Align to the right side */
+    width: 250px; /* Set fixed width */
+    height: calc(100vh - 100px); /* Fit within the viewport */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    background: #ffffff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow on the right side */
+    padding: 15px;
+    border-left: 1px solid #ddd;
+    z-index: 1000;
+}
+
+/* Section Titles */
+.sectionTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Daily Missions and Leaderboard Styling */
+.dailyMissions,
+.leaderBoard {
+    margin-bottom: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    /* Main Content */
+    .mainContent {
+        margin-left: 0; /* Remove space for left sidebar */
+        margin-right: 0; /* Remove space for right sidebar */
+        padding: 10px;
+    }
+
+    /* Left Sidebar */
+    .leftColumn {
+        position: static; /* Make it static on small screens */
+        width: 100%; /* Full width */
+        margin-top: 20px; /* Add space on top */
+    }
+
+    /* Right Sidebar */
+    .rightColumn {
+        position: static; /* Make it static on small screens */
+        width: 100%; /* Full width */
+        margin-top: 20px; /* Add space on top */
+    }
+
+    /* Course card layout adjustment */
+    .coursesGrid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+}

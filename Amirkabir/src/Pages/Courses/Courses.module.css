@@ -1,0 +1,176 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    font-family: "Arial", sans-serif;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Allows content to grow beyond viewport height */
+    padding: 20px;
+}
+
+/* Header Section */
+.header {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.details {
+    display: flex;
+    gap: 15px;
+}
+
+.time,
+.videos {
+    background-color: #f5f5f5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Content Section */
+.content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Map Section */
+.map {
+    flex: 3;
+    background: #e0f7fa; /* Keep the background color */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Required for positioning the pseudo-element */
+    overflow: hidden; /* Ensures the pseudo-element does not exceed bounds */
+    height: max-content;
+}
+
+.map::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../../Images/Course/map.png") center/cover no-repeat; /* Your map image */
+    opacity: 0.3; /* Set the image opacity to 30% */
+    z-index: 1; /* Layer the pseudo-element correctly */
+    border-radius: 10px; /* Match the parent border radius */
+    pointer-events: none; /* Prevent interference with interactions */
+}
+
+
+.mapPoint {
+    margin-top: 15px;
+}
+
+.point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pointTime {
+    font-size: 14px;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.pointTitle {
+    font-size: 12px;
+    color: #333;
+}
+
+.viewButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.viewButton:hover {
+    background-color: #45a049;
+}
+
+.viewButton:active {
+    background-color: #3d8e42;
+}
+
+/* Right Column: Daily Missions and Leaderboard */
+.rightColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dailyMissions,
+.leaderBoard {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Titles */
+.sectionTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .map,
+    .rightColumn {
+        width: 100%;
+    }
+}

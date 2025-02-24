@@ -1,0 +1,255 @@
+/* src/components/EventsBox.css */
+
+.recent-events {
+    width: 100%; /* Full width of the viewport */
+    background-color: #f0f4f8; /* Light gray background for the whole section */
+    padding: 20px 0; /* Only vertical padding to prevent horizontal space */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px 0; /* Remove default margin */
+    position: relative; /* Ensure it positions correctly without affecting layout */
+}
+
+.events-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2d3748; /* Dark gray */
+    text-align: center;
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.events-container {
+    display: flex;
+    justify-content: space-around; /* Space out the cards evenly */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    padding: 0 10px; /* Add padding to the container */
+}
+
+.event-card {
+    background-color: #ffffff; /* White background for each card */
+    border-radius: 8px; /* Rounded corners for the cards */
+    overflow: hidden; /* Clip overflow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+    margin: 10px; /* Space between cards */
+    max-width: 300px; /* Max width for cards */
+    flex: 1 1 200px; /* Allow cards to grow and shrink with a base width */
+    text-align: right; /* Align text to the right for Persian */
+}
+
+.event-image {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.event-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2d3748; /* Dark gray */
+    padding: 10px; /* Space around title */
+}
+
+.event-description {
+    color: #4a5568; /* Slightly lighter gray */
+    font-size: 16px;
+    line-height: 1.5; /* Line height for readability */
+    padding: 0 10px; /* Space around description */
+}
+
+.event-button {
+    background-color: #4299e1; /* Blue background */
+    color: white; /* White text */
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px; /* Space around the button */
+    transition: background-color 0.3s ease;
+    width: calc(100% - 20px); /* Full width minus margins */
+}
+
+.event-button:hover {
+    background-color: #3182ce; /* Darker blue on hover */
+}
+
+.show-all-button {
+    background-color: #4a5568; /* Dark gray background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px; /* Space above the button */
+    transition: background-color 0.3s ease;
+    width: calc(100% - 40px); /* Full width minus margins */
+}
+
+.show-all-button:hover {
+    background-color: #2d3748; /* Darker gray on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .event-card {
+        max-width: 90%; /* Allow the cards to take up more space on smaller screens */
+        margin: 10px auto; /* Center the cards on smaller screens */
+    }
+
+    .events-title {
+        font-size: 20px; /* Smaller title on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .event-title {
+        font-size: 18px; /* Adjust title size for mobile */
+    }
+
+    .event-description {
+        font-size: 14px; /* Adjust description size for mobile */
+    }
+}
+/* استایل‌های کلی اسلایدر */
+.swiper {
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* استایل‌های کارت دوره */
+.courseCard {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.courseCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.courseImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.courseDetails {
+    padding: 15px;
+}
+
+.courseTitle {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.courseDescription {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.courseInfo {
+    font-size: 12px;
+    color: #888;
+}
+
+.courseActions {
+    padding: 15px;
+    text-align: center;
+}
+
+.actionButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.actionButton:hover {
+    background-color: #45a049;
+}
+.dorehbox {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.textContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.simg {
+    width: 50px;
+    height: auto;
+}
+
+.courseCard {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.courseCard:hover {
+    transform: translateY(-5px);
+}
+
+.courseImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.courseDetails {
+    padding: 15px;
+}
+
+.courseTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.courseDescription {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.courseInfo {
+    font-size: 14px;
+    color: #444;
+}
+
+.swiper-pagination {
+    position: relative;
+    margin-top: 20px;
+}
+
+.swiper-pagination-bullet {
+    background-color: #ccc;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #333;
+}
